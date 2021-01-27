@@ -1,0 +1,31 @@
+/* This file contains all the images needed by the theme*/
+images {
+	/*menu images*/
+	image: "e17_menu_bg.png" COMP;
+	image: "e17_menu_separator.png" COMP;
+	/*image: "e17_menu_check0.png" COMP;*/
+	image: "e17_menu_check1.png" COMP;
+	image: "e17_menu_check2.png" COMP;
+	image: "e17_titlebar2.png" COMP;
+	/*image: "e17_titlebar_shadow1.png" COMP;
+	image: "e17_titlebar_shadow2.png" COMP;
+	image: "e17_titlebar_glint1.png" COMP;
+	image: "e17_titlebar_glint2.png" COMP;
+	image: "e17_titlebar_glint3.png" COMP;*/
+	image: "e17_menu_arrow.png" COMP;
+	image: "e17_menu_arrow_over.png" COMP;
+/*	image: "menu_bubble.png" COMP;*/
+	
+	/*pager use these images*/
+	
+	/*image: "e17_menu_bg_border.png" COMP;*/
+	image: "e17_ibar_bg_h.png" COMP;
+	image: "e17_ibar_over_h.png" COMP;
+	image: "e17_pager_window.png" COMP;
+	/*image: "pager_bg.png" COMP;*/
+	image: "e17_pager_desk.png" COMP;
+	image: "pager_base2.png" COMP;
+	image: "e17_pager_desk_sel.png" COMP;
+	image: "bd_title_over.png" COMP;
+	
+}

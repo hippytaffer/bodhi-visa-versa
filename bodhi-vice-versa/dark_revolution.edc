@@ -1,0 +1,108 @@
+//#########################################################
+//### Dark Revolution Theme for E17                                 #
+//### Realized and maint: Agustin J Verdegal T  #
+//### Original  theme was created by  PrinceAmd  #
+//### Updated 01/11/2011 : Please enjoy !!!!!              #
+//###                           #
+//#########################################################
+//
+/*Agust*/
+#ifdef E17_PROFILE
+# if E17_PROFILE == LOWRES_PDA
+#  define SM "sm_"
+# elif E17_PROFILE == MEDIUMRES_PDA
+#  define SM "sm_"
+# elif E17_PROFILE == HIRES_PDA
+#  define SM "sm_"
+# elif E17_PROFILE == SLOW_PC
+#  define SM "sm_"
+# elif E17_PROFILE == MEDIUM_PC
+#  define SM
+# elif E17_PROFILE == FAST_PC
+#  define SM
+# endif
+#else
+# define SM
+#endif
+
+//~ fonts {
+   //~ font: "Vera.ttf"   "Edje-Vera";
+   //~ font: "VeraBd.ttf" "Edje-Vera-Bold";
+//~ }
+
+#if 0
+spectra {
+  spectrum {
+    name: "black_to_trans";
+    color: 0 0 0 255 1;
+    color: 0 0 0 0 1;
+  }
+}
+#endif
+
+
+collections {
+#include "dark_revolution_background.edc"
+#include "dark_revolution_battery.edc"
+#include "dark_revolution_border.edc"
+#include "dark_revolution_clock.edc"
+#include "dark_revolution_sys.edc"
+#include "dark_revolution_gadman.edc"
+#include "dark_revolution_ibar.edc"
+#include "images.edc"
+#include "dark_revolution_resize.edc"
+#include "dark_revolution_move.edc"
+#include "dark_revolution_temperature.edc"
+#include "dark_revolution_error.edc"
+#include "dark_revolution_cpufreq.edc"
+#include "dark_revolution_ibox.edc"
+#include "dark_revolution_init.edc"
+#include "dark_revolution_start.edc"
+#include "dark_revolution_winlist.edc"
+#include "dark_revolution_transitions.edc"
+#include "dark_revolution_dialog.edc"
+#include "dark_revolution_calendar.edc"
+#include "dark_revolution_configure.edc"
+#include "dark_revolution_pointer.edc"
+#include "dark_revolution_about.edc"
+#include "dark_revolution_theme_about.edc"
+#include "dark_revolution_entry.edc"
+#include "dark_revolution_fileman.edc"
+#include "dark_revolution_filesel.edc"   
+#include "dark_revolution_check.edc"
+#include "dark_revolution_radio.edc"
+#include "dark_revolution_pager.edc"
+#include "dark_revolution_frame.edc"
+#include "dark_revolution_button.edc"
+#include "dark_revolution_label.edc"
+#include "dark_revolution_scrollframe.edc"
+#include "dark_revolution_ilist.edc"
+#include "dark_revolution_tlist.edc"
+#include "dark_revolution_slider.edc"
+#include "dark_revolution_exebuf.edc"
+#include "dark_revolution_desklock.edc"
+#include "dark_revolution_textblock.edc"
+#include "dark_revolution_shelf.edc"
+#include "dark_revolution_preview.edc"
+#include "dark_revolution_cslider.edc"
+#include "dark_revolution_spectrum.edc"
+#include "dark_revolution_color_well.edc"
+#include "dark_revolution_cpu.edc"
+#include "dark_revolution_net.edc"
+#include "dark_revolution_tclock.edc"
+#include "dark_revolution_uptime.edc"
+#include "dark_revolution_taskbar.edc"
+//~#include "dark_revolution_taskbar2.edc"
+#include "dark_revolution_deskshow.edc"
+#include "dark_revolution_language.edc"
+#include "dark_revolution_mem.edc"
+#include "dark_revolution_mixer.edc"
+#include "dark_revolution_deskpreview.edc"
+#include "dark_revolution_icons.edc"
+#include "dark_revolution_fontpreview.edc"
+#include "darkrevolution_menu.edc"
+
+}
+
+
+

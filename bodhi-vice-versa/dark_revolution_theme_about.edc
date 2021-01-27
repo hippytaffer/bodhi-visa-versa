@@ -1,0 +1,182 @@
+images {
+   image: "e17_button_sm.png" COMP;
+   image: "e17_button_sm2.png" COMP;
+   image: "e17_logo.png" COMP;
+   image: "e17_about_sky0.png" LOSSY 70;
+   image: "e17_about_sky_overlay.png" COMP;
+}
+
+styles
+{
+   style {
+      name: "theme_about_style";
+      base: "font=Edje-DejaVu style=glow color=#fff glow_color=#d50f0f  glow2_color=#38526DA0  font_size=12 align=center wrap=word";
+      tag:  "br" "\n";
+      tag:  "hilight" "+ font=Edje-DejaVu-Bold";
+      tag:  "invisible" "+ font=Edje-DejaVu font_size=7 style=none color=#0002";
+   }
+}
+
+group {
+   name: "e/theme/about";
+   min: 400 160;
+   max: 400 160;
+   parts {
+      part {
+	 name:          "sky";
+	 mouse_events:  0;
+	 description {
+	    state:    "default" 0.0;
+	    min:      400 160;
+	    max:      400 160;
+	    align:    0.5 1.0;
+	    fixed:    1 1;
+	    rel1 {
+	       relative: 0.0 1.0;
+	       offset:   7   -1;
+	    }
+	    rel2 {
+	       relative: 1.0 1.0;
+	       offset:   -8 -1;
+	    }
+	    image {
+	       normal: "e17_about_sky0.png";
+	    }
+	 }
+      }
+      part {
+	 name:          "about";
+	 type:          TEXTBLOCK;
+	 mouse_events:  0;
+	 description {
+	    state:    "default" 0.0;
+	    rel1 {
+	       to_x: "logo";
+	       relative: 1.0 0.0;
+	       offset:   6   6;
+	    }
+	    rel2 {
+	       to_x: "button";
+	       relative: 0.0 1.0;
+	       offset:   -7  -7;
+	    }
+	    text {
+	       style:    "theme_about_style";
+	       min:      0 1;
+	       text: 
+"This is " <hilight>"Vice-Versa."</hilight> <br>
+"Based On 'A-Revolution' by Agustin J Verdegal." <br>
+"Wallpaper By LKJ, thanks to  Alberto 'Duma' Verdoja. " <br>
+<hilight> "Realized By "</hilight>
+             <hilight>" LostBumpkin "</hilight>;
+
+	    }
+	 }
+      }
+      part {
+	 name:          "logo";
+	 type: 	        IMAGE;
+	 mouse_events:  0;
+	 description {
+	    state:      "default" 0.0;
+	    min:        63 63;
+	    max:        63 63;
+	    align:      0.0 1.0;
+	    fixed:      1 1;
+	    rel1 {
+	       relative: 0.0  1.0;
+	       offset:   6    -6;
+	    }
+	    rel2 {
+	       relative: 0.0  1.0;
+	       offset:   6    -6;
+	    }
+	    image {
+	       normal:   "e17_logo.png";
+	    }
+	 }
+      }
+      part {
+	 name:          "button";
+	 type:          IMAGE;
+	 mouse_events:  1;
+	 description {
+	    state:    "default" 0.0;
+	    min:      64 32;
+	    align:    1.0 1.0;
+	    fixed:    1 1;
+	    rel1 {
+	       relative: 1.0  1.0;
+	       offset:   -7    -7;
+	    }
+	    rel2 {
+	       relative: 1.0  1.0;
+	       offset:   -7    -7;
+	    }
+	    image {
+	       normal: "e17_button_sm.png";
+	       border: 8 8 8 8;
+	    }
+	 }
+	 description {
+	    state:    "clicked" 0.0;
+	    inherit:  "default" 0.0;
+	    image {
+	       normal: "e17_button_sm2.png";
+	    }
+	 }
+      }
+      part {
+	 name:          "button_text";
+	 type:          TEXT;
+	 effect:        SHADOW;
+	 mouse_events:  0;
+	 description {
+	    state:    "default" 0.0;
+	    rel1 {
+	       relative: 0.0  0.0;
+	       offset:   6    6;
+	       to:     "button";
+	    }
+	    rel2 {
+	       relative: 1.0  1.0;
+	       offset:   -7   -7;
+	       to:     "button";
+	    }
+	    color:   250 250 250 255;
+	    color3: 0 0 0 0;
+	    color_class: "button_text";
+        text {
+	       text:     "OK";
+	       font:     "Edje-Vera";
+	       size:     10;
+	       min:      1 1;
+	       align:    0.5 0.5;
+               text_class: "button_text";	       
+	    }
+	 }
+      }
+   }
+   programs {
+      program {
+	 name:   "button_click";
+	 signal: "mouse,down,1";
+	 source: "button";
+	 action: STATE_SET "clicked" 0.0;
+	 target: "button";
+      }
+      program {
+	 name:   "button_unclick";
+	 signal: "mouse,up,1";
+	 source: "button";
+	 action: STATE_SET "default" 0.0;
+	 target: "button";
+      }
+      program {
+	 name:   "button_unclick2";
+	 signal: "mouse,clicked,1";
+	 source: "button";
+	 action: SIGNAL_EMIT "e,action,close" "";
+      }
+   }
+}
