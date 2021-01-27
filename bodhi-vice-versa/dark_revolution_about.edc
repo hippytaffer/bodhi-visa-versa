@@ -24,13 +24,6 @@ images {
    image: "e17_logo_small_p27.png" COMP;
    image: "e17_logo_small_p28.png" COMP;
    image: "e17_logo_small_p29.png" COMP;
-/*   image: "e17_about_sky0.png" LOSSY 70;
-   image: "e17_about_sky1.png" LOSSY 70;
-   image: "e17_about_sky2.png" LOSSY 70;
-   image: "e17_about_sky3.png" LOSSY 70;
-   image: "e17_about_sky4.png" LOSSY 70;
-   image: "e17_about_sky5.png" LOSSY 70;
-   image: "e17_about_sky_overlay.png" COMP;*/
 }
 
 styles

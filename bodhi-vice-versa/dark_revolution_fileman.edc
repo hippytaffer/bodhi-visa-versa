@@ -9228,8 +9228,8 @@ images
    image: "e17_icon_fileman_pcf.png" COMP;
    image: "e17_icon_fileman_bdf.png" COMP;
    image: "e17_icon_fileman_css.png" COMP;
-   image: "e17_icon_fileman_html.png" COMP;
-   image: "e17_icon_fileman_htm.png" COMP;
+   //~ image: "e17_icon_fileman_html.png" COMP;
+   //~ image: "e17_icon_fileman_htm.png" COMP;
    image: "e17_icon_fileman_zip.png" COMP;
    image: "e17_icon_fileman_gz.png" COMP;
    image: "e17_icon_fileman_tar.png" COMP;

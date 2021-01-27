@@ -1,6 +1,6 @@
-images {
-   image: "milky.png" COMP;
-}
+//~ images {
+   //~ image: "milky.png" COMP;
+//~ }
 group {
    name: "e/desktop/background";
  /*  max: 1680 1050;*/

@@ -3,8 +3,8 @@ images {
    image: "e17_shelf_bg_v.png" COMP;
    image: "e17_shelf_bg_dark_revolution_h.png" COMP;
    image: "e17_shelf_bg_dark_revolution_v.png" COMP;
-   image: "e17_shelf_bg2_h.png" COMP;
-   image: "e17_shelf_bg2_v.png" COMP;
+   //~ image: "e17_shelf_bg2_h.png" COMP;
+   //~ image: "e17_shelf_bg2_v.png" COMP;
    image: "e17_ibar_bg_h.png" COMP;
    image: "e17_ibar_over_h.png" COMP;
 }

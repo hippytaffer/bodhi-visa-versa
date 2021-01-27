@@ -3,7 +3,7 @@ images {
    image: "e17_button_sm2.png" COMP;
    image: "e17_logo.png" COMP;
    image: "e17_about_sky0.png" LOSSY 70;
-   image: "e17_about_sky_overlay.png" COMP;
+   //~ image: "e17_about_sky_overlay.png" COMP;
 }
 
 styles
