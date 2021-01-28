@@ -42,6 +42,7 @@ spectra {
 
 
 collections {
+#include "dark_revolution_evrything.edc"
 #include "dark_revolution_background.edc"
 #include "dark_revolution_battery.edc"
 #include "dark_revolution_border.edc"
