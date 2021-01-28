@@ -2,7 +2,7 @@
    color_classes {
 color_class {
 	 name: "mem_module_real";
-	 color: 6 101 244 128; 
+	 color: 6 101 244 128;
       }
 color_class {
 	 name: "mem_module_swap";
