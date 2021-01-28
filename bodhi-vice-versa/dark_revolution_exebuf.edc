@@ -378,7 +378,7 @@ group {
       }
       part {
 	 name:          "item_clip";
-	 /*type:          RECT;*/
+	 type:          RECT;
 	 description {
 	    state:    "default" 0.0;
 	    rel1 {
@@ -639,7 +639,7 @@ group {
    
       part {
 	 name:          "e.event.exebuf.item";
-	 /*type:          RECT;*/
+	 type:          RECT;
 	 mouse_events:  1;
 	 description {
 	    state:    "default" 0.0;

@@ -76,9 +76,9 @@ group {
 	       relative: 1.0 1.0;
 	       offset:   -8 -1;
 	    }
-	  /*  image {
+	    image {
 	       normal: "e17_about_sky0.png";
-	    }*/
+	    }
 	 }
       }/*
       part {
