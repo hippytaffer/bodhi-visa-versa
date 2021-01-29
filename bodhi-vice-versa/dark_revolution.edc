@@ -43,6 +43,7 @@ spectra {
 
 collections {
 #include "macros.edc"
+#include "tasks.edc"
 #include "toolbar.edc"
 #include "dark_revolution_evrything.edc"
 #include "dark_revolution_background.edc"
