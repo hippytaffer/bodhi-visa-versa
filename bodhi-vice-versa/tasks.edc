@@ -75,7 +75,7 @@ group { name:"e/modules/tasks/item";
             rel2.to: "e.text.label";
             color: 225 225 255 255;
             color2: 225 225 255 24;
-            color3: 225 225 255 18;
+            color3: 255 225 255 18;
             color_class: "ilist_item_selected";
             text { font: "Sans"; size: 10;
                text_source: "e.text.label";
