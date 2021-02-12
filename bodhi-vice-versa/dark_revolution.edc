@@ -105,7 +105,7 @@ collections {
 #include "dark_revolution_deskpreview.edc"
 #include "dark_revolution_icons.edc"
 #include "dark_revolution_fontpreview.edc"
-#include "darkrevolution_menu.edc"
+#include "dark_revolution_menu.edc"
 
 }
 
