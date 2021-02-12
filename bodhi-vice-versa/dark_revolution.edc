@@ -55,6 +55,7 @@ collections {
 #include "dark_revolution_ibar.edc"
 #include "images.edc"
 #include "dark_revolution_resize.edc"
+#include "dark_revolution_systray.edc"
 #include "dark_revolution_move.edc"
 #include "dark_revolution_temperature.edc"
 #include "dark_revolution_error.edc"
