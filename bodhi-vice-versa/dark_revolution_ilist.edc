@@ -902,14 +902,13 @@ group { name: "e/widgets/ilist/toggle_end";
    parts {
       part { name: "base"; mouse_events: 0; type: IMAGE;
          description { state: "default" 0.0;
-            image.normal: "led_dark.png";
+            image.normal: "e17_button_detail_minimize.png";
             aspect: 1.0 1.0; aspect_preference: BOTH;
             max: 24 24;
             visible: 0;
          }
          description { state: "visible" 0.0;
             inherit: "default" 0.0;
-            image.normal: "e17_button_detail_minimize.png";
             visible: 1;
          }
       }
