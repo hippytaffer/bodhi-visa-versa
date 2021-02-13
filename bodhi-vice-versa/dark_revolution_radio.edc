@@ -59,6 +59,9 @@ group {
 	 description {
 	    state:    "active" 0.0;
 	    inherit:  "default" 0.0;
+      image {
+	       normal: "e17_menu_radio3.png";
+	    }
 	    visible:  1;
 	 }
       }
@@ -67,6 +70,7 @@ group {
 	 type:           TEXT;
 	 /*effect:         SHADOW;*/
 	 mouse_events:   0;
+   scale: 1;
 	 description {
 	    state: "default" 0.0;
 	    min:      16 16;
@@ -88,7 +92,7 @@ group {
 	       size:     10;
 	       min:      1 1;
 	       align:    0.0 0.5;
-               text_class: "radio_button";	       
+         text_class: "radio_button";    
 	    }
 	 }
          description {
