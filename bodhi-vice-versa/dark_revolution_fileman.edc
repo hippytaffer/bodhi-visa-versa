@@ -1085,6 +1085,7 @@ group {
 	 type:           TEXT;
 	/* effect:         SHADOW;*/
 	 mouse_events:   0;
+   scale: 1;
 	 description {
 	    state: "default" 0.0;
 	    min:      16 16;
@@ -1761,6 +1762,7 @@ group {
 	 type:           TEXT;
 	 /*effect:         SHADOW;*/
 	 mouse_events:   0;
+   scale: 1;
 	 description {
 	    state: "default" 0.0;
 	    min:      16 16;
