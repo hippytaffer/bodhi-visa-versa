@@ -50,7 +50,7 @@ group {
 	       to: "button_image";
 	    }
 	    image {
-	       normal: "e17_button_sm_disabled.png";
+	       normal: "e17_button_sm2.png";
 	       border: 8 8 8 8;
 	    }
 	 }
