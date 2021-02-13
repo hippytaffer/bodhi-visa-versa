@@ -131,8 +131,8 @@ group {
 	       offset:   -8   -8;
 	       to:     "button_image";
 	    }
-	    color:    255 255 255 255;
-	    color3: 255 255 255 0;
+	    color:    220 202 154 255;
+	    color3: 0 0 0 64;
 	    color_class: "button_text";
 	    text {
 	       text:     "";
