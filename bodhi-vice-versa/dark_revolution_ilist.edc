@@ -879,7 +879,7 @@ group { name: "e/widgets/ilist/toggle_end";
          description { state: "default" 0.0;
             image.normal: "led_dark.png";
             aspect: 1.0 1.0; aspect_preference: BOTH;
-            max: 32 32;
+            max: 24 24;
          }
          description { state: "visible" 0.0;
             inherit: "default" 0.0;
