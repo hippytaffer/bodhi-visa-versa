@@ -144,8 +144,9 @@ group {
       part {
 	 name:           "e.text.reading";
 	 type:           TEXT;
-	/* effect:         SOFT_SHADOW;*/
+	 effect:         SOFT_SHADOW;
 	 clip_to: "fade_clip";
+   scale: 1;
 	 description {
 	    state: "default" 0.0;
 	    align: 1.0 0.0;
@@ -157,7 +158,7 @@ group {
 	       relative: 1.0  0.0;
 	    }
 	    color: 255 255 255 220;
-	    color3: 220 220 220 250;
+      color3:  0   0   0 64;
 	    color_class: "module_label";
             text {
 	       text:     "100%";
@@ -165,6 +166,7 @@ group {
 	       size:     7;
 	       min:      1 1;
 	       align:    1.0 0.0;
+         ellipsis: -1;
 	       text_class: "module_small";
 	    }
 	 }
@@ -172,8 +174,9 @@ group {
       part {
 	 name:           "e.text.time";
 	 type:           TEXT;
-	/* effect:         SOFT_SHADOW;*/
+	 effect:         SOFT_SHADOW;
 	 clip_to: "fade_clip";
+   scale: 1;
 	 description {
 	    state: "default" 0.0;
 	    align: 1.0 0.0;
@@ -187,7 +190,7 @@ group {
 	       to_y:     "e.text.reading";
 	    }
 	    color: 255 255 255 220;
-	    color3: 220 220 220 250;
+	    color3:  0   0   0  64;
             color_class: "module_label";
 	    text {
 	       text:     "00:00";
@@ -195,7 +198,8 @@ group {
 	       size:     7;
 	       min:      1 1;
 	       align:    1.0 0.0;
-               text_class: "module_small";
+         ellipsis: -1;
+         text_class: "module_small";
 	    }
 	 }
       }
