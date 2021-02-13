@@ -174,7 +174,7 @@ group {
 	       relative: 1.0  1.0;
 	       offset:   -5 -5;
 	    }
-	    color: 220 202 154 255;
+	    color: 40 40 20 255;
 	    color3: 0 0 0 96;
 	    color_class: "ilist_item";
 	    text {
@@ -574,8 +574,8 @@ group {
 	       relative: 1.0  1.0;
 	       offset:   -5 -5;
 	    }
-	    color: 240 222 174 255;
-	    color3: 0 0 0 196;
+	    color: 40 40 20 255;
+	    color3: 0 0 0 96;
 	    color_class: "ilist_item_odd";	    
 	    text {
 	       text:     "Item Label";
@@ -847,8 +847,8 @@ group {
 	       relative: 1.0  1.0;
 	       offset:   -5 -5;
 	    }
-	    color: 255 255 255 255;
-	    color2: 0 0 0 64;
+	    color: 40 40 20 255;
+	    color3: 255 255 255 96;
 	    color_class: "ilist_header";	    
 	    text {
 	       text:     "Item Label";
