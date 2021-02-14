@@ -1095,7 +1095,8 @@ group {
 	    }
 	    color: 0 0 0 0;
 	 }
-      }
+ }
+	 
       part {
 	 name:          "e.event.resize.bl";
 	 type:          RECT;
@@ -1146,7 +1147,7 @@ group {
 	    }
 	 }
       }
-
+      
       BORDER_BUTTON_ADV("close","close",0.0,0.0, 0,0,"whole", "whole",1.0,1.0,-1,5,"whole", "title2")
       BORDER_BUTTON("maximize","maximize",0.0,0.0,3,0,"close",0.0,1.0,3,-1,"close")
       BORDER_BUTTON("minimize","minimize",0.0,0.0,3,0,"maximize",0.0,1.0,3,-1,"maximize")
@@ -1178,6 +1179,35 @@ group {
 	    }
 	    color: 0 0 0 0;
 	 }
+      }
+      
+        part { name: "e.event.resize.tl"; type: RECT;
+         description { state: "default" 0.0;
+            rel2.relative: 0.0 0.0;
+            min: 32 4;
+            align: 0.0 0.0;
+            color: 0 0 0 0;
+         }
+      }
+      part { name: "e.event.resize.t"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.relative: 1.0 0.0;
+            rel1.to_x: "e.event.resize.tl";
+            rel2.relative: 0.0 0.0;
+            rel2.to_x: "e.event.resize.tr";
+            min: 0 4;
+            align: 0.5 0.0;
+            color: 0 0 0 0;
+         }
+      }
+      part { name: "e.event.resize.tr"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.relative: 1.0 0.0;
+            rel2.relative: 1.0 0.0;
+            min: 32 4;
+            align: 1.0 0.0;
+            color: 0 0 0 0;
+         }
       }
 
 			   
