@@ -51,6 +51,7 @@ collections {
 #include "dark_revolution_border.edc"
 #include "dark_revolution_clock.edc"
 #include "dark_revolution_sys.edc"
+#include "dark_revolution_syscon.edc"
 #include "dark_revolution_gadman.edc"
 #include "dark_revolution_ibar.edc"
 #include "images.edc"
