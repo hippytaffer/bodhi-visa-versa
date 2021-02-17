@@ -7,6 +7,17 @@
 //#########################################################
 //
 /*Agust*/
+
+data {
+	item: "theme/name" 		"MokshaViceVersa";
+	item: "theme/version"	"0.0.1";
+	item: "theme/author"	"Agustin J Verdegal, Gareth ""hippytaff"" Williams, Stefan ""the_waiter"" Uram";
+	item: "theme/license"	"BSD Artistic License";
+	item: "gtk-theme"     "MokshaViceVersa-GTK";
+	item: "version"       "110";
+	item: "icon-theme"    "gnome";
+}
+
 #ifdef E17_PROFILE
 # if E17_PROFILE == LOWRES_PDA
 #  define SM "sm_"
