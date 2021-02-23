@@ -198,11 +198,11 @@ group {
 	    state:    "default" 0.0;
 	    rel1 {
 	       relative: 0.0  0.0;
-	       offset:   10   1;
+	       offset:   2   1;
 	    }
 	    rel2 {
 	       relative: 1.0  1.0;
-	       offset:   -10  -1;
+	       offset:   -2  -1;
 	    }
 	 }
 	 description {
@@ -234,11 +234,11 @@ group {
 	    inherit:  "default" 0.0;
 	    rel1 {
 	       relative: 0.0  0.0;
-	       offset:   10   1;
+	       offset:   2   1;
 	    }
 	    rel2 {
 	       relative: 1.0  1.0;
-	       offset:   -10   -1;
+	       offset:   -2   -1;
 	    }
 	 }
 	 description {
@@ -258,11 +258,11 @@ group {
 	    inherit:  "default" 0.0;
 	    rel1 {
 	       relative: 0.0  0.0;
-	       offset:   18   2;
+	       offset:   2   2;
 	    }
 	    rel2 {
 	       relative: 1.0  1.0;
-	       offset:   -3   -3;
+	       offset:   -2   -3;
 	    }
 	 }
 	 description {
@@ -270,11 +270,11 @@ group {
 	    inherit:  "default" 0.0;
 	    rel1 {
 	       relative: 0.0  0.0;
-	       offset:   1    7;
+	       offset:   1    4;
 	    }
 	    rel2 {
 	       relative: 1.0  1.0;
-	       offset:   -1   -7;
+	       offset:   -1   -4;
 	    }
 	 }
 	 description {
@@ -306,11 +306,11 @@ group {
 	    inherit:  "default" 0.0;
 	    rel1 {
 	       relative: 0.0  0.0;
-	       offset:   2    7;
+	       offset:   2    4;
 	    }
 	    rel2 {
 	       relative: 1.0  1.0;
-	       offset:   -3   -7;
+	       offset:   -3   -4;
 	    }
 	 }
 	 description {
