@@ -24,7 +24,7 @@ group {
 	    state: "default" 0.0;
 	    aspect: 0.387 0.387;
 	    aspect_preference: BOTH;
-	    align: 0.0 0.5;
+	    align: 0.5 0.5;
 	    max: 48 124;
 	    rel1 {
 	       relative: 0.0 0.0;
