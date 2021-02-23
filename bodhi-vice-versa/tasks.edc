@@ -298,13 +298,13 @@ group { name:"e/modules/tasks/item";
          target: "sel_clip";
          target: "glow";
       }
-      program {
-         signal: "e,state,focused"; source: "e";
-         action: STATE_SET "hilighted" 0.0;
-         transition: DECELERATE 0.2;
-         target: "glow";
-         after: "focus2";
-      }
+      //~ program {
+         //~ signal: "e,state,focused"; source: "e";
+         //~ action: STATE_SET "hilighted" 0.0;
+         //~ transition: DECELERATE 0.2;
+         //~ target: "glow";
+         //~ after: "focus2";
+      //~ }
       program { name: "focus2";
          action: STATE_SET "visible" 0.0;
          transition: SINUSOIDAL 0.3;
