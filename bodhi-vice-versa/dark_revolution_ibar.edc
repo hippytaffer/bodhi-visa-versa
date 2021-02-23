@@ -109,7 +109,7 @@ group {
 }
 
 group { name: "e/modules/ibar/adjacent_label";
-	images.image: "vgrad_med_lighter.png" COMP;
+	images.image: "e17_border3b.png" COMP;
 	images.image: "shine.png" COMP;
 	images.image: "bevel_horiz_out.png" COMP;
 parts{
@@ -119,7 +119,7 @@ parts{
             rel1.to: "e.text.label";
             rel2.offset: 8 4;
             rel2.to: "e.text.label";
-            image.normal: "vgrad_med_lighter.png";
+            image.normal: "e17_border3b.png";
             image.border: 2 2 2 2;
             fill.smooth: 0;
             visible: 1;
