@@ -1,38 +1,21 @@
-images {
-   image: "e17_ibar_arrow_d.png" COMP;
-   image: "e17_ibar_arrow_l.png" COMP;
-   image: "e17_ibar_arrow_r.png" COMP;
-   image: "e17_ibar_arrow_u.png" COMP;
-   image: "e17_ibar_handle_h.png" COMP;
-   image: "e17_ibar_handle_h2.png" COMP;
-   image: "e17_ibar_handle_thumb_h.png" COMP;
-   image: "e17_ibar_handle_thumb_v.png" COMP;
-   image: "e17_ibar_handle_v.png" COMP;
-   image: "e17_ibar_handle_v2.png" COMP;
-   image: "e17_gadman_indicator.png" COMP;
-   //~ image: "e17_gadman_overlay.png" COMP;
-}
-
 group { name: "e/gadman/popup";
-   images.image: "vgrad_med_lighter.png" COMP;
+   images.image: "vgrad_tall.png" COMP;
    images.image: "bevel_out.png" COMP;
    images.image: "shine.png" COMP;
    parts {
-      part { name: "bg"; mouse_events: 0; type: IMAGE;
+      part { name: "bg"; mouse_events: 0;
          description { state: "default" 0.0;
-             image.normal: "vgrad_med_lighter.png";
-             image.border: 2 2 2 2;
-             fill.smooth: 0;
-             TILED_HORIZ(40);
+            image.normal: "vgrad_tall.png";
+            fill.smooth: 0;
+            TILED_HORIZ(40)
          }
       }
-     part { name: "bevel"; mouse_events: 0;
+      part { name: "bevel"; mouse_events: 0;
          description { state: "default" 0.0;
             image.normal: "bevel_out.png";
             image.border: 1 1 1 1;
             image.middle: 0;
             fill.smooth: 0;
-            visible: 1;
          }
       }
       part { name: "e.swallow.content"; type: SWALLOW;
@@ -53,1364 +36,473 @@ group { name: "e/gadman/popup";
    }
 }
 
-
-group {
-   name: "e/gadman/control";
+group { name: "e/gadman/full_bg";
    parts {
-      part {
-	 name:          "hclip";
-	 mouse_events:  0;
-	 type:          RECT;
-	 description {
-	    state: "default" 0.0;
-	    visible : 1;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   -80    -80;
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   79   79;
-	    }
-	 }
-	 description {
-	    state: "disabled" 0.0;
-	    inherit: "default" 0.0;
-	    visible : 0;
-	 }
+      part { name: "bg"; type: RECT; mouse_events: 0;
+         description { state: "default" 0.0;
+            color: 0 0 0 0;
+            visible: 0;
+         }
+         description { state: "visible" 0.0;
+            color: 0 0 0 192;
+         }
       }
-      part {
-	 name:          "vclip";
-	 mouse_events:  0;
-	 type:          RECT;
-	 description {
-	    state: "default" 0.0;
-	    visible : 1;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   -80    -80;
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   79   79;
-	    }
-	 }
-	 description {
-	    state: "disabled" 0.0;
-	    inherit: "default" 0.0;
-	    visible : 0;
-	 }
+      part { name: "custom_bg"; type: RECT;
+         description { state: "default" 0.0;
+            color: 255 255 255 0;
+            visible: 0;
+         }
+         description { state: "visible" 0.0;
+            color: 255 255 255 200;
+         }
       }
-      part {
-	 name:          "indicator";
-	 mouse_events:  0;
-	 description {
-	    state: "default" 0.0;
-	    max: 18 18;
-	    aspect: 1.0 1.0;
-	    aspect_preference: BOTH;
-	    image {
-	       normal: "e17_gadman_indicator.png";
-	    }
-	 }
-	 description {
-	    state: "disabled" 0.0;
-	    inherit: "default" 0.0;
-	    visible: 0;
-	 }
+      part { name: "e.swallow.bg"; type: SWALLOW;
+         clip_to: "custom_bg";
+         description { state: "default" 0.0;
+         }
       }
-      part {
-	 name:          "overlay";
-	 mouse_events:  1;
-	 description {
-	    state: "default" 0.0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   -8    -8;
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   7    7;
-	    }
-	    //~ image {
-	       //~ normal: "e17_gadman_overlay.png";
-	       //~ border: 15 15 15 15;
-	    //~ }
-	 }
-      }
-      part {      
-	 name:          "h1a1";
-	 mouse_events:  0;
-	 description {
-	    state:    "default" 0.0;
-	    align:    1.0 0.5;
-	    min:      21 29;
-	    max:      21 29;
-	    visible:  0;
-	    color:    255 255 255 0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   -1   0;
-	       to: "h1";
-	    }
-	    rel2 {
-	       relative: 0.0  1.0;
-	       offset:   -1   -1;
-	       to: "h1";
-	    }
-	    image {
-	       normal: "e17_ibar_arrow_l.png";
-	    }
-	 }
-	 description {
-	    state:    "default2" 0.0;
-	    inherit:  "default" 0.0;
-	    visible:  1;
-	    color:    255 255 255 255;
-	 }
-      }
-      part {
-	 name:          "h1a2";
-	 mouse_events:  0;
-	 description {
-	    state:    "default" 0.0;
-	    align:    1.0 0.5;
-	    min:      21 29;
-	    max:      21 29;
-	    visible:  0;
-	    color:    255 255 255 0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   -1   0;
-	       to: "h1a1";
-	    }
-	    rel2 {
-	       relative: 0.0  1.0;
-	       offset:   -1   -1;
-	       to: "h1a1";
-	    }
-	    image {
-	       normal: "e17_ibar_arrow_l.png";
-	    }
-	 }
-	 description {
-	    state:    "default2" 0.0;
-	    inherit:  "default" 0.0;
-	    visible:  1;
-	    color:    255 255 255 255;
-	 }
-      }
-      part {
-	 name:          "h1a3";
-	 mouse_events:  0;
-	 description {
-	    state:    "default" 0.0;
-	    align:    1.0 0.5;
-	    min:      21 29;
-	    max:      21 29;
-	    visible:  0;
-	    color:    255 255 255 0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   -1   0;
-	       to: "h1a2";
-	    }
-	    rel2 {
-	       relative: 0.0  1.0;
-	       offset:   -1   -1;
-	       to: "h1a2";
-	    }
-	    image {
-	       normal: "e17_ibar_arrow_l.png";
-	    }
-	 }
-	 description {
-	    state:    "default2" 0.0;
-	    inherit:  "default" 0.0;
-	    visible:  1;
-	    color:    255 255 255 255;
-	 }
-      }
-      part {
-	 name:          "h1a4";
-	 mouse_events:  0;
-	 description {
-	    state:    "default" 0.0;
-	    align:    1.0 0.5;
-	    min:      21 29;
-	    max:      21 29;
-	    visible:  0;
-	    color:    255 255 255 0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   -1   0;
-	       to: "h1a3";
-	    }
-	    rel2 {
-	       relative: 0.0  1.0;
-	       offset:   -1   -1;
-	       to: "h1a3";
-	    }
-	    image {
-	       normal: "e17_ibar_arrow_l.png";
-	    }
-	 }
-	 description {
-	    state:    "default2" 0.0;
-	    inherit:  "default" 0.0;
-	    visible:  1;
-	    color:    255 255 255 255;
-	 }
-      }
-      part {      
-	 name:          "h2a1";
-	 mouse_events:  0;
-	 description {
-	    state:    "default" 0.0;
-	    align:    0.0 0.5;
-	    min:      21 29;
-	    max:      21 29;
-	    visible:  0;
-	    color:    255 255 255 0;
-	    rel1 {
-	       relative: 1.0  0.0;
-	       offset:   0    0;
-	       to: "h2";
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   0   -1;
-	       to: "h2";
-	    }
-	    image {
-	       normal: "e17_ibar_arrow_r.png";
-	    }
-	 }
-	 description {
-	    state:    "default2" 0.0;
-	    inherit:  "default" 0.0;
-	    visible:  1;
-	    color:    255 255 255 255;
-	 }
-      }
-      part {
-	 name:          "h2a2";
-	 mouse_events:  0;
-	 description {
-	    state:    "default" 0.0;
-	    align:    0.0 0.5;
-	    min:      21 29;
-	    max:      21 29;
-	    visible:  0;
-	    color:    255 255 255 0;
-	    rel1 {
-	       relative: 1.0  0.0;
-	       offset:   0    0;
-	       to: "h2a1";
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   0    -1;
-	       to: "h2a1";
-	    }
-	    image {
-	       normal: "e17_ibar_arrow_r.png";
-	    }
-	 }
-	 description {
-	    state:    "default2" 0.0;
-	    inherit:  "default" 0.0;
-	    visible:  1;
-	    color:    255 255 255 255;
-	 }
-      }
-      part {
-	 name:          "h2a3";
-	 mouse_events:  0;
-	 description {
-	    state:    "default" 0.0;
-	    align:    0.0 0.5;
-	    min:      21 29;
-	    max:      21 29;
-	    visible:  0;
-	    color:    255 255 255 0;
-	    rel1 {
-	       relative: 1.0  0.0;
-	       offset:   0    0;
-	       to: "h2a2";
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   0    -1;
-	       to: "h2a2";
-	    }
-	    image {
-	       normal: "e17_ibar_arrow_r.png";
-	    }
-	 }
-	 description {
-	    state:    "default2" 0.0;
-	    inherit:  "default" 0.0;
-	    visible:  1;
-	    color:    255 255 255 255;
-	 }
-      }
-      part {
-	 name:          "h2a4";
-	 mouse_events:  0;
-	 description {
-	    state:    "default" 0.0;
-	    align:    0.0 0.5;
-	    min:      21 29;
-	    max:      21 29;
-	    visible:  0;
-	    color:    255 255 255 0;
-	    rel1 {
-	       relative: 1.0  0.0;
-	       offset:   0    0;
-	       to: "h2a3";
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   0    -1;
-	       to: "h2a3";
-	    }
-	    image {
-	       normal: "e17_ibar_arrow_r.png";
-	    }
-	 }
-	 description {
-	    state:    "default2" 0.0;
-	    inherit:  "default" 0.0;
-	    visible:  1;
-	    color:    255 255 255 255;
-	 }
-      }
-
-
-      
-      
-      part {      
-	 name:          "v1a1";
-	 mouse_events:  0;
-	 description {
-	    state:    "default" 0.0;
-	    align:    0.5 1.0;
-	    min:      29 21;
-	    max:      29 21;
-	    visible:  0;
-	    color:    255 255 255 0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   0    -1;
-	       to: "v1";
-	    }
-	    rel2 {
-	       relative: 1.0  0.0;
-	       offset:   -1   -1;
-	       to: "v1";
-	    }
-	    image {
-	       normal: "e17_ibar_arrow_u.png";
-	    }
-	 }
-	 description {
-	    state:    "default2" 0.0;
-	    inherit:  "default" 0.0;
-	    visible:  1;
-	    color:    255 255 255 255;
-	 }
-      }
-      part {
-	 name:          "v1a2";
-	 mouse_events:  0;
-	 description {
-	    state:    "default" 0.0;
-	    align:    0.5 1.0;
-	    min:      29 21;
-	    max:      29 21;
-	    visible:  0;
-	    color:    255 255 255 0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   0    -1;
-	       to: "v1a1";
-	    }
-	    rel2 {
-	       relative: 1.0  0.0;
-	       offset:   -1   -1;
-	       to: "v1a1";
-	    }
-	    image {
-	       normal: "e17_ibar_arrow_u.png";
-	    }
-	 }
-	 description {
-	    state:    "default2" 0.0;
-	    inherit:  "default" 0.0;
-	    visible:  1;
-	    color:    255 255 255 255;
-	 }
-      }
-      part {
-	 name:          "v1a3";
-	 mouse_events:  0;
-	 description {
-	    state:    "default" 0.0;
-	    align:    0.5 1.0;
-	    min:      29 21;
-	    max:      29 21;
-	    visible:  0;
-	    color:    255 255 255 0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   0    -1;
-	       to: "v1a2";
-	    }
-	    rel2 {
-	       relative: 1.0  0.0;
-	       offset:   -1   -1;
-	       to: "v1a2";
-	    }
-	    image {
-	       normal: "e17_ibar_arrow_u.png";
-	    }
-	 }
-	 description {
-	    state:    "default2" 0.0;
-	    inherit:  "default" 0.0;
-	    visible:  1;
-	    color:    255 255 255 255;
-	 }
-      }
-      part {
-	 name:          "v1a4";
-	 mouse_events:  0;
-	 description {
-	    state:    "default" 0.0;
-	    align:    0.5 1.0;
-	    min:      29 21;
-	    max:      29 21;
-	    visible:  0;
-	    color:    255 255 255 0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   0    -1;
-	       to: "v1a3";
-	    }
-	    rel2 {
-	       relative: 1.0  0.0;
-	       offset:   -1   -1;
-	       to: "v1a3";
-	    }
-	    image {
-	       normal: "e17_ibar_arrow_u.png";
-	    }
-	 }
-	 description {
-	    state:    "default2" 0.0;
-	    inherit:  "default" 0.0;
-	    visible:  1;
-	    color:    255 255 255 255;
-	 }
-      }
-      part {      
-	 name:          "v2a1";
-	 mouse_events:  0;
-	 description {
-	    state:    "default" 0.0;
-	    align:    0.5 0.0;
-	    min:      29 21;
-	    max:      29 21;
-	    visible:  0;
-	    color:    255 255 255 0;
-	    rel1 {
-	       relative: 0.0  1.0;
-	       offset:   0    0;
-	       to: "v2";
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   -1   0;
-	       to: "v2";
-	    }
-	    image {
-	       normal: "e17_ibar_arrow_d.png";
-	    }
-	 }
-	 description {
-	    state:    "default2" 0.0;
-	    inherit:  "default" 0.0;
-	    visible:  1;
-	    color:    255 255 255 255;
-	 }
-      }
-      part {
-	 name:          "v2a2";
-	 mouse_events:  0;
-	 description {
-	    state:    "default" 0.0;
-	    align:    0.5 0.0;
-	    min:      29 21;
-	    max:      29 21;
-	    visible:  0;
-	    color:    255 255 255 0;
-	    rel1 {
-	       relative: 0.0  1.0;
-	       offset:   0    0;
-	       to: "v2a1";
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   -1   0;
-	       to: "v2a1";
-	    }
-	    image {
-	       normal: "e17_ibar_arrow_d.png";
-	    }
-	 }
-	 description {
-	    state:    "default2" 0.0;
-	    inherit:  "default" 0.0;
-	    visible:  1;
-	    color:    255 255 255 255;
-	 }
-      }
-      part {
-	 name:          "v2a3";
-	 mouse_events:  0;
-	 description {
-	    state:    "default" 0.0;
-	    align:    0.5 0.0;
-	    min:      29 21;
-	    max:      29 21;
-	    visible:  0;
-	    color:    255 255 255 0;
-	    rel1 {
-	       relative: 0.0  1.0;
-	       offset:   0    0;
-	       to: "v2a2";
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   -1   0;
-	       to: "v2a2";
-	    }
-	    image {
-	       normal: "e17_ibar_arrow_d.png";
-	    }
-	 }
-	 description {
-	    state:    "default2" 0.0;
-	    inherit:  "default" 0.0;
-	    visible:  1;
-	    color:    255 255 255 255;
-	 }
-      }
-      part {
-	 name:          "v2a4";
-	 mouse_events:  0;
-	 description {
-	    state:    "default" 0.0;
-	    align:    0.5 0.0;
-	    min:      29 21;
-	    max:      29 21;
-	    visible:  0;
-	    color:    255 255 255 0;
-	    rel1 {
-	       relative: 0.0  1.0;
-	       offset:   0    0;
-	       to: "v2a3";
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   -1   0;
-	       to: "v2a3";
-	    }
-	    image {
-	       normal: "e17_ibar_arrow_d.png";
-	    }
-	 }
-	 description {
-	    state:    "default2" 0.0;
-	    inherit:  "default" 0.0;
-	    visible:  1;
-	    color:    255 255 255 255;
-	 }
-      }
-      
-      
-      
-      
-      
-      
-      part {
-	 name:          "h1";
-	 mouse_events:  1;
-	 clip_to:       "hclip";
-	 description {
-	    state: "default" 0.0;
-	    align: 1.0 0.5;
-	    min: 18 36;
-	    max: 18 96;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   -9   0;
-	    }
-	    rel2 {
-	       relative: 0.0  1.0;
-	       offset:   -9   -1;
-	    }
-	    image {
-	       normal: "e17_ibar_handle_h.png";
-	       border: 0 0 19 19;
-	    }
-	 }
-	 description {
-	    state: "default2" 0.0;
-	    inherit: "default" 0.0;
-	    image {
-	       normal: "e17_ibar_handle_h2.png";
-	    }
-	 }
-      }
-      part {
-	 name:          "h1th";
-	 mouse_events:  0;
-	 clip_to:       "hclip";
-	 description {
-	    state:    "default" 0.0;
-	    max:      6 16;
-	    rel1 {
-	       offset:   -1    -1;
-	       to: "h1";
-	    }
-	    rel2 {
-	       offset:   -2    -2;
-	       to: "h1";
-	    }
-	    image {
-	       normal: "e17_ibar_handle_thumb_h.png";
-	    }
-	 }
-         description {
-	    state:    "default2" 0.0;
-	    inherit: "default" 0.0;
-	    rel1 {
-	       offset:   0    0;
-	    }
-	    rel2 {
-	       offset:   -1   -1;
-	    }
-	 }
-      }
-      part {
-	 name:          "h2";
-	 mouse_events:  1;
-	 clip_to:       "hclip";
-	 description {
-	    state: "default" 0.0;
-	    align: 0.0 0.5;
-	    min: 18 36;
-	    max: 18 96;
-	    rel1 {
-	       relative: 1.0  0.0;
-	       offset:   8    0;
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   0    -1;
-	    }
-	    image {
-	       normal: "e17_ibar_handle_h.png";
-	       border: 0 0 19 19;
-	    }
-	 }
-	 description {
-	    state: "default2" 0.0;
-	    inherit: "default" 0.0;
-	    image {
-	       normal: "e17_ibar_handle_h2.png";
-	    }
-	 }
-      }
-      part {
-	 name:          "h2th";
-	 mouse_events:  0;
-	 clip_to:       "hclip";
-	 description {
-	    state:    "default" 0.0;
-	    max:      6 16;
-	    rel1 {
-	       offset:   -1    -1;
-	       to: "h2";
-	    }
-	    rel2 {
-	       offset:   -2    -2;
-	       to: "h2";
-	    }
-	    image {
-	       normal: "e17_ibar_handle_thumb_h.png";
-	    }
-	 }
-         description {
-	    state:    "default2" 0.0;
-	    inherit: "default" 0.0;
-	    rel1 {
-	       offset:   0    0;
-	    }
-	    rel2 {
-	       offset:   -1   -1;
-	    }
-	 }
-      }
-      part {
-	 name:          "v1";
-	 mouse_events:  1;
-	 clip_to:       "vclip";
-	 description {
-	    state: "default" 0.0;
-	    align: 0.5 1.0;
-	    min: 36 18;
-	    max: 96 18;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   0    -9;
-	    }
-	    rel2 {
-	       relative: 1.0  0.0;
-	       offset:   -1   -9;
-	    }
-	    image {
-	       normal: "e17_ibar_handle_v.png";
-	       border: 19 19 0 0;
-	    }
-	 }
-	 description {
-	    state: "default2" 0.0;
-	    inherit: "default" 0.0;
-	    image {
-	       normal: "e17_ibar_handle_v2.png";
-	    }
-	 }
-      }
-      part {
-	 name:          "v1th";
-	 mouse_events:  0;
-	 clip_to:       "vclip";
-	 description {
-	    state:    "default" 0.0;
-	    max:      16 6;
-	    rel1 {
-	       offset:   -1    -1;
-	       to: "v1";
-	    }
-	    rel2 {
-	       offset:   -2    -2;
-	       to: "v1";
-	    }
-	    image {
-	       normal: "e17_ibar_handle_thumb_v.png";
-	    }
-	 }
-         description {
-	    state:    "default2" 0.0;
-	    inherit: "default" 0.0;
-	    rel1 {
-	       offset:   0    0;
-	    }
-	    rel2 {
-	       offset:   -1   -1;
-	    }
-	 }
-      }
-      part {
-	 name:          "v2";
-	 mouse_events:  1;
-	 clip_to:       "vclip";
-	 description {
-	    state: "default" 0.0;
-	    align: 0.5 0.0;
-	    min: 36 18;
-	    max: 96 18;
-	    rel1 {
-	       relative: 0.0  1.0;
-	       offset:   0    8;
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   -1   8;
-	    }
-	    image {
-	       normal: "e17_ibar_handle_v.png";
-	       border: 19 19 0 0;
-	    }
-	 }
-	 description {
-	    state: "default2" 0.0;
-	    inherit: "default" 0.0;
-	    image {
-	       normal: "e17_ibar_handle_v2.png";
-	    }
-	 }
-      }
-      part {
-	 name:          "v2th";
-	 mouse_events:  0;
-	 clip_to:       "vclip";
-	 description {
-	    state:    "default" 0.0;
-	    max:      16 6;
-	    rel1 {
-	       offset:   -1    -1;
-	       to: "v2";
-	    }
-	    rel2 {
-	       offset:   -2    -2;
-	       to: "v2";
-	    }
-	    image {
-	       normal: "e17_ibar_handle_thumb_v.png";
-	    }
-	 }
-         description {
-	    state:    "default2" 0.0;
-	    inherit: "default" 0.0;
-	    rel1 {
-	       offset:   0    0;
-	    }
-	    rel2 {
-	       offset:   -1   -1;
-	    }
-	 }
+      part { name: "grabber"; type: RECT; repeat_events: 1;
+         description { state: "default" 0.0;
+            color: 0 0 0 0;
+         }
       }
    }
-   programs {
+   programs {   
       program {
-	 name:    "api_hsize_on";
-	 signal:  "e,state,hsize,on";
-	 source:  "e";
-	 action:  STATE_SET "default" 0.0;
-	 target:  "hclip";
+         signal: "e,state,visibility,show"; source: "e";
+         action: STATE_SET "visible" 0.0;
+         transition: DECELERATE 0.4;
+         target: "bg";
       }
       program {
-	 name:    "api_hsize_off";
-	 signal:  "e,state,hsize,off";
-	 source:  "e";
-	 action:  STATE_SET "disabled" 0.0;
-	 target:  "hclip";
+         signal: "e,state,visibility,show,now"; source: "e";
+         action: STATE_SET "visible" 0.0;
+         target: "bg";
       }
       program {
-	 name:    "api_vsize_on";
-	 signal:  "e,state,vsize,on";
-	 source:  "e";
-	 action:  STATE_SET "default" 0.0;
-	 target:  "vclip";
+         signal: "e,state,visibility,hide"; source: "e";
+         action: STATE_SET "default" 0.0;
+         transition: DECELERATE 0.4;
+         target: "bg";
+         after: "hide_stop";
       }
       program {
-	 name:    "api_vsize_off";
-	 signal:  "e,state,vsize,off";
-	 source:  "e";
-	 action:  STATE_SET "disabled" 0.0;
-	 target:  "vclip";
+         signal: "e,state,visibility,hide,now"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "bg";
+         after: "hide_stop";
       }
       program {
-	 name:    "api_move_on";
-	 signal:  "e,state,move,on";
-	 source:  "e";
-	 action:  STATE_SET "default" 0.0;
-	 target:  "indicator";
+         signal: "e,state,visibility,show,custom"; source: "e";
+         action: STATE_SET "visible" 0.0;
+         transition: DECELERATE 0.4;
+         target: "custom_bg";
       }
       program {
-	 name:    "api_move_off";
-	 signal:  "e,state,move,off";
-	 source:  "e";
-	 action:  STATE_SET "disabled" 0.0;
-	 target:  "indicator";
+         signal: "e,state,visibility,show,custom,now"; source: "e";
+         action: STATE_SET "visible" 0.0;
+         target: "custom_bg";
       }
-/*      
       program {
-	 name:    "api_active";
-	 signal:  "e,state,focused";
-	 source:  "e";
+         signal: "e,state,visibility,hide,custom"; source: "e";
+         action: STATE_SET "default" 0.0;
+         transition: DECELERATE 0.4;
+         target: "custom_bg";
+         after: "hide_stop";
       }
       program {
-	 name:    "api_inactive";
-	 signal:  "e,state,unfocused";
-	 source:  "e";
+         signal: "e,state,visibility,hide,custom,now"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "custom_bg";
+         after: "hide_stop";
       }
-*/      
-      program {
-	 name:    "mv_down";
-	 signal:  "mouse,down,1";
-	 source:  "overlay";
-	 action:  SIGNAL_EMIT "e,action,move,start" "";
-      }
-      program {
-	 name:    "mv_up";
-	 signal:  "mouse,up,1";
-	 source:  "overlay";
-	 action:  SIGNAL_EMIT "e,action,move,stop" "";
-      }
-      program {
-	 name:    "mv_move";
-	 signal:  "mouse,move";
-	 source:  "overlay";
-	 action:  SIGNAL_EMIT "e,action,move,go" "";
-      }
-      
-      program {
-	 name:    "h1_down1";
-	 signal:  "mouse,down,1";
-	 source:  "h1";
-	 action:  STATE_SET "default2" 0.0;
-	 target:  "h1";
-	 target:  "h1th";
-      }
-      program {
-	 name:    "h1_up1";
-	 signal:  "mouse,up,1";
-	 source:  "h1";
-	 action:  STATE_SET "default" 0.0;
-	 target:  "h1";
-	 target:  "h1th";
-      }
-      program {
-	 name:    "h1_down2";
-	 signal:  "mouse,down,1";
-	 source:  "h1";
-	 action:  SIGNAL_EMIT "e,action,resize,left,start" "";
-      }
-      program {
-	 name:    "h1_up2";
-	 signal:  "mouse,up,1";
-	 source:  "h1";
-	 action:  SIGNAL_EMIT "e,action,resize,left,stop" "";
-      }
-      program {
-	 name:    "h1_move";
-	 signal:  "mouse,move";
-	 source:  "h1";
-	 action:  SIGNAL_EMIT "e,action,resize,left,go" "";
-      }
-      program {
-	 name:    "h1_in";
-	 signal:  "mouse,in";
-	 source:  "h1";
-	 action:  STATE_SET "default" 0.0;
-	 target:  "h1a1";
-	 target:  "h1a2";
-	 target:  "h1a3";
-	 target:  "h1a4";
-	 after:   "h1_h_in1a";
-      }
-      program {
-	 name:    "h1_out";
-	 signal:  "mouse,out";
-	 source:  "h1";
-	 action:  STATE_SET "default" 0.0;
-	 target:  "h1a1";
-	 target:  "h1a2";
-	 target:  "h1a3";
-	 target:  "h1a4";
-      }
-      program {      
-	 name:    "h1_h_in1a";
-	 action:  STATE_SET "default2" 0.0;
-	 transition: SINUSOIDAL 0.25;
-	 target:  "h1a1";
-	 after:   "h1_h_in2a";
-	 after:   "h1_h_in2b";
-      }
-      program {
-	 name:    "h1_h_in1b";
-	 action:  STATE_SET "default" 0.0;
-	 transition: DECELERATE 0.75;
-	 target:  "h1a4";
-      }
-      program {
-	 name:    "h1_h_in2a";
-	 action:  STATE_SET "default2" 0.0;
-	 transition: SINUSOIDAL 0.25;
-	 target:  "h1a2";
-	 after:   "h1_h_in3a";
-	 after:   "h1_h_in3b";
-      }
-      program {
-	 name:    "h1_h_in2b";
-	 action:  STATE_SET "default" 0.0;
-	 transition: DECELERATE 0.75;
-	 target:  "h1a1";
-      }
-      program {
-	 name:    "h1_h_in3a";
-	 action:  STATE_SET "default2" 0.0;
-	 transition: SINUSOIDAL 0.25;
-	 target:  "h1a3";
-	 after:   "h1_h_in4a";
-	 after:   "h1_h_in4b";
-      }
-      program {
-	 name:    "h1_h_in3b";
-	 action:  STATE_SET "default" 0.0;
-	 transition: DECELERATE 0.75;
-	 target:  "h1a2";
-      }
-      program {
-	 name:    "h1_h_in4a";
-	 action:  STATE_SET "default2" 0.0;
-	 transition: SINUSOIDAL 0.25;
-	 target:  "h1a4";
-	 after:   "h1_h_in1a";
-	 after:   "h1_h_in1b";
-      }
-      program {
-	 name:    "h1_h_in4b";
-	 action:  STATE_SET "default" 0.0;
-	 transition: DECELERATE 0.75;
-	 target:  "h1a3";
-      }
-
-   
-      program {
-	 name:    "h2_down1";
-	 signal:  "mouse,down,1";
-	 source:  "h2";
-	 action:  STATE_SET "default2" 0.0;
-	 target:  "h2";
-	 target:  "h2th";
-      }
-      program {
-	 name:    "h2_up1";
-	 signal:  "mouse,up,1";
-	 source:  "h2";
-	 action:  STATE_SET "default" 0.0;
-	 target:  "h2";
-	 target:  "h2th";
-      }
-      program {
-	 name:    "h2_down2";
-	 signal:  "mouse,down,1";
-	 source:  "h2";
-	 action:  SIGNAL_EMIT "e,action,resize,right,start" "";
-      }
-      program {
-	 name:    "h2_up2";
-	 signal:  "mouse,up,1";
-	 source:  "h2";
-	 action:  SIGNAL_EMIT "e,action,resize,right,stop" "";
-      }
-      program {
-	 name:    "h2_move";
-	 signal:  "mouse,move";
-	 source:  "h2";
-	 action:  SIGNAL_EMIT "e,action,resize,right,go" "";
-      }
-      program {
-	 name:    "h2_in";
-	 signal:  "mouse,in";
-	 source:  "h2";
-	 action:  STATE_SET "default" 0.0;
-	 target:  "h2a1";
-	 target:  "h2a2";
-	 target:  "h2a3";
-	 target:  "h2a4";
-	 after:   "h2_h_in1a";
-      }
-      program {
-	 name:    "h2_out";
-	 signal:  "mouse,out";
-	 source:  "h2";
-	 action:  STATE_SET "default" 0.0;
-	 target:  "h2a1";
-	 target:  "h2a2";
-	 target:  "h2a3";
-	 target:  "h2a4";
-      }
-      program {      
-	 name:    "h2_h_in1a";
-	 action:  STATE_SET "default2" 0.0;
-	 transition: SINUSOIDAL 0.25;
-	 target:  "h2a1";
-	 after:   "h2_h_in2a";
-	 after:   "h2_h_in2b";
-      }
-      program {
-	 name:    "h2_h_in1b";
-	 action:  STATE_SET "default" 0.0;
-	 transition: DECELERATE 0.75;
-	 target:  "h2a4";
-      }
-      program {
-	 name:    "h2_h_in2a";
-	 action:  STATE_SET "default2" 0.0;
-	 transition: SINUSOIDAL 0.25;
-	 target:  "h2a2";
-	 after:   "h2_h_in3a";
-	 after:   "h2_h_in3b";
-      }
-      program {
-	 name:    "h2_h_in2b";
-	 action:  STATE_SET "default" 0.0;
-	 transition: DECELERATE 0.75;
-	 target:  "h2a1";
-      }
-      program {
-	 name:    "h2_h_in3a";
-	 action:  STATE_SET "default2" 0.0;
-	 transition: SINUSOIDAL 0.25;
-	 target:  "h2a3";
-	 after:   "h2_h_in4a";
-	 after:   "h2_h_in4b";
-      }
-      program {
-	 name:    "h2_h_in3b";
-	 action:  STATE_SET "default" 0.0;
-	 transition: DECELERATE 0.75;
-	 target:  "h2a2";
-      }
-      program {
-	 name:    "h2_h_in4a";
-	 action:  STATE_SET "default2" 0.0;
-	 transition: SINUSOIDAL 0.25;
-	 target:  "h2a4";
-	 after:   "h2_h_in1a";
-	 after:   "h2_h_in1b";
-      }
-      program {
-	 name:    "h2_h_in4b";
-	 action:  STATE_SET "default" 0.0;
-	 transition: DECELERATE 0.75;
-	 target:  "h2a3";
-      }
-
-      
-      
-      program {
-	 name:    "v1_down1";
-	 signal:  "mouse,down,1";
-	 source:  "v1";
-	 action:  STATE_SET "default2" 0.0;
-	 target:  "v1";
-	 target:  "v1th";
-      }
-      program {
-	 name:    "v1_up1";
-	 signal:  "mouse,up,1";
-	 source:  "v1";
-	 action:  STATE_SET "default" 0.0;
-	 target:  "v1";
-	 target:  "v1th";
-      }
-      program {
-	 name:    "v1_down2";
-	 signal:  "mouse,down,1";
-	 source:  "v1";
-	 action:  SIGNAL_EMIT "e,action,resize,up,start" "";
-      }
-      program {
-	 name:    "v1_up2";
-	 signal:  "mouse,up,1";
-	 source:  "v1";
-	 action:  SIGNAL_EMIT "e,action,resize,up,stop" "";
-      }
-      program {
-	 name:    "v1_move";
-	 signal:  "mouse,move";
-	 source:  "v1";
-	 action:  SIGNAL_EMIT "e,action,resize,up,go" "";
-      }
-      program {
-	 name:    "v1_in";
-	 signal:  "mouse,in";
-	 source:  "v1";
-	 action:  STATE_SET "default" 0.0;
-	 target:  "v1a1";
-	 target:  "v1a2";
-	 target:  "v1a3";
-	 target:  "v1a4";
-	 after:   "v1_h_in1a";
-      }
-      program {
-	 name:    "v1_out";
-	 signal:  "mouse,out";
-	 source:  "v1";
-	 action:  STATE_SET "default" 0.0;
-	 target:  "v1a1";
-	 target:  "v1a2";
-	 target:  "v1a3";
-	 target:  "v1a4";
-      }
-      program {      
-	 name:    "v1_h_in1a";
-	 action:  STATE_SET "default2" 0.0;
-	 transition: SINUSOIDAL 0.25;
-	 target:  "v1a1";
-	 after:   "v1_h_in2a";
-	 after:   "v1_h_in2b";
-      }
-      program {
-	 name:    "v1_h_in1b";
-	 action:  STATE_SET "default" 0.0;
-	 transition: DECELERATE 0.75;
-	 target:  "v1a4";
-      }
-      program {
-	 name:    "v1_h_in2a";
-	 action:  STATE_SET "default2" 0.0;
-	 transition: SINUSOIDAL 0.25;
-	 target:  "v1a2";
-	 after:   "v1_h_in3a";
-	 after:   "v1_h_in3b";
-      }
-      program {
-	 name:    "v1_h_in2b";
-	 action:  STATE_SET "default" 0.0;
-	 transition: DECELERATE 0.75;
-	 target:  "v1a1";
-      }
-      program {
-	 name:    "v1_h_in3a";
-	 action:  STATE_SET "default2" 0.0;
-	 transition: SINUSOIDAL 0.25;
-	 target:  "v1a3";
-	 after:   "v1_h_in4a";
-	 after:   "v1_h_in4b";
-      }
-      program {
-	 name:    "v1_h_in3b";
-	 action:  STATE_SET "default" 0.0;
-	 transition: DECELERATE 0.75;
-	 target:  "v1a2";
-      }
-      program {
-	 name:    "v1_h_in4a";
-	 action:  STATE_SET "default2" 0.0;
-	 transition: SINUSOIDAL 0.25;
-	 target:  "v1a4";
-	 after:   "v1_h_in1a";
-	 after:   "v1_h_in1b";
-      }
-      program {
-	 name:    "v1_h_in4b";
-	 action:  STATE_SET "default" 0.0;
-	 transition: DECELERATE 0.75;
-	 target:  "v1a3";
-      }
-      
-
-   
-      program {
-	 name:    "v2_down1";
-	 signal:  "mouse,down,1";
-	 source:  "v2";
-	 action:  STATE_SET "default2" 0.0;
-	 target:  "v2";
-	 target:  "v2th";
-      }
-      program {
-	 name:    "v2_up1";
-	 signal:  "mouse,up,1";
-	 source:  "v2";
-	 action:  STATE_SET "default" 0.0;
-	 target:  "v2";
-	 target:  "v2th";
-      }
-      program {
-	 name:    "v2_down2";
-	 signal:  "mouse,down,1";
-	 source:  "v2";
-	 action:  SIGNAL_EMIT "e,action,resize,down,start" "";
-      }
-      program {
-	 name:    "v2_up2";
-	 signal:  "mouse,up,1";
-	 source:  "v2";
-	 action:  SIGNAL_EMIT "e,action,resize,down,stop" "";
-      }
-      program {
-	 name:    "v2_move";
-	 signal:  "mouse,move";
-	 source:  "v2";
-	 action:  SIGNAL_EMIT "e,action,resize,down,go" "";
-      }
-      program {
-	 name:    "v2_in";
-	 signal:  "mouse,in";
-	 source:  "v2";
-	 action:  STATE_SET "default" 0.0;
-	 target:  "v2a1";
-	 target:  "v2a2";
-	 target:  "v2a3";
-	 target:  "v2a4";
-	 after:   "v2_h_in1a";
-      }
-      program {
-	 name:    "v2_out";
-	 signal:  "mouse,out";
-	 source:  "v2";
-	 action:  STATE_SET "default" 0.0;
-	 target:  "v2a1";
-	 target:  "v2a2";
-	 target:  "v2a3";
-	 target:  "v2a4";
-      }
-      program {      
-	 name:    "v2_h_in1a";
-	 action:  STATE_SET "default2" 0.0;
-	 transition: SINUSOIDAL 0.25;
-	 target:  "v2a1";
-	 after:   "v2_h_in2a";
-	 after:   "v2_h_in2b";
-      }
-      program {
-	 name:    "v2_h_in1b";
-	 action:  STATE_SET "default" 0.0;
-	 transition: DECELERATE 0.75;
-	 target:  "v2a4";
-      }
-      program {
-	 name:    "v2_h_in2a";
-	 action:  STATE_SET "default2" 0.0;
-	 transition: SINUSOIDAL 0.25;
-	 target:  "v2a2";
-	 after:   "v2_h_in3a";
-	 after:   "v2_h_in3b";
-      }
-      program {
-	 name:    "v2_h_in2b";
-	 action:  STATE_SET "default" 0.0;
-	 transition: DECELERATE 0.75;
-	 target:  "v2a1";
-      }
-      program {
-	 name:    "v2_h_in3a";
-	 action:  STATE_SET "default2" 0.0;
-	 transition: SINUSOIDAL 0.25;
-	 target:  "v2a3";
-	 after:   "v2_h_in4a";
-	 after:   "v2_h_in4b";
-      }
-      program {
-	 name:    "v2_h_in3b";
-	 action:  STATE_SET "default" 0.0;
-	 transition: DECELERATE 0.75;
-	 target:  "v2a2";
-      }
-      program {
-	 name:    "v2_h_in4a";
-	 action:  STATE_SET "default2" 0.0;
-	 transition: SINUSOIDAL 0.25;
-	 target:  "v2a4";
-	 after:   "v2_h_in1a";
-	 after:   "v2_h_in1b";
-      }
-      program {
-	 name:    "v2_h_in4b";
-	 action:  STATE_SET "default" 0.0;
-	 transition: DECELERATE 0.75;
-	 target:  "v2a3";
+      program { name: "hide_stop";
+         action: SIGNAL_EMIT "e,action,hide,stop" "";
       }
    }
 }
 
+group { name: "e/gadman/frame";
+   parts {
+      part { name: "e.swallow.content"; type: SWALLOW;
+         description { state: "default" 0.0;
+            rel1.offset: 4 4;
+            rel2.offset: -5 -5;
+         }
+      }
+   }
+}
+
+group { name: "e/gadman/control";
+   images.image: "outline_glow.png" COMP;
+   images.image: "diagonal_stripes.png" COMP;
+   images.image: "sym_up_glow_normal.png" COMP;
+   images.image: "sym_down_glow_normal.png" COMP;
+   images.image: "sym_left_glow_normal.png" COMP;
+   images.image: "sym_right_glow_normal.png" COMP;
+   parts {
+      part { name: "base"; mouse_events: 0;
+         description { state: "default" 0.0;
+            image.normal: "outline_glow.png";
+            image.border: 4 4 4 4;
+            image.middle: 0;
+            fill.smooth: 0;
+            color: 255 255 255 255;
+         }
+         description { state: "active" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 255;
+         }
+      }
+      part { name: "pat"; mouse_events: 0;
+         description { state: "default" 0.0;
+            rel1.to: "base";
+            rel1.offset: 1 1;
+            rel2.offset: -2 -2;
+            rel2.to: "base";
+            image.normal: "diagonal_stripes.png";
+            TILED_PATTERN(240, 240)
+            color: 255 255 255 25;
+         }
+      }
+      part { name: "av10"; mouse_events: 0;
+         description { state: "default" 0.0;
+            align: 0.5 1.0;
+            rel1.to: "resizev1";
+            rel2.relative: 1.0 0.0;
+            rel2.to: "resizev1";
+            image.normal: "sym_up_glow_normal.png";
+            visible: 0;
+            FIXED_SIZE(15, 15)
+         }
+         description { state: "pulse0" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+         }
+         description { state: "pulse1" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+            rel2.relative: 1.0 -5.0;
+            color: 255 255 255 0;
+         }
+      }
+      part { name: "av11"; mouse_events: 0;
+         description { state: "default" 0.0;
+            align: 0.5 0.0;
+            rel1.to: "resizev1";
+            rel1.relative: 0.0 1.0;
+            rel2.to: "resizev1";
+            image.normal: "sym_down_glow_normal.png";
+            visible: 0;
+            FIXED_SIZE(15, 15)
+         }
+         description { state: "pulse0" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+         }
+         description { state: "pulse1" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+            rel1.relative: 0.0 6.0;
+            color: 255 255 255 0;
+         }
+      }
+      part { name: "av20"; mouse_events: 0;
+         description { state: "default" 0.0;
+            align: 0.5 1.0;
+            rel1.to: "resizev2";
+            rel2.relative: 1.0 0.0;
+            rel2.to: "resizev2";
+            image.normal: "sym_up_glow_normal.png";
+            visible: 0;
+            FIXED_SIZE(15, 15)
+         }
+         description { state: "pulse0" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+         }
+         description { state: "pulse1" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+            rel2.relative: 1.0 -5.0;
+            color: 255 255 255 0;
+         }
+      }
+      part { name: "av21"; mouse_events: 0;
+         description { state: "default" 0.0;
+            align: 0.5 0.0;
+            rel1.to: "resizev2";
+            rel1.relative: 0.0 1.0;
+            rel2.to: "resizev2";
+            image.normal: "sym_down_glow_normal.png";
+            visible: 0;
+            FIXED_SIZE(15, 15)
+         }
+         description { state: "pulse0" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+         }
+         description { state: "pulse1" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+            rel1.relative: 0.0 6.0;
+            color: 255 255 255 0;
+         }
+      }
+      part { name: "ah10"; mouse_events: 0;
+         description { state: "default" 0.0;
+            align: 1.0 0.5;
+            rel1.to: "resizeh1";
+            rel2.relative: 0.0 1.0;
+            rel2.to: "resizeh1";
+            image.normal: "sym_left_glow_normal.png";
+            visible: 0;
+            FIXED_SIZE(15, 15)
+         }
+         description { state: "pulse0" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+         }
+         description { state: "pulse1" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+            rel2.relative: -5.0 1.0;
+            color: 255 255 255 0;
+         }
+      }
+      part { name: "ah11"; mouse_events: 0;
+         description { state: "default" 0.0;
+            align: 0.0 0.5;
+            rel1.to: "resizeh1";
+            rel1.relative: 1.0 0.0;
+            rel2.to: "resizeh1";
+            image.normal: "sym_right_glow_normal.png";
+            visible: 0;
+            FIXED_SIZE(15, 15)
+         }
+         description { state: "pulse0" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+         }
+         description { state: "pulse1" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+            rel1.relative: 6.0 0.0;
+            color: 255 255 255 0;
+         }
+      }
+      part { name: "ah20"; mouse_events: 0;
+         description { state: "default" 0.0;
+            align: 1.0 0.5;
+            rel1.to: "resizeh2";
+            rel2.relative: 0.0 1.0;
+            rel2.to: "resizeh2";
+            image.normal: "sym_left_glow_normal.png";
+            visible: 0;
+            FIXED_SIZE(15, 15)
+         }
+         description { state: "pulse0" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+         }
+         description { state: "pulse1" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+            rel2.relative: -5.0 1.0;
+            color: 255 255 255 0;
+         }
+      }
+      part { name: "ah21"; mouse_events: 0;
+         description { state: "default" 0.0;
+            align: 0.0 0.5;
+            rel1.to: "resizeh2";
+            rel1.relative: 1.0 0.0;
+            rel2.to: "resizeh2";
+            image.normal: "sym_right_glow_normal.png";
+            visible: 0;
+            FIXED_SIZE(15, 15)
+         }
+         description { state: "pulse0" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+         }
+         description { state: "pulse1" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+            rel1.relative: 6.0 0.0;
+            color: 255 255 255 0;
+         }
+      }
+      part { name: "move"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.to: "base";
+            rel2.to: "base";
+            color: 0 0 0 0;
+         }
+         description { state: "off" 0.0;
+            inherit: "default" 0.0;
+            visible: 0;
+         }
+      }
+      part { name: "resizeh1"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.to: "base";
+            rel2.to: "base";
+            rel2.relative: 0.5 1.0;
+            align: 0.0 0.5;
+            max: 7 99999;
+            color: 0 0 0 0;
+         }
+         description { state: "off" 0.0;
+            inherit: "default" 0.0;
+            visible: 0;
+         }
+      }
+      part { name: "resizeh2"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.to: "base";
+            rel2.to: "base";
+            rel1.relative: 0.5 0.0;
+            align: 1.0 0.5;
+            max: 7 99999;
+            color: 0 0 0 0;
+         }
+         description { state: "off" 0.0;
+            inherit: "default" 0.0;
+            visible: 0;
+         }
+      }
+      part { name: "resizev1"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.to: "base";
+            rel2.to: "base";
+            rel2.relative: 1.0 0.5;
+            align: 0.5 0.0;
+            max: 99999 7;
+            color: 0 0 0 0;
+         }
+         description { state: "off" 0.0;
+            inherit: "default" 0.0;
+            visible: 0;
+         }
+      }
+      part { name: "resizev2"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.to: "base";
+            rel2.to: "base";
+            rel1.relative: 0.0 0.5;
+            align: 0.5 1.0;
+            max: 99999 7;
+            color: 0 0 0 0;
+         }
+         description { state: "off" 0.0;
+            inherit: "default" 0.0;
+            visible: 0;
+         }
+      }
+   }
+   programs {
+      program {
+         signal: "e,state,hsize,on"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "resizeh1";
+         target: "resizeh2";
+      }
+      program {
+         signal: "e,state,hsize,off"; source: "e";
+         action: STATE_SET "off" 0.0;
+         target: "resizeh1";
+         target: "resizeh2";
+      }
+      program {
+         signal: "e,state,vsize,on"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "resizev1";
+         target: "resizev2";
+      }
+      program {
+         signal: "e,state,vsize,off"; source: "e";
+         action: STATE_SET "off" 0.0;
+         target: "resizev1";
+         target: "resizev2";
+      }
+      program {
+         signal: "e,state,move,on"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "move";
+      }
+      program {
+         signal: "e,state,move,off"; source: "e";
+         action: STATE_SET "off" 0.0;
+         target: "move";
+      }
+      program {
+         signal: "e,state,focused"; source: "e";
+         action: STATE_SET "active" 0.0;
+         target: "base";
+      }
+      program {
+         signal: "e,state,unfocused"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "base";
+      }
+#define ARROWPULSE(_NAME, _SRC, _DST1, _DST2) \
+      program { name: _NAME"0"; \
+         signal: "mouse,in"; source: _SRC; \
+         action: STATE_SET "pulse0" 0.0; \
+         target: _DST1; \
+         target: _DST2; \
+         after: _NAME"1"; \
+      } \
+      program { name: _NAME"1"; \
+         action: STATE_SET "pulse1" 0.0; \
+         transition: DECELERATE 0.5; \
+         target: _DST1; \
+         target: _DST2; \
+         after: _NAME"2"; \
+      } \
+      program { name: _NAME"2"; \
+         action: STATE_SET "pulse0" 0.0; \
+         target: _DST1; \
+         target: _DST2; \
+         after: _NAME"1"; \
+      } \
+      program { \
+         signal: "mouse,out"; source: _SRC; \
+         action: ACTION_STOP; \
+         target: _NAME"0"; \
+         target: _NAME"1"; \
+         target: _NAME"2"; \
+         after: _NAME"3"; \
+      } \
+      program { name: _NAME"3"; \
+         action: STATE_SET "default" 0.0; \
+         target: _DST1; \
+         target: _DST2; \
+      }
+      ARROWPULSE("pulse1", "resizev1", "av10", "av11")
+      ARROWPULSE("pulse2", "resizev2", "av20", "av21")
+      ARROWPULSE("pulse3", "resizeh1", "ah10", "ah11")
+      ARROWPULSE("pulse4", "resizeh2", "ah20", "ah21")
+#undef ARROWPULSE              
+#define PROGSET(_SRC, _ACT) \
+      program { \
+         signal: "mouse,down,1"; source: _SRC; \
+         action: SIGNAL_EMIT "e,action,"_ACT",start" ""; \
+      } \
+      program { \
+         signal: "mouse,up,1"; source: _SRC; \
+         action: SIGNAL_EMIT "e,action,"_ACT",stop" ""; \
+      } \
+      program { \
+         signal: "mouse,move"; source: _SRC; \
+         action: SIGNAL_EMIT "e,action,"_ACT",go"  ""; \
+      }
+      PROGSET("move", "move")
+      PROGSET("resizeh1", "resize,left")
+      PROGSET("resizeh2", "resize,right")
+      PROGSET("resizev1", "resize,up")
+      PROGSET("resizev2", "resize,down")
+#undef PROGSET
+   }
+}
