@@ -1,12 +1,14 @@
 # This script will recolor all icons except those in colorful folder.
 if [ $# -eq 0 ]; then
-	if [ -f hexcolor.log ]; then
-		COLOR=`cat hexcolor.log` # use previous color
+	if [ -f hexcolor ]; then
+		COLOR=`cat hexcolor` # use previous color
 	else
 		COLOR="FFFFFF" # default color white
 	fi
 elif [ "$1" = "help" ] || [ "$1" = "-help" ] || [ "$1" = "--help" ]; then
    echo "usage: ./recolor.sh 00AAFF"
+   echo "If no color code will be read from text file named hexcolor."
+   echo "If no hexcolor file, then FFFFFF whiite will be used."
    exit
 else
    COLOR="$1"
