@@ -254,6 +254,9 @@ group {
 	    state:    "active" 0.0;
 	    inherit:  "default" 0.0;
 	    visible:  1;
+      image {
+	       normal: "e17_menu_radio3.png";
+	    }
 	 }
       }
       part {
