@@ -366,7 +366,7 @@ images {
                text {
                   text: "??";
                   font: "Sans:style=Bold";
-                  size: 13;
+                  size: 10;
                   min: 1 1;
                   fit: 1 1;
                   align: 0.5 0.5; 
@@ -400,7 +400,7 @@ images {
                   size: 9;
 		          min: 1 0;
                   fit: 1 1;
-                  align: 0.5 0.5;
+                  align: 0.5 0.0;
                   text_class: "module_large";
                   ellipsis: -1;
                }
