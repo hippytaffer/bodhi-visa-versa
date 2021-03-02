@@ -51,7 +51,6 @@ group {
 	 clip_to:       "content_clip";
 	 description {
 	    state:    "default" 0.0;
-            aspect: 1 1;
 	    rel1 {
 	       offset:   4    4;
 	    }
