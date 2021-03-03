@@ -1,5 +1,5 @@
-# match MokshaViceVersa shelf color in modern style dock
-# create folder and put dock.theme in ~/.local/share/plank/themes/MokshaViceVersa then select from plank dock.
+# MokshaViceVersa shelf color on modern dock style
+# put this file (dock.theme) in /usr/share/plank/themes/MokshaViceVersa 
 # requires compositing enabled for corners & transparancy to work (and icon zoom)
 
 [PlankTheme]
