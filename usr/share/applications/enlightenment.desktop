@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+StartupNotify=false
+Categories=Settings;
+Icon=enlightenment
+Name=Enlightenment Settings
+Path=/home/bodhi/userdef-tester/build/us_pc
+Exec=enlightenment
+NoDisplay=true
