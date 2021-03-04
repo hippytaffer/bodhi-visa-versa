@@ -2,6 +2,7 @@ group { name: "e/modules/systray/main";
    alias: "e/modules/systray/main/default";
    alias: "e/modules/systray/main/invisible";
    alias: "e/modules/systray/main/alternate";
+   alias: "e/modules/systray/main/RedDragon";
    data.item: "default" "42 31 18";
    data.item: "inset" "42 31 18";
    data.item: "plain" "42 31 18";
