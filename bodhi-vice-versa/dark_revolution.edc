@@ -1,10 +1,10 @@
-//#########################################################
-//### Dark Revolution Theme for E17                                 #
-//### Realized and maint: Agustin J Verdegal T  #
-//### Original  theme was created by  PrinceAmd  #
-//### Updated 01/11/2011 : Please enjoy !!!!!              #
-//###                           #
-//#########################################################
+//###########################################################
+//### Dark Revolution Theme for E17                       ###
+//### Realized and maint: Agustin J Verdegal T            ###
+//### Original  theme was created by  PrinceAmd           ###
+//### Updated 01/11/2011 : Please enjoy !!!!!             ###
+//###                                                     ###
+//###########################################################
 //
 /*Agust*/
 
@@ -51,7 +51,7 @@ spectra {
 }
 #endif
 
-efl_version: 1 22;
+//~ efl_version: 1 22; - Causes issues!?
 
 collections {
 #include "macros.edc"
