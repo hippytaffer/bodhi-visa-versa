@@ -1,0 +1,61 @@
+--[[
+This is how to comment a block.
+]]
+
+conky.config = {
+    background = true,
+    gap_x = 20,
+    gap_y = 20,
+    own_window = true,
+    own_window_class = 'override',
+    own_window_type = 'normal',
+    own_window_transparent = true,
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    own_window_argb_visual = true,
+    own_window_argb_value = 0,
+    update_interval = 3.0,
+    use_spacer = 'right',
+    top_name_width = 16,
+    double_buffer = true,
+    alignment = 'top_right',
+    use_xft = true,
+    draw_shades = false,
+}
+
+conky.text = [[$color${color AE9066}${font mono:size=8}
+RAM: $memperc% $mem  Free: ${memfree}
+${memgraph 000000 E8B66B}
+Swap: $swapperc% $swap${swapbar 6}
+
+CPU: ${acpitemp}°C ${cpu cpu0} % ${cpubar}
+${cpugraph 000000 E8B66B}
+DiskIO: $diskio   Free: $fs_free
+${diskiograph 000000 E8B66B}
+Read: $diskio_read   Write: $diskio_write
+
+                   CPU%   MEM%
+${top_mem name 1}${top_mem cpu 1} ${top_mem mem 1}
+${top_mem name 2}${top_mem cpu 2} ${top_mem mem 2}
+${top_mem name 3}${top_mem cpu 3} ${top_mem mem 3}
+${top_mem name 4}${top_mem cpu 4} ${top_mem mem 4}
+${top_mem name 5}${top_mem cpu 5} ${top_mem mem 5}
+${top_mem name 6}${top_mem cpu 6} ${top_mem mem 6}
+${top_mem name 7}${top_mem cpu 7} ${top_mem mem 7}
+${top_mem name 8}${top_mem cpu 8} ${top_mem mem 8}
+${top_mem name 9}${top_mem cpu 9} ${top_mem mem 9}
+${top_mem name 10}${top_mem cpu 10} ${top_mem mem 10}
+                   CPU%   MEM%
+${top name 1}${top cpu 1} ${top mem 1}
+${top name 2}${top cpu 2} ${top mem 2}
+${top name 3}${top cpu 3} ${top mem 3}
+${top name 4}${top cpu 4} ${top mem 4}
+${top name 5}${top cpu 5} ${top mem 5}
+${top name 6}${top cpu 6} ${top mem 6}
+${top name 7}${top cpu 7} ${top mem 7}
+${top name 8}${top cpu 8} ${top mem 8}
+${top name 9}${top cpu 9} ${top mem 9}
+${top name 10}${top cpu 10} ${top mem 10}
+$color]]
+
+
+

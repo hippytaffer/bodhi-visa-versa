@@ -1,5 +1,4 @@
 # MokshaViceVersa shelf color on modern dock style
-# put this file (dock.theme) in /usr/share/plank/themes/MokshaViceVersa 
 # requires compositing enabled for corners & transparancy to work (and icon zoom)
 
 [PlankTheme]
@@ -16,7 +15,7 @@ FillStartColor=42;;31;;18;;200
 #The ending color (RGBA) of the fill gradient.
 FillEndColor=42;;31;;18;;255
 #The color (RGBA) of the inner stroke. 55;;55;;55;;245
-InnerStrokeColor=42;;31;;18;;101
+InnerStrokeColor=42;;31;;18;;0
 
 [PlankDockTheme]
 #The padding on the left/right dock edges, in tenths of a percent of IconSize. 0
@@ -28,11 +27,11 @@ BottomPadding=2
 #The padding between items on the dock, in tenths of a percent of IconSize.
 ItemPadding=3
 #The size of item indicators, in tenths of a percent of IconSize.
-IndicatorSize=5
+IndicatorSize=6
 #The size of the icon-shadow behind every item, in tenths of a percent of IconSize.
-IconShadowSize=1.2
+IconShadowSize=0
 #The height (in percent of IconSize) to bounce an icon when the application sets urgent.
-UrgentBounceHeight=1.6666666666666667
+UrgentBounceHeight=1.6
 #The height (in percent of IconSize) to bounce an icon when launching an application.
 LaunchBounceHeight=0.625
 #The opacity value (0 to 1) to fade the dock to when hiding it.
