@@ -4,11 +4,11 @@ This is how to comment a block.
 
 conky.config = {
     background = true,
-    gap_x = 20,
-    gap_y = 20,
+    gap_x = 40,
+    gap_y = 40,
     own_window = true,
     own_window_class = 'override',
-    own_window_type = 'normal',
+    own_window_colour = '030201',
     own_window_transparent = true,
     own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
     own_window_argb_visual = true,
@@ -22,8 +22,7 @@ conky.config = {
     draw_shades = false,
 }
 
-conky.text = [[$color${color AE9066}${font mono:size=8}
-RAM: $memperc% $mem  Free: ${memfree}
+conky.text = [[$color${color AE9066}${font mono:size=8}RAM: $memperc% $mem  Free: ${memfree}
 ${memgraph 000000 E8B66B}
 Swap: $swapperc% $swap${swapbar 6}
 
@@ -54,8 +53,7 @@ ${top name 6}${top cpu 6} ${top mem 6}
 ${top name 7}${top cpu 7} ${top mem 7}
 ${top name 8}${top cpu 8} ${top mem 8}
 ${top name 9}${top cpu 9} ${top mem 9}
-${top name 10}${top cpu 10} ${top mem 10}
-$color]]
+${top name 10}${top cpu 10} ${top mem 10}$color]]
 
 
 
