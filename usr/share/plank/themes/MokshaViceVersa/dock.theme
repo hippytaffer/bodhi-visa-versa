@@ -8,19 +8,20 @@ TopRoundness=15
 BottomRoundness=10
 #The thickness (in pixels) of lines drawn.
 LineWidth=1
-#The color (RGBA) of the outer stroke.
-OuterStrokeColor=0;;0;;0;;95
+#The color (RGBA) of the outer stroke. 0;;0;;0;;95
+OuterStrokeColor=42;;31;;18;;255
 #The starting color (RGBA) of the fill gradient.
-FillStartColor=42;;31;;18;;200
+FillStartColor=42;;31;;18;;192
 #The ending color (RGBA) of the fill gradient.
 FillEndColor=42;;31;;18;;255
 #The color (RGBA) of the inner stroke. 55;;55;;55;;245
-InnerStrokeColor=42;;31;;18;;0
+InnerStrokeColor=42;;31;;18;;255
+IndicatorColor=255;;31;;18;;255
 
 [PlankDockTheme]
 #The padding on the left/right dock edges, in tenths of a percent of IconSize. 0
 HorizPadding=3
-#The padding on the top dock edge, in tenths of a percent of IconSize.
+#The padding on the top dock edge, in tenths of a percent of IconSize. 1
 TopPadding=1
 #The padding on the bottom dock edge, in tenths of a percent of IconSize. 1.5
 BottomPadding=2
@@ -29,7 +30,7 @@ ItemPadding=3
 #The size of item indicators, in tenths of a percent of IconSize.
 IndicatorSize=6
 #The size of the icon-shadow behind every item, in tenths of a percent of IconSize.
-IconShadowSize=0
+IconShadowSize=-1
 #The height (in percent of IconSize) to bounce an icon when the application sets urgent.
 UrgentBounceHeight=1.6
 #The height (in percent of IconSize) to bounce an icon when launching an application.
