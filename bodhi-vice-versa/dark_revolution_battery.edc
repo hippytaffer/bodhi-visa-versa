@@ -12,7 +12,7 @@ group { name: "e/modules/battery/main";
       public message(Msg_Type:type, id, ...) {
          if ((type == MSG_FLOAT) && (id == 1)) {
             new Float:val;
-            new r = 65, g = 146, b = 54;
+            new r = 212, g = 178, b = 98;
             new lr = 255, lg = 0, lb = 0;
             
             val = getfarg(2);
@@ -140,7 +140,7 @@ group { name: "e/modules/battery/main";
             rel2.offset: -2 -2;
             image.normal: "glow_med_white2.png";
             image.border: 10 10 10 10;
-            color: 65 146 54 255;
+            color: 212 178 98 255;
          }
       }
       //~ part { name: "top-shine";
