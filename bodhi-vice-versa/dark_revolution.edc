@@ -55,6 +55,7 @@ spectra {
 
 collections {
 #include "macros.edc"
+#include "screenshot.edc"
 #include "backlight.edc"
 #include "tasks.edc"
 #include "toolbar.edc"
