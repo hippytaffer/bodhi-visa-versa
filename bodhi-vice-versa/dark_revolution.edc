@@ -15,7 +15,7 @@ data {
 	item: "theme/license"	"BSD Artistic License";
 	item: "gtk-theme"     "MokshaViceVersa-GTK";
 	item: "version"       "110";
-	item: "icon-theme"    "gnome";
+	item: "icon-theme"    "MokshaViceVersa-Icons";
 }
 
 #ifdef E17_PROFILE
