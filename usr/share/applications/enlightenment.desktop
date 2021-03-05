@@ -2,8 +2,7 @@
 Encoding=UTF-8
 Type=Application
 StartupNotify=false
-Categories=Settings;
-Icon=enlightenment
+Icon=emblem-enlightenment-logo
 Name=Enlightenment Settings
 Exec=enlightenment
 NoDisplay=true
