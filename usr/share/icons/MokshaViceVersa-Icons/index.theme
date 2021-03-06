@@ -20,11 +20,11 @@ MinSize=8
 MaxSize=256
 
 [animations/24]
-16 Size=24
-17 Context=Animations
-18 Type=Scalable
-19 MinSize=16
-20 MaxSize=512
+Size=24
+Context=Animations
+Type=Scalable
+MinSize=16
+MaxSize=512
 
 [colorful]
 Size=128
