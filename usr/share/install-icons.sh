@@ -1,16 +1,12 @@
 # Use this to install these icons for use from cloned repo.
-# It copies overwrites some exiting hicolor icons and
-# delete and replace entire MokshaViceVersa-Icon folder.
-# Its WIP so there may be some desktop files included for apps you dont have, I'll fix that later.
+# It overwrites some exiting hicolor icons and
+# deletes and replace entire MokshaViceVersa-Icon folder.
+# There may be some desktop files included for apps you dont have included which go in their packages not the viceversa package.
 
 if [ -d /usr/share/icons/MokshaViceVersa-Icons ]; then
 	echo removing old MokshaViceVersa-Icons folder
 	sudo rm -rf /usr/share/icons/MokshaViceVersa-Icons
 fi
-if [ -f /usr/share/icons/MokshaViceVersa-Icons ]; then
-	echo "Warning!  /usr/share/icons/MokshaViceVersa-Icons is an existing link so not changing."
-	sudo rm /usr/share/icons/MokshaViceVersa-Icons
-else
-	sudo cp -r * /usr/share
-fi
+echo Copyiing files ...
+sudo cp -r ../* /usr
 icons/MokshaViceVersa-Icons/reseticons.sh
