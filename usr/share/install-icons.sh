@@ -7,9 +7,10 @@ if [ -d /usr/share/icons/MokshaViceVersa-Icons ]; then
 	echo removing old MokshaViceVersa-Icons folder
 	sudo rm -rf /usr/share/icons/MokshaViceVersa-Icons
 fi
-if [ ! -f /usr/share/icons/MokshaViceVersa-Icons ]; then
-	echo removing old MokshaViceVersa-Icons link
+if [ -f /usr/share/icons/MokshaViceVersa-Icons ]; then
+	echo "Warning!  /usr/share/icons/MokshaViceVersa-Icons is an existing link so not changing."
 	sudo rm /usr/share/icons/MokshaViceVersa-Icons
+else
+	sudo cp -r * /usr/share
 fi
-sudo cp -r * /usr/share
 icons/MokshaViceVersa-Icons/reseticons.sh
