@@ -12,9 +12,9 @@ if [ -f /usr/share/icons/"$E_ICON_THEME"/status/tray.png ]; then
 	fi
 	/usr/share/discord/Discord &
 	while [ ! -f ~/.config/discord/tray.png ] && [ ! -f ~/.config/discord/tray-connected.png ] && [ ! -f ~/.config/discord/tray-unread.png ]; do sleep 1; done
-	cp /usr/share/icons/"$E_ICON_THEME"/tray.png ~/.config/discord
-	cp /usr/share/icons/"$E_ICON_THEME"/tray-connected.png ~/.config/discord
-	cp /usr/share/icons/"$E_ICON_THEME"/tray-unread.png ~/.config/discord
+	cp /usr/share/icons/"$E_ICON_THEME"/status/tray.png ~/.config/discord
+	cp /usr/share/icons/"$E_ICON_THEME"/status/tray-connected.png ~/.config/discord
+	cp /usr/share/icons/"$E_ICON_THEME"/status/tray-unread.png ~/.config/discord
 else
 	/usr/share/discord/Discord
 fi
