@@ -1,6 +1,6 @@
 [Icon Theme]
 Name=MokshaViceVersa
-Inherits=gnome,hicolor
+Inherits=gnome,hicolor,breeze-dark
 Comment=Single Color PNG Icons for Menus, Systray & Shelf Gadgets. No Apps!
 Directories=actions,animations/22,animations/24,colorful,categories,devices,emblems,mimetypes,places,status,stock,apps
 Example=directory-x-normal
