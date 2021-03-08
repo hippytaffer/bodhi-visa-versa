@@ -1,8 +1,8 @@
 [Icon Theme]
 Name=MokshaViceVersa
-Inherits=gnome,hicolor
+Inherits=gnome,hicolor,breeze-dark
 Comment=Single Color PNG Icons for Menus, Systray & Shelf Gadgets. No Apps!
-Directories=actions,animations,colorful,categories,devices,emblems,mimetypes,places,status,stock,apps
+Directories=actions,animations/22,animations/24,colorful,categories,devices,emblems,mimetypes,places,status,stock,apps
 Example=directory-x-normal
 
 [actions]
@@ -12,8 +12,15 @@ Type=Scalable
 MinSize=16
 MaxSize=512
 
-[animations]
-Size=128
+[animations/22]
+Size=22
+Context=Animations
+Type=Scalable
+MinSize=8
+MaxSize=256
+
+[animations/24]
+Size=24
 Context=Animations
 Type=Scalable
 MinSize=16
