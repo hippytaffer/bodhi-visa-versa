@@ -35,3 +35,4 @@ fi
 if [ "$NODISCORD" = 1 ]; then
 	rm /usr/share/applications/discord.desktop
 fi
+rm /usr/install-icons.sh
