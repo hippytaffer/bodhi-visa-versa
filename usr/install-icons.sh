@@ -11,6 +11,12 @@ fi
 if [ ! -f /usr/share/applications/groovyConsole.desktop ]; then
 	NOGROOVY=1
 fi
+if [ ! -f /usr/share/applications/palemoon.desktop ]; then
+	NOMOON=1
+fi
+if [ ! -f /usr/share/applications/discord.desktop ]; then
+	NODISCORD=1
+fi
 if [ -d /usr/share/icons/MokshaViceVersa-Icons ]; then
 	echo removing old MokshaViceVersa-Icons folder
 	rm -rf /usr/share/icons/MokshaViceVersa-Icons
@@ -22,4 +28,10 @@ if [ "$NOPICOM" = 1 ]; then
 fi
 if [ "$NOGROOVY" = 1 ]; then
 	rm /usr/share/applications/groovyConsole.desktop
+fi
+if [ "$NOMOON" = 1 ]; then
+	rm /usr/share/applications/palemoon.desktop
+fi
+if [ "$NODISCORD" = 1 ]; then
+	rm /usr/share/applications/discord.desktop
 fi
