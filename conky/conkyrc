@@ -28,6 +28,7 @@ Swap: $swapperc% $swap${swapbar 6}
 
 CPU: ${acpitemp}°C ${cpu cpu0} % ${cpubar}
 ${cpugraph 000000 E8B66B}
+
 DiskIO: $diskio   Free: $fs_free
 ${diskiograph 000000 E8B66B}
 Read: $diskio_read   Write: $diskio_write
