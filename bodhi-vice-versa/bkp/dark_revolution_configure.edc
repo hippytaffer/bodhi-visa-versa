@@ -93,7 +93,7 @@ group { name: "e/modules/conf/main";
       part { name: "spanner"; mouse_events: 0;
          description { state: "default" 0.0;
             aspect: 1.0 1.0; aspect_preference: BOTH;
-            min: 20 20;
+            min: 37 37;
             max: 315 315;
             rel1.offset: 4 4;
             rel2.offset: -5 -5;
