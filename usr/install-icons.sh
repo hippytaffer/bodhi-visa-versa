@@ -2,12 +2,12 @@ echo
 echo Use this to install these icons for use from cloned repo.
 echo It overwrites some existing hicolor icons and replaces MokshaViceVersa-Icon folder.
 echo
-echo QBitorrent tray icon is permanently changed, even if you later switch to another theme.
-echo To revert QB tray icon you must reinstall qbitorrent.  This is not ideal.
+echo QBitorrent and Remmina tray icon are permanently changed, even if you later switch to another theme.
+echo To revert QB tray icon you must reinstall qbitorrent or remmina.  This is not ideal.
 echo
 echo Everything else will continue to follow your selected icon theme.
 echo
-echo Note: desktop files to support icons are only installed if app already installed:
+echo Note: desktop files to support icons only installed if app installed:
 echo picom, groovy console, palemon, and discord tray
 echo
 if [ ! "$USER" = "root" ]; then
