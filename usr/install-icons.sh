@@ -1,5 +1,5 @@
 echo
-echo Install icons directly from cloned repository.
+echo This script installs icons directly from cloned repository.
 echo Previous MokshaViceVersa-Icon folder is replaced.
 echo Previous QBitorrent and Remmina tray hicolor icons are overwritten.
 echo To revert tray icons you must reinstall qbitorrent or remmina.
