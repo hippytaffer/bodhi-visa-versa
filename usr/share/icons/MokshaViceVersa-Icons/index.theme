@@ -12,20 +12,6 @@ Type=Scalable
 MinSize=16
 MaxSize=512
 
-[animations/22]
-Size=22
-Context=Animations
-Type=Scalable
-MinSize=8
-MaxSize=256
-
-[animations/24]
-Size=24
-Context=Animations
-Type=Scalable
-MinSize=16
-MaxSize=512
-
 [colorful]
 Size=128
 Context=Apps
