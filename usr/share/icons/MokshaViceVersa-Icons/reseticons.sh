@@ -2,7 +2,6 @@ printf "\nRemoving icon cache and restarting related daemon (efreetd)...\n"
 rm -rf ~/.cache/efreet
 killall efreetd
 enlightenment_remote -restart &
-gtk-update-icon-cache
 echo "Waiting (not done yet), chime will sound when all done!"
 sleep 10
 while pgrep -u $USER efreet_icon_cache_create > /dev/null; do sleep 1; done

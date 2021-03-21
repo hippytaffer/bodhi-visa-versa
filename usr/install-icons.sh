@@ -1,14 +1,12 @@
-echo
-echo This script installs icons directly from cloned repository.
+printf "\nThis script installs icons directly from cloned repository.\n"
 echo Previous MokshaViceVersa-Icon folder is replaced.
-echo Previous QBitorrent and Remmina tray hicolor icons are overwritten.
+echo Previous QBitorrent and Remmina system tray hicolor icons are overwritten.
 echo To revert tray icons you must reinstall qbitorrent or remmina.
 echo Everything else will continue to follow your selected icon theme.
-echo Note: desktop files to support icons only installed if app installed:
-echo picom, groovy console, palemon, pcmanfm, and discord tray
-echo
+echo Note: desktop files to support icons are replaced for these apps if installed:
+printf "picom, groovy console, palemon, pcmanfm, discord\n\n"
 if [ ! "$USER" = "root" ]; then
-	printf "\nInstallation requires sudo!\nFor example: sudo ./install-icons.sh\n\n"
+	printf "Installation requires sudo!\nFor example: sudo ./install-icons.sh\n\n"
 	exit
 fi
 if [ ! -f /usr/share/applications/picom.desktop ]; then
@@ -48,7 +46,10 @@ if [ "$NOPCMAN" = 1 ]; then
 	rm /usr/share/applications/pcmanfm.desktop
 fi
 rm /usr/install-icons.sh
-echo Done.
+echo Updating GTK Icon Cache
+gtk-update-icon-cache /usr/share/icons/MokshaViceVersa-Icons
+gtk-update-icon-cache /usr/share/icons/hicolor
+printf "\nDone.\n\n"
 echo If you wish to install system tray icons for additional applications not
 echo supported by theme then run ./install-usericons.sh from user.config folder.
 echo
