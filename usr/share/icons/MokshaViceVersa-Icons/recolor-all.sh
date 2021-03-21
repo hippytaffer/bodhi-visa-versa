@@ -15,7 +15,7 @@ else
 fi
 
 echo Recoloring icons to "$COLOR" in the following folders...
-for folder in actions animations/22 animations/24 apps categories devices emblems mimetypes places status stock
+for folder in apps categories devices emblems mimetypes places status stock
 do
 	pushd $folder >/dev/null
 	echo $folder
