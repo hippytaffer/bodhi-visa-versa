@@ -1,6 +1,6 @@
 [Icon Theme]
 Name=MokshaViceVersa
-Inherits=hicolor,gnome,ubuntu-mono-dark,Humanity-Dark,Papirus-Dark,breeze
+Inherits=gnome,hicolor
 Comment=Flat Anjou Pear colored PNG icons for menu categories, settings panel, system tray, and shelf gadgets.
 Directories=actions,apps,colorful,categories,devices,emblems,mimetypes,places,status,stock
 Example=directory-x-normal
