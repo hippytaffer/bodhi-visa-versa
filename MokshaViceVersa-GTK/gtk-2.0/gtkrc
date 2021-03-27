@@ -225,9 +225,9 @@ style "murrine-buttonlabel" {
 }
 
 style "murrine-scrollbar" {
-	bg[NORMAL] = mix (0.21, @fg_color, @bg_color)
-	bg[PRELIGHT] = mix (0.31, @fg_color, @bg_color)
-	bg[ACTIVE] = @selected_bg_color
+	bg[NORMAL] = mix (0.31, @fg_color, @selected_bg_color)
+	bg[PRELIGHT] = @selected_bg_color
+	bg[ACTIVE] = @selected_bg_color 
 
 	engine "murrine" {
 		roundness = 0
