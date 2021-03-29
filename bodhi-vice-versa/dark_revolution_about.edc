@@ -68,6 +68,7 @@ group {
 	    max:      400 160;
 	    align:    0.5 1.0;
 	    fixed:    1 1;
+      color: 0 0 0 0; 
 	    rel1 {
 	       relative: 0.0 1.0;
 	       offset:   7   -1;
@@ -285,7 +286,7 @@ group {
 	    align:    1.0 1.0;
 	    fixed:    1 1;
 	    rel1 {
-	       relative: 1.0  1.0;
+	       relative: 0.0  0.0;
 	       offset:   -1   -1;
 	    }
 	    rel2 {
@@ -300,6 +301,7 @@ group {
       part {
 	 name:          "e.textblock.about";
 	 type:          TEXTBLOCK;
+   //~ scale: 1;
 	 mouse_events:  0;
 	 description {
 	    state:    "default" 0.0;
@@ -325,6 +327,7 @@ group {
       part {
 	 name:          "e.textblock.authors";
 	 type:          TEXTBLOCK;
+   //~ scale: 1;
 	 mouse_events:  0;
 	 description {
 	    state:    "default" 0.0;
@@ -529,6 +532,7 @@ group {
 	 description {
 	    state:    "default" 0.0;
 	    min:      64 32;
+	    max:      64 32;
 	    align:    0.5 1.0;
 	    fixed:    1 1;
 	    rel1 {
