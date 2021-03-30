@@ -14,7 +14,7 @@ group { name: "e/modules/battery/main";
                new Float:val1, Float:val2;
                
                val1 = (val - 0.10) / 0.25;
-               val2 = 1.0 - val1;
+               val2 = 10 - val1;
                r = round((r * val1) + (lr * val2), ROUND);
                g = round((g * val1) + (lg * val2), ROUND);
                b = round((b * val1) + (lb * val2), ROUND);
