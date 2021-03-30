@@ -1517,6 +1517,32 @@ group {
 	 target:  "minimize_detail";
 	 transition: LINEAR 0.2;
       }
+       program {
+	 name:    "maximize_regular";
+	 signal:  "e,action,maximize";
+	 source:  "e";
+	 action:  STATE_SET "hidden" 0.0;
+	 target:  "t1";
+	 target:  "t3";
+	 target:  "b1";
+	 target:  "b2";
+	 target:  "b3";
+	 target:  "b4";
+	 target:  "b5";
+      }
+      program {
+	 name:    "unmaximize_regular";
+	 signal:  "e,action,unmaximize";
+	 source:  "e";
+	 action:  STATE_SET "hidden" 0.0;
+	 target:  "t1";
+	 target:  "t3";
+	 target:  "b1";
+	 target:  "b2";
+	 target:  "b3";
+	 target:  "b4";
+	 target:  "b5";
+      }
       program {
 	 name:    "maximize_fullscreen";
 	 signal:  "e,action,maximize,fullscreen";
