@@ -1534,7 +1534,7 @@ group {
 	 name:    "unmaximize_regular";
 	 signal:  "e,action,unmaximize";
 	 source:  "e";
-	 action:  STATE_SET "hidden" 0.0;
+	 action:  STATE_SET "default" 0.0;
 	 target:  "t1";
 	 target:  "t3";
 	 target:  "b1";
