@@ -2,6 +2,10 @@ group { name: "e/modules/battery/main";
    images.image: "bat_charge.png" COMP;
    images.image: "battery.png" COMP;
    images.image: "glow_med_white2.png" COMP;
+   images.image: "bat_top0.png" COMP;
+   images.image: "bat_bottom0.png" COMP;
+   min: 16 16;
+   max: 160 160;
    script {
       public message(Msg_Type:type, id, ...) {
          if ((type == MSG_FLOAT) && (id == 1)) {
@@ -14,7 +18,7 @@ group { name: "e/modules/battery/main";
                new Float:val1, Float:val2;
                
                val1 = (val - 0.10) / 0.25;
-               val2 = 10 - val1;
+               val2 = 1.0 - val1;
                r = round((r * val1) + (lr * val2), ROUND);
                g = round((g * val1) + (lg * val2), ROUND);
                b = round((b * val1) + (lb * val2), ROUND);
@@ -79,25 +83,51 @@ group { name: "e/modules/battery/main";
             aspect: 1.0 1.0; aspect_preference: BOTH;
          }
       }
-      part { name: "bg";
+       part { name: "bg";
          clip_to: "pulse_clip";
          description { state: "default" 0.0;
-            //~ rel1.to: "top";
-            rel1.relative: 0.05 0.05;
-            //~ rel2.to: "bottom";
-            rel2.relative: 0.95 0.92;
+            rel1.to: "top";
+            rel1.relative: 0.0 1.0;
+            rel2.to: "bottom";
+            rel2.relative: 1.0 0.0;
             image.normal: "battery.png";
             fill.smooth: 1;
          }
       }
-      part { name: "fill"; mouse_events: 0;
-         //~ clip_to: "pulse_clip";
+       part { name: "top";
+         clip_to: "pulse_clip";
          description { state: "default" 0.0;
-            rel1.to: "bg";
-            rel1.offset: 6  4;
-            rel2.to: "bg";
-            rel2.offset: -7 -4;
+            rel1.to: "base";
+            rel1.offset: 2 1;
+            rel2.to: "base";
+            rel2.offset: -2 1;
+            rel2.relative: 1.0 0.0;
+            aspect: (112/24) (112/24); aspect_preference: HORIZONTAL;
+            align: 0.5 0.0;
+            image.normal: "bat_top0.png";
+         }
+      }
+      part { name: "bottom";
+         clip_to: "pulse_clip";
+         description { state: "default" 0.0;
+            rel1.to: "base";
+            rel1.offset: 2 -3;
+            rel2.to: "base";
+            rel2.offset: -2 -3;
+            aspect: (112/12) (112/12); aspect_preference: HORIZONTAL;
+            align: 0.5 1.0;
+            image.normal: "bat_bottom0.png";
+         }
+      }
+      part { name: "fill"; mouse_events: 0;
+         clip_to: "pulse_clip";
+         description { state: "default" 0.0;
+            rel1.to: "fill_region";
+            rel1.offset: 0 0;
+            rel2.to: "fill_region";
+            rel2.offset: 0 0;
             image.normal: "glow_med_white2.png";
+            //~ image.border: 10 10 10 10;
             color: 65 146 54 255;
          }
       }
