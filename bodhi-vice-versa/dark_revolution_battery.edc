@@ -128,7 +128,7 @@ group { name: "e/modules/battery/main";
             rel2.offset: 0 0;
             image.normal: "glow_med_white2.png";
             //~ image.border: 10 10 10 10;
-            color: 65 146 54 255;
+            color: 212 178 98 255;
          }
       }
       part { name: "pwr1";
