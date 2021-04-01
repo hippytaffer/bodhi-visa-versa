@@ -90,7 +90,7 @@ group {
    scale: 1;
 	 description {
 	    state: "default" 0.0;
-	    align: 0.5 0.5;
+	    align: 0.0 0.5;
 	    rel1 {
 	       relative: 1.0  0.5;
 	       to_x:     "temp";
@@ -104,7 +104,7 @@ group {
             text {
 	       text:     "";
 	       font:     "Edje-Vera";
-	       size:     8;
+	       size:     7;
 	       min:      1 1;
 	       align:    0.0 0.0;
                text_class: "module_small";	       
