@@ -104,12 +104,17 @@ group {
       text {
             text:     "";
             font:     "Edje-Vera";
-            size:     9;
+            size:     8;
             min:      1 1;
             align:    0.0 0.0;
+            ellipsis: -1;
             text_class: "module_small";	       
      }
     }
+     description { state: "visible" 0.0;
+       inherit: "default";
+       text.size: 12;
+         }
       }
             part { name: "info_clip"; type: RECT;
          clip_to: "fade_clip";
@@ -194,18 +199,21 @@ group {
       }
    }
    programs {
-	  //~ program {
-         //~ signal: "mouse,in"; source: "over";
-         //~ action: STATE_SET "visible" 0.0;
-         //~ transition: LINEAR 0.3;
+	  program {
+         signal: "mouse,in"; source: "over";
+         action: STATE_SET "visible" 0.0;
+         transition: LINEAR 0.1;
          //~ target: "info_clip";
-              //~ }
-      //~ program {
-         //~ signal: "mouse,out"; source: "over";
-         //~ action: STATE_SET "default" 0.0;
-         //~ transition: LINEAR 0.3;
+         target: "e.text.reading";
+         
+              }
+      program {
+         signal: "mouse,out"; source: "over";
+         action: STATE_SET "default" 0.0;
+         transition: LINEAR 0.1;
          //~ target: "info_clip";
-		      //~ }
+         target: "e.text.reading";
+		      }
       program {
          name: "known";
          signal: "e,state,known";
