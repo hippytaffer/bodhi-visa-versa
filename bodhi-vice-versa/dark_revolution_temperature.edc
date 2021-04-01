@@ -85,31 +85,36 @@ group {
       part {
 	 name:           "e.text.reading";
 	 type:           TEXT;
-	/* effect:         SOFT_SHADOW;*/
+   effect:         SOFT_SHADOW;
 	 clip_to:        "fade_clip";
    scale: 1;
 	 description {
 	    state: "default" 0.0;
-	    align: 0.0 0.5;
+	    align: 0.5 0.5;
 	    rel1 {
-	       relative: 1.0  0.5;
-	       to_x:     "temp";
+	       relative: 0.5  0.5;
+	       //~ to_x:     "temp";
 	    }
 	    rel2 {
-	       relative: 1.0  0.5;
+	       relative: 0.5  0.5;
 	    }
-	    color: 255 255 255 220;
-	  /*  color3: 220 220 220 250;*/
+	    color: 255 255 255 0;
+	    color3: 220 220 220 0;
 	    color_class: "module_label";
-            text {
-	       text:     "";
-	       font:     "Edje-Vera";
-	       size:     7;
-	       min:      1 1;
-	       align:    0.0 0.0;
-               text_class: "module_small";	       
-	    }
-	 }
+      text {
+            text:     "";
+            font:     "Edje-Vera";
+            size:     8;
+            min:      1 1;
+            align:    0.0 0.0;
+            text_class: "module_small";	       
+     }
+    }
+    description { state: "visible" 0.0;
+      inherit: "default";
+      color: 255 255 255 225;
+      color3: 20 20 20 128;
+    }
       }
             part { name: "info_clip"; type: RECT;
          clip_to: "fade_clip";
@@ -185,7 +190,12 @@ group {
 	       relative: 1.0 0.637;
 	       to: "base";
 	    }
-	 }
+      }
+    }
+    part { name: "over"; type: RECT;
+         description { state: "default" 0.0;
+            color: 0 0 0 0;
+         }
       }
    }
    programs {
@@ -193,13 +203,16 @@ group {
          signal: "mouse,in"; source: "over";
          action: STATE_SET "visible" 0.0;
          transition: LINEAR 0.3;
-         target: "info_clip";
+         //~ target: "info_clip";
+         target: "e.text.reading";
+         
               }
       program {
          signal: "mouse,out"; source: "over";
          action: STATE_SET "default" 0.0;
          transition: LINEAR 0.3;
-         target: "info_clip";
+         //~ target: "info_clip";
+         target: "e.text.reading";
 		      }
       program {
          name: "known";
