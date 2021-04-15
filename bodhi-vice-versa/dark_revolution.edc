@@ -54,7 +54,9 @@ spectra {
 //~ efl_version: 1 22; - Causes issues!?
 
 collections {
+#include "fonts.edc"
 #include "macros.edc"
+#include "xkbswitch.edc"
 #include "screenshot.edc"
 #include "backlight.edc"
 #include "tasks.edc"
