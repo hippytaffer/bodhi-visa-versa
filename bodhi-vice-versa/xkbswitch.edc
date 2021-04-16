@@ -126,7 +126,7 @@ group { name: "e/modules/xkbswitch/noflag";
             rel1.relative: 0.0 0.5;
             rel2.to: "base";
             rel2.relative: 1.0 0.5;
-            color: 65 146 54 255;
+            color: 212 178 98 255;
             text { font: "Sans:style=Bold"; size: 9;
                min: 0 1;
                text_class: "module_small";
