@@ -479,10 +479,10 @@ parts {
 			type: RECT;
 			description { state: "default" 0.0;
 				color: 0 0 0 0;
-        rel1.to: "time-area_base";
-				rel1.offset: 2 0;
-        rel2.to: "time-area_base";
-				rel2.offset: -6 0;
+        rel1.relative: 0.01 0.0;
+				//~ rel1.offset: 2 0;
+        rel2.relative: 0.99 1.0;
+				//~ rel2.offset: -6 0;
 			}
 			description { state: "show-date" 0.0;
 				inherit: "default" 0.0;
