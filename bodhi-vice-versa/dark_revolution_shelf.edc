@@ -728,18 +728,18 @@ group {
 	    }
 	 }
       }
-      part {
+     part {
 	 name:          "e.swallow.content";
 	 type:          SWALLOW;
 	 description {
 	    state:    "default" 0.0;
 	    rel1 {
 	       relative: 0.0  0.0;
-	       offset:   2   2;
+	       offset:   2   1;
 	    }
 	    rel2 {
 	       relative: 1.0  1.0;
-	       offset:   -2   -3;
+	       offset:   -2  -1;
 	    }
 	 }
 	 description {
@@ -807,11 +807,11 @@ group {
 	    inherit:  "default" 0.0;
 	    rel1 {
 	       relative: 0.0  0.0;
-	       offset:   1    2;
+	       offset:   1    4;
 	    }
 	    rel2 {
 	       relative: 1.0  1.0;
-	       offset:   -1   -2;
+	       offset:   -1   -4;
 	    }
 	 }
 	 description {
@@ -819,11 +819,11 @@ group {
 	    inherit:  "default" 0.0;
 	    rel1 {
 	       relative: 0.0  0.0;
-	       offset:   1    2;
+	       offset:   1    4;
 	    }
 	    rel2 {
 	       relative: 1.0  1.0;
-	       offset:   -1   -2;
+	       offset:   -1   -4;
 	    }
 	 }
 	 description {
@@ -843,11 +843,11 @@ group {
 	    inherit:  "default" 0.0;
 	    rel1 {
 	       relative: 0.0  0.0;
-	       offset:   1    1;
+	       offset:   1    4;
 	    }
 	    rel2 {
 	       relative: 1.0  1.0;
-	       offset:   -2   -2;
+	       offset:   -1   -4;
 	    }
 	 }
 	 description {
@@ -855,11 +855,11 @@ group {
 	    inherit:  "default" 0.0;
 	    rel1 {
 	       relative: 0.0  0.0;
-	       offset:   1    2;
+	       offset:   1    4;
 	    }
 	    rel2 {
 	       relative: 1.0  1.0;
-	       offset:   -1   -2;
+	       offset:   -1   -4;
 	    }
 	 }
 	 description {
@@ -867,11 +867,11 @@ group {
 	    inherit:  "default" 0.0;
 	    rel1 {
 	       relative: 0.0  0.0;
-	       offset:   2    1;
+	       offset:   1    4;
 	    }
 	    rel2 {
 	       relative: 1.0  1.0;
-	       offset:   -2   -1;
+	       offset:   -1   -4;
 	    }
 	 }
       }
