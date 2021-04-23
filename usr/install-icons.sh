@@ -18,9 +18,6 @@ fi
 if [ ! -f /usr/share/applications/palemoon.desktop ]; then
 	NOMOON=1
 fi
-if [ ! -f /usr/share/applications/discord.desktop ]; then
-	NODISCORD=1
-fi
 if [ -d /usr/share/icons/MokshaViceVersa-Icons ]; then
 	echo removing old MokshaViceVersa-Icons folder
 	rm -rf /usr/share/icons/MokshaViceVersa-Icons
