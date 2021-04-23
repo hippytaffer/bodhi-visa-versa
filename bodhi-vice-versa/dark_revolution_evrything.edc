@@ -1207,7 +1207,7 @@ group { name: "e/modules/everything/thumbview/main/scrollframe";
             rel1.to: "base_vbar";
             rel2.to: "base_vbar";
             image.normal: "e17_scrollbar_vdrag_thumb.png";
-            //~ FIXED_SIZE(3, 11)
+            FIXED_SIZE(3, 11)
          }
       }
       part { name: "center_glow_vbar"; mouse_events: 0;
@@ -1216,7 +1216,7 @@ group { name: "e/modules/everything/thumbview/main/scrollframe";
             rel1.to: "center_vbar";
             rel2.to: "center_vbar";
             image.normal: "holes_tiny_glow_vert.png";
-            //~ FIXED_SIZE(11, 17)
+            FIXED_SIZE(11, 17)
             visible: 0;
          }
          description { state: "clicked" 0.0;
