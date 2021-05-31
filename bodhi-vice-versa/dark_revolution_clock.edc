@@ -16,6 +16,8 @@ images {
 }
 group {
   name: "e/modules/clock/main";
+    min: 16 16;
+    max: 128 128; 
     script {
         public clock_cb(val) {
             new buf[11];
@@ -480,9 +482,9 @@ parts {
 			description { state: "default" 0.0;
 				color: 0 0 0 0;
         rel1.relative: 0.01 0.0;
-				//~ rel1.offset: 2 0;
+				rel1.offset: 2 0;
         rel2.relative: 0.99 1.0;
-				//~ rel2.offset: -6 0;
+				rel2.offset: -6 0;
 			}
 			description { state: "show-date" 0.0;
 				inherit: "default" 0.0;
@@ -502,12 +504,13 @@ parts {
 				color: 5 5 5 128;
 				rel1.to: "time-area";
 				rel2.to: "time-area";
+        aspect: 0.5 0.0; 
 				text {
 					text_class: "clock";
 					font: FONT;
 					size: 7;
 					fit: 1 1;
-					min: 1 0;
+					min: 1 1;
 					size_range: 7 72;
 					ellipsis: -1;
 					align: 0.5 0.5;
