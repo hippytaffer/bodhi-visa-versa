@@ -1,7 +1,7 @@
 printf "\nThis script installs icons directly from cloned repository.\n"
 echo Previous MokshaViceVersa-Icon folder is replaced.
-echo Previous QBitorrent and Remmina system tray hicolor icons are overwritten.
-echo To revert tray icons you must reinstall qbitorrent or remmina.
+echo Previous Remmina system tray hicolor icons are overwritten.
+echo To revert tray icons you must reinstall remmina.
 echo Everything else will continue to follow your selected icon theme.
 echo Note: desktop files to support icons are replaced for these apps if installed:
 printf "picom, groovy console, palemon, pcmanfm, discord, thunar\n\n"
@@ -17,9 +17,6 @@ if [ ! -f /usr/share/applications/groovyConsole.desktop ]; then
 fi
 if [ ! -f /usr/share/applications/palemoon.desktop ]; then
 	NOMOON=1
-fi
-if [ ! -f /usr/share/applications/discord.desktop ]; then
-	NODISCORD=1
 fi
 if [ -d /usr/share/icons/MokshaViceVersa-Icons ]; then
 	echo removing old MokshaViceVersa-Icons folder
