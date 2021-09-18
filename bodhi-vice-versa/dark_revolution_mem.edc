@@ -349,7 +349,7 @@ group { "modules/mem/main";
 			}
 		}
 	text { "real_label"; mouse; scale;
-		desc { "default"; color: TRANSPARENT; hid;
+		desc { "default"; color: NO_COLOR; hid;
 			color3: "#00000000";
 			rel1.relative: 0.05 0.05;
 			rel1.offset: 0 0;
@@ -365,7 +365,7 @@ group { "modules/mem/main";
 		desc { "visible"; inherit; color: 219 190 123 255; vis; }
 	}
 	text { "swap_label"; mouse; scale;
-		desc { "default"; color: TRANSPARENT; hid;
+		desc { "default"; color: NO_COLOR; hid;
 			color3: "#00000000";
 			rel1.relative: 0.05 0.7;
 			rel1.offset: 0 0;

@@ -6,7 +6,7 @@
 //###                                                     ###
 //###########################################################
 //
-#define TRANSPARENT "#FFFFFF00"
+#define NO_COLOR "#FFFFFF00"
 #define VISIBLE "#FFFFFF"
 
 data {
