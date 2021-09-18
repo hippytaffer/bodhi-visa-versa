@@ -6,13 +6,14 @@
 //###                                                     ###
 //###########################################################
 //
-/*Agust*/
+#define TRANSPARENT "#FFFFFF00"
+#define VISIBLE "#FFFFFF"
 
 data {
-	item: "theme/name" 		"MokshaViceVersa";
-	item: "theme/version"	"0.0.1";
-	item: "theme/author"	"Agustin J Verdegal, Gareth ""hippytaff"" Williams, Stefan ""the_waiter"" Uram";
-	item: "theme/license"	"BSD Artistic License";
+	item: "theme/name"              "MokshaViceVersa";
+	item: "theme/version"   "0.0.1";
+	item: "theme/author"    "Agustin J Verdegal, Gareth ""hippytaff"" Williams, Stefan ""the_waiter"" Uram";
+	item: "theme/license"   "BSD Artistic License";
 	item: "gtk-theme"     "MokshaViceVersa-GTK";
 	item: "version"       "110";
 	item: "icon-theme"    "MokshaViceVersa-Icons";
@@ -37,17 +38,17 @@ data {
 #endif
 
 //~ fonts {
-   //~ font: "Vera.ttf"   "Edje-Vera";
-   //~ font: "VeraBd.ttf" "Edje-Vera-Bold";
+//~ font: "Vera.ttf"   "Edje-Vera";
+//~ font: "VeraBd.ttf" "Edje-Vera-Bold";
 //~ }
 
 #if 0
 spectra {
-  spectrum {
-    name: "black_to_trans";
-    color: 0 0 0 255 1;
-    color: 0 0 0 0 1;
-  }
+	spectrum {
+		name: "black_to_trans";
+		color: 0 0 0 255 1;
+		color: 0 0 0 0 1;
+	}
 }
 #endif
 
@@ -124,8 +125,4 @@ collections {
 #include "dark_revolution_icons.edc"
 #include "dark_revolution_fontpreview.edc"
 #include "dark_revolution_menu.edc"
-
 }
-
-
-
