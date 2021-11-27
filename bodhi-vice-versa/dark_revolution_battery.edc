@@ -33,43 +33,27 @@ group { name: "e/modules/battery/main";
       }
    }
    parts {
-      part { name: "fade_clip"; type: RECT;
-         description { state: "default" 0.0;
-            color: 255 255 255 255;
-         }
-         description { state: "faded" 0.0;
-            color: 128 128 128 255;
-         }
+      rect { "fade_clip";
+         desc { "default"; color: "#CCCCCC"; }
+         desc { "faded" 0.0; color: "#999999"; }
       }
-      part { name: "info_clip"; type: RECT;
-         clip_to: "fade_clip";
-         description { state: "default" 0.0;
-            color: 255 255 255 0;
-         }
-         description { state: "visible" 0.0;
-            color: 255 255 255 255;
-         }
+      rect { "info_clip"; clip: "fade_clip";
+         desc { "default"; color: "#CCCCCC00"; }
+         desc { "visible"; color: "#CCCCCC"; }
       }
-      part { name: "pulse_clip"; type: RECT;
-         clip_to: "fade_clip";
-         description { state: "default" 0.0;
-            color: 255 255 255 255;
-         }
-         description { state: "faded" 1.0;
-            color: 255 255 255 255;
-         }
-         description { state: "faded" 0.0;
-            color: 255 255 255 64;
-         }
+      rect { "pulse_clip"; clip: "fade_clip";
+         desc { "default"; color: "#CCCCCC"; }
+         desc { "faded" 1.0; color: "#CCCCCC"; }
+         desc { "faded" 0.0; color: "#CCCCCC64"; }
       }
-      part { name: "fill_region"; type: SPACER;
-         description { state: "default" 0.0;
+      rect { "fill_region";
+         desc { "default";
             rel1.to: "bg";
             rel2.to: "bg";
          }
       }
-      part { name: "pwr"; type: SPACER;
-         description { state: "default" 0.0;
+      spacer { "pwr";
+         desc { "default"; min: 5 5;
             rel1.to: "bg";
             rel1.relative: 0.40 0.40;
             rel2.to: "bg";
@@ -78,14 +62,13 @@ group { name: "e/modules/battery/main";
             step: 5 5;
          }
       }
-      part { name: "base"; type: SPACER;
-         description { state: "default" 0.0;
+      spacer { "base";
+         desc { "default";
             aspect: 1.0 1.0; aspect_preference: BOTH;
          }
       }
-       part { name: "bg";
-         clip_to: "pulse_clip";
-         description { state: "default" 0.0;
+       part { name: "bg"; clip: "pulse_clip";
+         desc { "default";
             rel1.to: "top";
             rel1.relative: 0.0 1.0;
             rel2.to: "bottom";
@@ -94,9 +77,8 @@ group { name: "e/modules/battery/main";
             fill.smooth: 1;
          }
       }
-       part { name: "top";
-         clip_to: "pulse_clip";
-         description { state: "default" 0.0;
+       part { "top"; clip: "pulse_clip";
+         desc { "default";
             rel1.to: "base";
             rel1.offset: 2 1;
             rel2.to: "base";
@@ -107,9 +89,8 @@ group { name: "e/modules/battery/main";
             image.normal: "bat_top0.png";
          }
       }
-      part { name: "bottom";
-         clip_to: "pulse_clip";
-         description { state: "default" 0.0;
+      part { "bottom"; clip: "pulse_clip";
+         desc { "default";
             rel1.to: "base";
             rel1.offset: 2 -3;
             rel2.to: "base";
@@ -119,21 +100,18 @@ group { name: "e/modules/battery/main";
             image.normal: "bat_bottom0.png";
          }
       }
-      part { name: "fill"; mouse_events: 0;
-         clip_to: "pulse_clip";
-         description { state: "default" 0.0;
+      part { "fill"; nomouse; clip: "pulse_clip";
+         desc { "default"; color: "#98b212"; //212 178 98 255;
             rel1.to: "fill_region";
             rel1.offset: 0 0;
             rel2.to: "fill_region";
             rel2.offset: 0 0;
             image.normal: "glow_med_white2.png";
             //~ image.border: 10 10 10 10;
-            color: 212 178 98 255;
          }
       }
-      part { name: "pwr1";
-         clip_to: "pulse_clip";
-         description { state: "default" 0.0;
+      part { "pwr1"; clip: "pulse_clip";
+         desc { "default"; color_class: "focus"; hid;
             rel1.to: "pwr";
             rel1.relative: (2/5) 0.0;
             rel1.offset: 1 1;
@@ -143,16 +121,11 @@ group { name: "e/modules/battery/main";
             image.normal: "glow_med_white2.png";
             image.border: 5 5 5 5;
             fill.smooth: 0;
-            visible: 0;
          }
-         description { state: "visible" 0.0;
-            inherit: "default" 0.0;
-            visible: 1;
-         }
+         desc { "visible"; inherit; vis; }
       }
-      part { name: "pwr2";
-         clip_to: "pulse_clip";
-         description { state: "default" 0.0;
+      part { "pwr2"; clip: "pulse_clip";
+         desc { "default"; color_class: "focus"; hid;
             rel1.to: "pwr";
             rel1.relative: 0.0 (2/5);
             rel1.offset: 1 1;
@@ -162,16 +135,11 @@ group { name: "e/modules/battery/main";
             image.normal: "glow_med_white2.png";
             image.border: 5 5 5 5;
             fill.smooth: 0;
-            visible: 0;
          }
-         description { state: "visible" 0.0;
-            inherit: "default" 0.0;
-            visible: 1;
-         }
+         desc { "visible" 0.0; inherit; vis; }
       }
-      part { name: "charge";
-         clip_to: "pulse_clip";
-         description { state: "default" 0.0;
+      part { "charge"; clip: "pulse_clip";
+         desc { "default"; hid;
             rel1.to: "bg";
             rel1.relative: 0.35 0.15;
             rel2.to: "bg";
@@ -179,18 +147,11 @@ group { name: "e/modules/battery/main";
             image.normal: "bat_charge.png";
             //~ image.border: 10 10 1O 10;
             fill.smooth: 1;
-            visible: 0;
          }
-         description { state: "visible" 0.0;
-            inherit: "default" 0.0;
-            visible: 1;
-         }
+         desc { "visible"; inherit; vis; }
       }
-      part { name: "e.text.reading"; type: TEXT; mouse_events: 0;
-         scale: 1;
-         clip_to: "info_clip";
-         effect: SOFT_SHADOW;
-         description { state: "default" 0.0;
+      text { "e.text.reading"; effect: SOFT_SHADOW; nomouse; scale; clip: "info_clip";
+         desc { "default" 0.0; color: "#CCCCCC"; color2: "#CCCCCC64";
             align: 0.5 0.0;
             rel1.to: "bg";
             rel1.offset: 0 -2;
@@ -199,8 +160,6 @@ group { name: "e/modules/battery/main";
             rel2.to_y: "pwr";
             rel2.offset: -1 2;
             //color_class: "module_label_plain";
-            color: 255 255 255 255;
-            color2: 255 255 255 64;
             text { font: "Sans"; size: 6;
                fit: 1 0;
                ellipsis: -1;
@@ -209,11 +168,8 @@ group { name: "e/modules/battery/main";
             }
          }
       }
-      part { name: "e.text.time"; type: TEXT; mouse_events: 0;
-         scale: 1;
-         clip_to: "info_clip";
-         effect: SOFT_SHADOW;
-         description { state: "default" 0.0;
+      text { "e.text.time"; nomouse; effect: SOFT_SHADOW; scale; clip: "info_clip";
+         desc { "default"; color: "#CCCCCC"; color2: "#CCCCCC64";
             align: 0.5 1.0;
             rel1.relative: 0.0 1.0;
             rel1.offset: 0 -2;
@@ -222,20 +178,13 @@ group { name: "e/modules/battery/main";
             rel2.offset: -1 1;
             rel2.to: "bg";
             //color_class: "module_label_plain";
-            color: 255 255 255 255;
-            color2: 255 255 255 64;
-            text { font: "Sans"; size: 6;
-               fit: 1 0;
-               ellipsis: -1;
-               align: 0.5 0.5;
-               text_class: "module_small";
+            text.font: "Sans"; text.size: 6;
+            text.fit: 1 0; text.ellipsis: -1;
+            text.text_class: "module_small";
             }
          }
-      }
-      part { name: "over"; type: RECT;
-         description { state: "default" 0.0;
-            color: 0 0 0 0;
-         }
+      rect { "over";
+         desc { "default"; color: "#00000000"; }
       }
    }
    programs {
@@ -292,44 +241,37 @@ group { name: "e/modules/battery/main";
 group { name: "e/modules/battery/popup";
    min: 240 60;
    parts {
-      part { name: "e.swallow.battery"; type: SWALLOW;
-         description { state: "default" 0.0;
+      swallow { "e.swallow.battery";
+         desc { "default"; min: 1 1; max: 160 160;
             aspect: 1.0 1.0; aspect_preference: VERTICAL;
-            min: 1 1;
-            max: 160 160;
             align: 0.0 0.5;
          }
       }
-      part { name: "e.text.title"; type: TEXT;
-         effect: SHADOW BOTTOM;
-         scale: 1;
-         description { state: "default" 0.0;
+      text { "e.text.title"; effect: SHADOW BOTTOM; scale;
+         desc { "default";
             rel1.relative: 1.0 0.0;
             rel1.to_x: "e.swallow.battery";
             rel2.relative: 1.0 0.5;
            // color: FN_COL_DEFAULT;
-            text { font: "Sans:style=Bold"; size: 10;
-               text: "Your battery is low!";
-               min: 1 1;
-               ellipsis: -1;
-               text_class: "module_large";
-            }
+            text.font: "Sans:style=Bold"; text.size: 10;
+            text.text: "Your battery is low!";
+            text.min: 1 1;
+            text.ellipsis: -1;
+            text.text_class: "module_large";
          }
       }
-      part { name: "e.text.label"; type: TEXT;
-         effect: SHADOW BOTTOM;
-         scale: 1;
-         description { state: "default" 0.0;
+      text { "e.text.label"; effect: SHADOW BOTTOM; scale;
+         desc { "default";
             rel1.relative: 1.0 0.5;
             rel1.to_x: "e.swallow.battery";
      //       color: FN_COL_DEFAULT;
-            text { font: "Sans"; size: 10;
-               text: "AC power is recommended.";
-               min: 1 1;
-               ellipsis: -1;
-               text_class: "module_normal";
+            text.font: "Sans"; text.size: 10;
+            text.text: "AC power is recommended.";
+            text.min: 1 1;
+            text.ellipsis: -1;
+            text.text_class: "module_normal";
             }
          }
       }
    }
-}
+
