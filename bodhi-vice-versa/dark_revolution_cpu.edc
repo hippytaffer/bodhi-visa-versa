@@ -70,6 +70,7 @@ styles {
 			 text {
                  style:    "cpu_style";
                  min:      0 1;
+                 ellipsis: -1;
 			 }
 		    }
 	       }
