@@ -375,7 +375,7 @@ group { name: "e/modules/notification/main";
          action: SIGNAL_EMIT "notification,close" "theme";
       }
       program {
-         signal: "mouse,clicked,1"; source: "base";
+         signal: "mouse,clicked,1"; source: "border";
          action: SIGNAL_EMIT "notification,find" "theme";
       }
         program {
