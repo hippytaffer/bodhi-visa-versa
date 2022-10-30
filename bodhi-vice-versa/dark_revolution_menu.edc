@@ -152,7 +152,7 @@
                 rel1 {
                    to_y:     "e.text.title";
                    relative: 0.0  1.0;
-                   offset:   1    0;
+                   offset:   7    0;
                 }
                 rel2 {
                    relative: 1.0  1.0;
