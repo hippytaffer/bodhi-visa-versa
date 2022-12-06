@@ -552,6 +552,30 @@ group {
 	    }
 	 }
       }
+      text { name: "spacer";
+         effect: SHADOW BOTTOM;
+         scale: 1;
+         desc { color: 0 0 0 0;
+            rel1.relative: 1 0;
+            rel2.relative: 0 1;
+            text {
+               source: "e.text.label";
+               text_source: "e.text.label";
+            }
+            link.base: "e,origin,center" "e";
+            link.transition: SINUSOIDAL 0.1 CURRENT;
+         }
+         desc { "left"; inherit: "default";
+            align: 0.0 0.5;
+            link.base: "e,origin,left" "e";
+            link.transition: SINUSOIDAL 0.1 CURRENT;
+         }
+         desc { "right"; inherit: "default";
+            align: 1.0 0.5;
+            link.base: "e,origin,right" "e";
+            link.transition: SINUSOIDAL 0.1 CURRENT;
+         }
+      }
       part {      
 	 name: "e.text.label";
 	 type: TEXT;
@@ -561,14 +585,9 @@ group {
 	 description {
 	    state: "default" 0.0;
 	    align: 0.5 0.5;
-	    rel1 {
-               relative: 0.0  1.0;
-	       offset:   0    -1;
-	    }
-	    rel2 {
-               relative: 1.0  1.0;
-	       offset:   -1    -1;
-	    }
+	    rel1.to_x: "spacer";
+            rel2.to_x: "spacer";
+	    rel1.relative: 0 1;
 	    color: 255 255 255 0;
 	    color3: 0 0 0 0;
             color_class: "module_label";
@@ -584,14 +603,8 @@ group {
 	 description {
 	    state: "visible" 0.0;
 	    inherit: "default" 0.0;
-	    rel1 {
-               relative: 0.0  0.0;
-	       offset:   0    0;
-	    }
-	    rel2 {
-               relative: 1.0  1.0;
-	       offset:   -1    -1;
-	    }
+	    rel1.relative: 0.0 0.5;
+            rel2.relative: 1.0 0.5;
 	    color: 255 255 255 220;
 	    color3: 77 77 77 250;
 	    color_class: "module_label";
