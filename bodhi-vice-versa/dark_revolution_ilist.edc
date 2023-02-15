@@ -108,7 +108,7 @@ group { name: "e/widgets/ilist";
 					text: "Item Label";
 					min: 1 1;
 					align: 0.0 0.5;
-					text_class: "ilist_item";	       
+					text_class: "ilist_item";
 				}
 			}
 			description { state: "active" 0.0;
@@ -395,7 +395,7 @@ group { name: "e/widgets/ilist_odd";
 				rel2.offset: -5 -5;
 				color: 40 40 20 255;
 				color3: 0 0 0 96;
-				color_class: "ilist_item_odd";	    
+				color_class: "ilist_item_odd";
 					text { font: "Edje-Vera"; size: 10;
 						text: "Item Label";
 						min: 1 1;
@@ -587,6 +587,7 @@ group { name: "e/widgets/ilist_odd";
 }
 
 group { name: "e/widgets/ilist_header";
+	alias: "e/widgets/ilist_header_odd"; 
 	parts {
 		part { name: "base"; mouse_events: 0;
 			description { state: "default" 0.0;
@@ -607,7 +608,7 @@ group { name: "e/widgets/ilist_header";
 				rel2.offset: 4 -5;
 			}
 		}
-		part { name: "e.text.label"; type: TEXT; effect: SOFT_SHADOW; mouse_events: 0; scale: 1;
+		part { name: "e.text.label"; type: TEXT; mouse_events: 0; scale: 1;
 			description { state: "default" 0.0;
 				min: 16 16;
 				rel1.to_x: "e.swallow.icon";
@@ -615,11 +616,9 @@ group { name: "e/widgets/ilist_header";
 				rel1.offset: 16 4;
 				rel2.relative: 1.0 1.0;
 				rel2.offset: -5 -5;
-				color: 40 40 20 255;
-				color3: 255 255 255 96;
-				color_class: "ilist_header";	    
-					text { font: "Edje-Vera-Bold"; size: 16;
-						text: "Item Label";      
+				color_class: "ilist_header";
+					text { font: "Edje-Vera-Bold"; size: 11;
+						text: "Item Label";
 						min: 1 1;
 						align: 0.0 0.5;
 						text_class: "ilist_header";
