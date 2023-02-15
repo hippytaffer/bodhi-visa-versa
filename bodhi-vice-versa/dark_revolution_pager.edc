@@ -196,6 +196,17 @@ group {
                rel2.offset: 0 0;
             }
          }
+          part { name: "e.background"; type: SWALLOW;
+             clip_to: "clip";
+             description { state: "default" 0.0;
+                rel1.to: "base";
+                rel2.to: "base";
+             }
+             description { state: "hidden" 0.0;
+                inherit: "default" 0.0;
+                visible: 0;
+             }
+         }
          part {
             name: "pattern";
             mouse_events: 0;
