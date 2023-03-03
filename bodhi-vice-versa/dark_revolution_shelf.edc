@@ -1,6 +1,6 @@
 images {
    image: "e17_shelf_bg_h.png" COMP;
-   image: "e17_shelf_bg_v.png" COMP;
+   //~ image: "e17_shelf_bg_v.png" COMP;
    image: "e17_shelf_bg_dark_revolution_h.png" COMP;
    image: "e17_shelf_bg_dark_revolution_v.png" COMP;
    //~ image: "e17_shelf_bg2_h.png" COMP;
@@ -10,7 +10,7 @@ images {
 }
 
 group {
-   name: "e/shelf/default/base";
+   name: "e/shelf/default/base"; nomouse;
    data {
       // this tells e the border is shaped
       item: "shaped" "1";
@@ -29,429 +29,71 @@ group {
       }
    }
    parts {
-      part {
-	 name:          "base";
-	 mouse_events:  0;
-	 description {
-	    state:    "default" 0.0;
-	    image {
-	       normal: "e17_shelf_bg_h.png";
-	       border: 19 19 9 9;
-	    }
-	    fill {
-	       origin {
-		  offset: 0 -6;
-	       }
-	       size {
-		  offset: 0 6;
-	       }
-	    }
-	 }
-	 description {
-	    state:    "top_left" 0.0;
-	    inherit:  "default" 0.0;
-	    fill {
-	       origin {
-		  offset: -16 -6;
-	       }
-	       size {
-		  offset: 16 6;
-	       }
-	    }
-	 }
-	 description {
-	    state:    "top_right" 0.0;
-	    inherit:  "default" 0.0;
-	    fill {
-	       origin {
-		  offset: 0 -6;
-	       }
-	       size {
-		  offset: 16 6;
-	       }
-	    }
-	 }
-	 description {
-	    state:    "bottom" 0.0;
-	    inherit:  "default" 0.0;
-	    fill {
-	       origin {
-		  offset: 0 0;
-	       }
-	       size {
-		  offset: 0 6;
-	       }
-	    }
-	 }
-	 description {
-	    state:    "bottom_left" 0.0;
-            inherit:  "default" 0.0;
-	    fill {
-	       origin {
-		  offset: -16 0;
-	       }
-	       size {
-		  offset: 16 6;
-	       }
-	    }
-	 }
-	 description {
-	    state:    "bottom_right" 0.0;
-            inherit:  "default" 0.0;
-	    fill {
-	       origin {
-		  offset: 0 0;
-	       }
-	       size {
-		  offset: 16 6;
-	       }
-	    }
-	 }
-	 description {
-	    state:    "left" 0.0;
-            inherit:  "default" 0.0;
-	    image {
-	       normal: "e17_shelf_bg_v.png";
-	       border: 9 9 19 19;
-	    }
-	    fill {
-	       origin {
-		  offset: -6 0;
-	       }
-	       size {
-		  offset: 6 0;
-	       }
-	    }
-	 }
-	 description {
-	    state:    "left_top" 0.0;
-            inherit:  "default" 0.0;
-	    image {
-	       normal: "e17_shelf_bg_v.png";
-	       border: 9 9 19 19;
-	    }
-	    fill {
-	       origin {
-		  offset: -6 -16;
-	       }
-	       size {
-		  offset: 6 16;
-	       }
-	    }
-	 }
-	 description {
-	    state:    "left_bottom" 0.0;
-            inherit:  "default" 0.0;
-	    image {
-	       normal: "e17_shelf_bg_v.png";
-	       border: 9 9 19 19;
-	    }
-	    fill {
-	       origin {
-		  offset: -6 0;
-	       }
-	       size {
-		  offset: 6 16;
-	       }
-	    }
-	 }
-	 description {
-	    state:    "right" 0.0;
-            inherit:  "default" 0.0;
-	    image {
-	       normal: "e17_shelf_bg_v.png";
-	       border: 9 9 19 19;
-	    }
-	    fill {
-	       origin {
-		  offset: 0 0;
-	       }
-	       size {
-		  offset: 6 0;
-	       }
-	    }
-	 }
-	 description {
-	    state:    "right_top" 0.0;
-            inherit:  "default" 0.0;
-	    image {
-	       normal: "e17_shelf_bg_v.png";
-	       border: 9 9 19 19;
-	    }
-	    fill {
-	       origin {
-		  offset: 0 -16;
-	       }
-	       size {
-		  offset: 6 16;
-	       }
-	    }
-	 }
-	 description {
-	    state:    "right_bottom" 0.0;
-            inherit:  "default" 0.0;
-	    image {
-	       normal: "e17_shelf_bg_v.png";
-	       border: 9 9 19 19;
-	    }
-	    fill {
-	       origin {
-		  offset: 0 0;
-	       }
-	       size {
-		  offset: 6 16;
-	       }
-	    }
-	 }
+      part { name: "bg"; type: IMAGE;
+         description { state: "default" 0.0;
+              image {
+               normal: "e17_shelf_bg_h.png";
+               border: 8 8 8 8;
+              }
+         }
+         description { state: "vert" 0.0;
+            inherit: "default" 0.0;
+         }
       }
-      part {
-	 name:          "e.swallow.content";
-	 type:          SWALLOW;
-	 description {
-	    state:    "default" 0.0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   2   1;
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   -2  -1;
-	    }
-	 }
-	 description {
-	    state:    "top_left" 0.0;
-	    inherit:  "default" 0.0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   2    1;
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   -2   -1;
-	    }
-	 }
-	 description {
-	    state:    "top_right" 0.0;
-	    inherit:  "default" 0.0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   2   1;
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   -2   -1;
-	    }
-	 }
-	 description {
-	    state:    "bottom" 0.0;
-	    inherit:  "default" 0.0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   2   1;
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   -2   -1;
-	    }
-	 }
-	 description {
-	    state:    "bottom_left" 0.0;
-	    inherit:  "default" 0.0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   2   1;
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   -2   -1;
-	    }
-	 }
-	 description {
-	    state:    "bottom_right" 0.0;
-	    inherit:  "default" 0.0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   2   1;
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   -2   -1;
-	    }
-	 }
-	 description {
-	    state:    "left" 0.0;
-	    inherit:  "default" 0.0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   1    4;
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   -1   -4;
-	    }
-	 }
-	 description {
-	    state:    "left_top" 0.0;
-	    inherit:  "default" 0.0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   1    4;
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   -1   -4;
-	    }
-	 }
-	 description {
-	    state:    "left_bottom" 0.0;
-	    inherit:  "default" 0.0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   1    2;
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   -1   -2;
-	    }
-	 }
-	 description {
-	    state:    "right" 0.0;
-	    inherit:  "default" 0.0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   1    4;
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   -1   -4;
-	    }
-	 }
-	 description {
-	    state:    "right_top" 0.0;
-	    inherit:  "default" 0.0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   1    4;
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   -1   -4;
-	    }
-	 }
-	 description {
-	    state:    "right_bottom" 0.0;
-	    inherit:  "default" 0.0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   1    4;
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   -1   -4;
-	    }
-	 }
+      part { name: "border"; type: RECT;
+         insert_before: "bg";
+         scale: 1;
+         description {
+            state: "default" 0.0;
+            rel1.offset: -1 -3;
+            rel2.offset: 1 1;
+            color_class: "shelf_border_default";
+         }
       }
-   }
-   programs {
+      part { name: "e.swallow.content"; type: SWALLOW; mouse;
+         description { state: "default" 0.0;
+            rel1.offset: 1 0;
+            rel1.relative: 0.0 0.0;
+            rel1.to_x: "bg";
+            rel2.offset: 0 0;
+            rel2.to_x: "bg";
+            rel2.relative: 1.0 1.0;
+         }
+         description { state: "vert" 0.0;
+            rel1.offset: 0 1;
+            rel1.relative: 0.0 0.0;
+            rel1.to_y: "bg";
+            rel2.offset: 1 0;
+            rel2.to_y: "bg";
+            rel2.relative: 1.0 1.0;
+         }
+      }
 
-      program {
-	 name:    "orient1";
-	 signal:  "e,state,orientation,top";
-	 source:  "e";
-	 action:  STATE_SET "default" 0.0;
-	 target:  "base";
-	 target:  "e.swallow.content";
+      programs  {
+#define ORIENT_SATE(_ORIENT, _STATE) \
+         program { \
+            signal: "e,state,orientation,"_ORIENT; source: "e"; \
+            action: STATE_SET _STATE 0.0; \
+            target: "bg"; \
+            target: "e.swallow.content"; \
+         }
       }
-      program {
-	 name:    "orient2";
-	 signal:  "e,state,orientation,top_left";
-	 source:  "e";
-	 action:  STATE_SET "top_left" 0.0;
-	 target:  "base";
-	 target:  "e.swallow.content";
-      }
-      program {
-	 name:    "orient3";
-	 signal:  "e,state,orientation,top_right";
-	 source:  "e";
-	 action:  STATE_SET "top_right" 0.0;
-	 target:  "base";
-	 target:  "e.swallow.content";
-      }
-      program {
-	 name:    "orient4";
-	 signal:  "e,state,orientation,bottom";
-	 source:  "e";
-	 action:  STATE_SET "bottom" 0.0;
-	 target:  "base";
-	 target:  "e.swallow.content";
-      }
-      program {
-	 name:    "orient5";
-	 signal:  "e,state,orientation,bottom_left";
-	 source:  "e";
-	 action:  STATE_SET "bottom_left" 0.0;
-	 target:  "base";
-	 target:  "e.swallow.content";
-      }
-      program {
-	 name:    "orient6";
-	 signal:  "e,state,orientation,bottom_right";
-	 source:  "e";
-	 action:  STATE_SET "bottom_right" 0.0;
-	 target:  "base";
-	 target:  "e.swallow.content";
-      }
-      program {
-	 name:    "orient7";
-	 signal:  "e,state,orientation,left";
-	 source:  "e";
-	 action:  STATE_SET "left" 0.0;
-	 target:  "base";
-	 target:  "e.swallow.content";
-      }
-      program {
-	 name:    "orient8";
-	 signal:  "e,state,orientation,left_top";
-	 source:  "e";
-	 action:  STATE_SET "left_top" 0.0;
-	 target:  "base";
-	 target:  "e.swallow.content";
-      }
-      program {
-	 name:    "orient9";
-	 signal:  "e,state,orientation,left_bottom";
-	 source:  "e";
-	 action:  STATE_SET "left_bottom" 0.0;
-	 target:  "base";
-	 target:  "e.swallow.content";
-      }
-      program {
-	 name:    "orient10";
-	 signal:  "e,state,orientation,right";
-	 source:  "e";
-	 action:  STATE_SET "right" 0.0;
-	 target:  "base";
-	 target:  "e.swallow.content";
-      }
-      program {
-	 name:    "orient11";
-	 signal:  "e,state,orientation,right_top";
-	 source:  "e";
-	 action:  STATE_SET "right_top" 0.0;
-	 target:  "base";
-	 target:  "e.swallow.content";
-      }
-      program {
-	 name:    "orient12";
-	 signal:  "e,state,orientation,right_bottom";
-	 source:  "e";
-	 action:  STATE_SET "right_bottom" 0.0;
-	 target:  "base";
-	 target:  "e.swallow.content";
-      }
+      ORIENT_SATE("top", "default")
+      ORIENT_SATE("top_left", "default")
+      ORIENT_SATE("top_right", "default")
+      ORIENT_SATE("bottom", "default")
+      ORIENT_SATE("bottom_left", "default")
+      ORIENT_SATE("bottom_right", "default")
+      ORIENT_SATE("left", "vert")
+      ORIENT_SATE("left_top", "vert")
+      ORIENT_SATE("left_bottom", "vert")
+      ORIENT_SATE("right", "vert")
+      ORIENT_SATE("right_top", "vert")
+      ORIENT_SATE("right_bottom", "vert")
+#undef ORIENT_SATE
    }
 }
+
 group {
    name: "e/shelf/default/inset";
    parts {
@@ -533,10 +175,10 @@ group {
 	 description {
 	    state:    "default" 0.0;
 	    rel1 {
-	       offset:   0    0;
+	       offset:   0  0;
 	    }
 	    rel2 {
-	       offset:   -1    -1;
+	       offset:   -1  -1;
 	    }
 	    color: 255 255 255 255;
 	 }
@@ -548,10 +190,10 @@ group {
 	 description {
 	    state:    "default" 0.0;
 	    rel1 {
-	       offset:   0 0;
+	       offset:   1  1;
 	    }
 	    rel2 {
-	       offset:   -1    -1;
+	       offset:  -2 -2;
 	    }
 	 }
       }
