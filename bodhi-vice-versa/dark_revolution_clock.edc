@@ -463,21 +463,6 @@ group { name: "e/modules/clock/digital";
     }
 
 parts {
-		part { name: "time-area_base";
-			type: RECT;
-			description { state: "default" 0.0;
-				color: 0 0 0 0;
-				rel1.offset: 0 0;
-				rel2.offset: 0 0;
-			}
-			description { state: "show-date" 0.0;
-				inherit: "default" 0.0;
-				rel2 {
-					relative: 1.0 0.0;
-					to: "e.text.today";
-				}
-			}
-		}
 		part { name: "time-area";
 			type: RECT;
 			description { state: "default" 0.0;
@@ -493,6 +478,8 @@ parts {
 					relative: 1.0 0.0;
 					to: "e.text.today";
 				}
+				rel1.offset: -28 0;
+				rel2.offset:  28 0;
 			}
 		}
 		part { name: "time";
@@ -512,7 +499,7 @@ parts {
 					size: 10;
 					fit: 1 1;
 					min: 1 1;
-					//~ size_range: 8 72;
+					size_range: 8 25;
 					ellipsis: -1;
 					align: 0.5 0.5;
 					text: "--:--";
