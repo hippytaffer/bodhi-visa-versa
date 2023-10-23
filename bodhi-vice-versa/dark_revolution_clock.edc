@@ -784,11 +784,6 @@ group { name: "e/modules/clock/calendar/dayname";
 				action: STATE_SET "weeknumb" 0.0;
 				target: "e.text.label";
 			}
-			program { name: "prev_clicked";
-				signal: "mouse,clicked,1*";
-				source: "day";
-				action: SIGNAL_EMIT "e,action,date,get" "";
-			}
 		}
 	}
 
