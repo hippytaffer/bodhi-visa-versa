@@ -11,8 +11,7 @@ group {
   parts {
     part {
        name: "background_image";
-       description {
-	  state: "default" 0.0;
+       description { state: "default" 0.0;
 	  image {
 	     normal: "e17_brushed.png";
 	  }
@@ -29,10 +28,8 @@ group
 	  {
 	    name: "logo";
 	    mouse_events: 0;
-      scale: 1;
-	    description
-	    {
-	       state: "default" 0.0;
+	    scale: 1;
+	    description { state: "default" 0.0;
 	       min: 64 64;
 	       max: 64 64;
 	       //align: 0.45 0.5;
@@ -46,9 +43,8 @@ group
 	    name: "e.text.title";
 	    type: TEXT;
 	    /*effect: SHADOW;*/
-      scale: 1;
-	    description {
-	       state: "default" 0.0;
+	    scale: 1;
+	    description { state: "default" 0.0;
 	       color: 255 255 255 220;
 	       fixed: 0 1;
 	       align: 0.0 0.5;
@@ -70,122 +66,113 @@ group
 		  size: 10;
 		  align: 0.0 0.5;
 		  min: 1 1;
-		  text_class: "desklock_title";		  
+		  text_class: "desklock_title";
 	       }
 	    }
 	  }
 	part
 	  {
-	     name: "passwd_entry_clip";
-	     type: RECT;
-	     mouse_events: 0;
-	     description
-	       {
-		  state: "default" 0.0;
-		  visible: 1;
-		  rel1
-		    {
-		       relative: 0.0 0.0;
-		       offset: 10 10;
-		       to: "passwd_border";
-		    }
-		  rel2
-		    {
-		       relative: 1.0 1.0;
-		       offset: -17 -10;
-		       to: "passwd_border";
-		    }
+	    name: "passwd_entry_clip";
+	    type: RECT;
+	    mouse_events: 0;
+	    description { state: "default" 0.0;
+		visible: 1;
+		rel1 {
+		     relative: 0.0 0.0;
+		     offset: 10 10;
+		     to: "passwd_border";
+		}
+		rel2 {
+		     relative: 1.0 1.0;
+		     offset: -17 -10;
+		     to: "passwd_border";
+		}
 	       }
 	    }
-	  part 
-	    {
-	       name: "e.text.password";
-	       type: TEXT;
-	      /* effect: SHADOW;*/
-	       clip_to: "passwd_entry_clip";
-         scale: 1;
-	       description {
-            state: "default" 0.0;
-		        color: 0 0 0 255;
-		        fixed: 0 1;
-		        align: 0.0 0.5;
-      		  rel1
-		        {
-		          relative: 0.0 0.0;
-		          offset: 0 0;
-		          to: "passwd_entry_clip";
-		        }
-            rel2
-              {
-                 relative: 0.0 1.0;
-                 offset: 0 0;
-                 to: "passwd_entry_clip";
-              }
-            
-            color: 255 255 255 220;
-            color3: 220 220 220 255;
-            text {
-               text: "****";
-               font: "Edje-Vera-Bold";
-               size: 16;
-               align: 0.0 0.5;
-               min: 1 1;
-               ellipsis: -1;
-               text_class: "desklock_passwd";
-      		  }
-	       }
+	part 
+	  {
+	    name: "e.text.password";
+	    type: TEXT;
+	    /* effect: SHADOW;*/
+	    clip_to: "passwd_entry_clip";
+	    scale: 1;
+	    description { state: "default" 0.0;
+		    color: 0 0 0 255;
+		    fixed: 0 1;
+		    align: 0.0 0.5;
+		    rel1 {
+			    relative: 0.0 0.0;
+			    offset: 0 0;
+			    to: "passwd_entry_clip";
+		    }
+		    rel2 {
+			    relative: 0.0 1.0;
+			    offset: 0 0;
+			    to: "passwd_entry_clip";
+		    }
+		    color: 255 255 255 220;
+		    color3: 220 220 220 255;
+		    text {
+			text: "****";
+			font: "Edje-Vera-Bold";
+			size: 16;
+			align: 0.0 0.5;
+			min: 1 1;
+			ellipsis: -1;
+			text_class: "desklock_passwd";
+		    }
 	    }
-	  part 
-	    {
-	       name: "cursor";
-	       mouse_events: 0;
-	       clip_to: "passwd_entry_clip";
-         scale: 1;
-	       description {
-            state: "default" 0.0;
-            min: 16 16;
-            max: 16 16;
-            align: 0.0 0.5;
-            fixed: 1 1;
-            color: 255 255 255 255;
-            rel1 {
-               relative: 1.0 0.0;
-               offset: 0 -2;
-               to: "e.text.password";
-            }
-            rel2 {
-               relative: 1.0 0.9;
-               offset: 0 0;
-               to: "e.text.password";
-            }
-            image {
-               normal: "e17_entry_cursor.png";
-            }
+	  }
+	part 
+	   {
+	    name: "cursor";
+	    mouse_events: 0;
+	    clip_to: "passwd_entry_clip";
+	    scale: 1;
+	    description {
+		    state: "default" 0.0;
+		    min: 16 16;
+		    max: 16 16;
+		    align: 0.0 0.5;
+		    fixed: 1 1;
+		    color: 255 255 255 255;
+		    rel1 {
+			relative: 1.0 0.0;
+			offset: 0 -2;
+			to: "e.text.password";
+		    }
+		    rel2 {
+			relative: 1.0 0.9;
+			offset: 0 0;
+			to: "e.text.password";
+		    }
+		    image {
+			normal: "e17_entry_cursor.png";
+		    }
                }
-         }
-	  part
-	    {
-	       name: "passwd_border";
-	       mouse_events: 0;
-	       description
-		 {
+	    }
+	part
+	  {
+	    name: "passwd_border";
+	    mouse_events: 0;
+	    description {
 		    state: "default" 0.0;
 		    rel1 
 		      {
-			 relative: 1.0 0.3;
-			 offset: 0 0;
-			 to: "logo";
+			relative: 1.0 0.3;
+			offset: 0 0;
+			to: "logo";
 		      }
 		    rel2
 		      {
-			 relative: 5.0 0.9;
-			 offset: 0 0;
-			 to: "logo";
+			relative: 5.0 0.9;
+			offset: 0 0;
+			to: "logo";
 		      }
 		    image
 		      {
-			 normal: "e17_gadman_overlay.png";
-			 border: 15 15 15 15;
+			normal: "e17_gadman_overlay.png";
+			border: 15 15 15 15;
 		      }
 		 }
 	    }
