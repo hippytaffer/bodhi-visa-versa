@@ -10,50 +10,80 @@ group {
    name: "e/modules/ibar/icon";
    data {
       item: "raise_on_hilight" "0"; // 1 or 0 if u want an icon holder to raise when the mouse (or keyboard) hilights it
-      //	 item: "item_list" "item item2 item3";
+      // item: "item_list" "item item2 item3";
    }
    images.image: "e17_menu_check1.png" COMP;
    parts {
       part {
-	 name:          "item_clip";
-	 type:          RECT;
-	 mouse_events:  0;
-	 description {
-	    state:    "default" 0.0;
-	    color: 255 255 255 255;
-	 }
-	 description {
-	    state:    "faded" 0.0;
-	    color: 255 255 255 64;
-	 }
+         name:          "item_clip";
+         type:          RECT;
+         mouse_events:  0;
+         description {
+            state:    "default" 0.0;
+            color: 255 255 255 255;
+         }
+         description {
+            state:    "faded" 0.0;
+            color: 255 255 255 64;
+         }
       }
       part {
-	 name:          "e.swallow.content";
-	 type:          SWALLOW;
-	 clip_to:       "item_clip";
-	 description {
-	    state:    "default" 0.0;
-	    rel1 {
-	       relative: 0.1  0.1;
-	       //~ offset:   4   4;
-	    }
-	    rel2 {
-	       relative: 0.9  0.9;
-	       //~ offset:   -4   -4;
-	    }
-	 }
-	 description {
-	    state:    "bigger" 0.0;
-	    inherit:  "default" 0.0;
-	    rel1 {
-	       relative: 0.0  0.0;
-	       offset:   0   0;
-	    }
-	    rel2 {
-	       relative: 1.0  1.0;
-	       offset:   -1   -1;
-	    }
-	 }
+         name:          "e.swallow.content";
+         type:          SWALLOW;
+         clip_to:       "item_clip";
+         description {
+            state:    "default" 0.0;
+            rel1 {
+               relative: 0.1  0.1;
+               //~ offset:   4   4;
+            }
+            rel2 {
+               relative: 0.9  0.9;
+               //~ offset:   -4   -4;
+            }
+         }
+         description {
+            state:    "bigger" 0.0;
+            inherit:  "default" 0.0;
+            rel1 {
+               relative: 0.0  0.0;
+               offset:   0   0;
+            }
+            rel2 {
+               relative: 1.0  1.0;
+               offset:   -1   -1;
+           }
+         }
+         description { state: "bounce1" 0.0;
+            inherit: "default" 0.0;
+            rel1.relative: 0.0 0.15;
+            rel2.relative: 1.0 1.15;
+         }
+         description { state: "bounce2" 0.0;
+            inherit: "default" 0.0;
+            rel1.relative: 0.0 -0.15;
+            rel2.relative: 1.0 0.85;
+         }
+      }
+      part { name: "e.swallow.preview"; type: SWALLOW;
+         clip_to: "item_clip";
+         description { state: "default" 0.0;
+            rel1.offset:  1 1;
+            rel2.offset: -2 -2;
+            rel1.relative: 0.1 0.1;
+            rel2.relative: 0.9 0.9;
+            align: 0.5 0.5;
+         }
+         description { state: "bounce1" 0.0;
+            inherit: "default" 0.0;
+            rel1.relative: 0.0 0.15;
+            rel2.relative: 1.0 1.15;
+         }
+         description { state: "bounce2" 0.0;
+            inherit: "default" 0.0;
+            rel1.relative: 0.0 -0.15;
+            rel2.relative: 1.0 0.85;
+         }
       }
       part { name: "indicator";
          scale: 1;
@@ -96,55 +126,39 @@ group {
          }
       }
       part {
-	 name:          "over";
-	 type:          RECT;
-	 repeat_events: 0;
-	 description {
-	    state:    "default" 0.0;
-	    color: 0 0 0 0;
-	 }
+         name:          "over";
+         type:          RECT;
+         repeat_events: 0;
+         description {
+            state:    "default" 0.0;
+            color: 0 0 0 0;
+         }
       }
    }
    programs {
       program {
-	 name:    "hover_in";
-	 signal:  "mouse,in";
-	 source:  "over";
-	 action:  STATE_SET "bigger" 0.0;
-         transition: LINEAR 0.1;
-	 target:  "e.swallow.content";
-      }
-      program {
-	 name:    "hover_out";
-	 signal:  "mouse,out";
-	 source:  "over";
-	 action:  STATE_SET "default" 0.0;
-         transition: LINEAR 0.2;
-	 target:  "e.swallow.content";
-      }
-      program {
-	 name:    "exec_start";
-	 signal:  "e,action,start";
-	 source:  "e";
-	 action:  STATE_SET "faded" 0.0;
+         name:    "exec_start";
+         signal:  "e,action,start";
+         source:  "e";
+         action:  STATE_SET "faded" 0.0;
          transition: LINEAR 0.5;
-	 target:  "item_clip";
+         target:  "item_clip";
       }
       program {
-	 name:    "exec_exec";
-	 signal:  "e,action,exec";
-	 source:  "e";
-	 action:  STATE_SET "faded" 0.0;
+         name:    "exec_exec";
+         signal:  "e,action,exec";
+         source:  "e";
+         action:  STATE_SET "faded" 0.0;
          transition: LINEAR 0.5;
-	 target:  "item_clip";
-	 after:   "exec_stop";
+         target:  "item_clip";
+         after:   "exec_stop";
       }
       program {
-	 name:    "exec_stop";
-	 signal:  "e,action,stop";
-	 source:  "e";
-	 action:  STATE_SET "default" 0.0;
-	 target:  "item_clip";
+         name:    "exec_stop";
+         signal:  "e,action,stop";
+         source:  "e";
+         action:  STATE_SET "default" 0.0;
+         target:  "item_clip";
       }
        program { name: "ion";
          signal: "e,state,on"; source: "e";
@@ -170,13 +184,40 @@ group {
          target: "indicator";
          transition: DECELERATE 0.8;
       }
+      program {
+         signal: "e,state,urgent"; source: "e";
+         action: STATE_SET "bounce1" 0.0;
+         target: "e.swallow.preview";
+         target:  "e.swallow.content";
+         after: "urg1";
+      }
+      program { name: "urg1";
+         action: STATE_SET "bounce2" 0.0;
+         transition: DECELERATE 0.2;
+         target: "e.swallow.preview";
+         target:  "e.swallow.content";
+         after: "urg2";
+      }
+      program { name: "urg2";
+         action: STATE_SET "bounce1" 0.0;
+         transition: ACCELERATE 0.2;
+         target: "e.swallow.preview";
+         target:  "e.swallow.content";
+         after: "urg1";
+      }
+      program {
+         signal: "e,state,not_urgent"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "e.swallow.preview";
+         target:  "e.swallow.content";
+      }
    }
 }
 
 group { name: "e/modules/ibar/adjacent_label";
-	images.image: "e17_border3b.png" COMP;
-	images.image: "shine.png" COMP;
-	images.image: "bevel_horiz_out.png" COMP;
+        images.image: "e17_border3b.png" COMP;
+        images.image: "shine.png" COMP;
+        images.image: "bevel_horiz_out.png" COMP;
 parts{
      part { name: "bevel"; mouse_events: 0;
          description { state: "default" 0.0;
@@ -271,10 +312,10 @@ group { name: "e/modules/ibar/menu";
          description { state: "default" 0.0;
             rel1.to: "sizer";
             rel2.to: "sizer";
-	    image {
-	       normal: "e17_shelf_bg_h.png";
-	       border: 19 19 9 9;
-	    }
+            image {
+               normal: "e17_shelf_bg_h.png";
+               border: 19 19 9 9;
+            }
             //~ color_class: "shelf_base";
          }
       }
@@ -400,6 +441,16 @@ group { name: "e/modules/ibar/menu/item";
             rel1.to: "icon";
             rel2.to: "icon";
          }
+         description { state: "bounce1" 0.0;
+            inherit: "default" 0.0;
+            rel1.relative: 0.0 0.15;
+            rel2.relative: 1.0 1.15;
+         }
+         description { state: "bounce2" 0.0;
+            inherit: "default" 0.0;
+            rel1.relative: 0.0 -0.15;
+            rel2.relative: 1.0 0.85;
+         }
       }
       part { name: "e.text.title"; type: TEXT; mouse_events: 0;
          effect: SHADOW;
@@ -488,6 +539,29 @@ group { name: "e/modules/ibar/menu/item";
          target: "icon_clip";
          target: "glow";
          transition: DECELERATE 0.2;
+      }
+      program {
+         signal: "e,state,urgent"; source: "e";
+         action: STATE_SET "bounce1" 0.0;
+         target: "e.swallow.icon";
+         after: "urg1";
+      }
+      program { name: "urg1";
+         action: STATE_SET "bounce2" 0.0;
+         transition: DECELERATE 0.2;
+         target: "e.swallow.icon";
+         after: "urg2";
+      }
+      program { name: "urg2";
+         action: STATE_SET "bounce1" 0.0;
+         transition: ACCELERATE 0.2;
+         target: "e.swallow.icon";
+         after: "urg1";
+      }
+      program {
+         signal: "e,state,not_urgent"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "e.swallow.icon";
       }
    }
 }
