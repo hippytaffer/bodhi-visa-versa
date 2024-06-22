@@ -808,7 +808,7 @@ group {
 	 type:           TEXT;
 	 effect:         SHADOW;
 	 mouse_events:   0;
-   scale: 1;
+	 scale: 1;
 	 description {
 	    state: "default" 0.0;
 	    align: 1.0 0.0;
@@ -1151,6 +1151,7 @@ group {
       BORDER_BUTTON_ADV("close","close",0.0,0.0, 0,0,"whole", "whole",1.0,1.0,-1,5,"whole", "title2")
       BORDER_BUTTON("maximize","maximize",0.0,0.0,3,0,"close",0.0,1.0,3,-1,"close")
       BORDER_BUTTON("minimize","minimize",0.0,0.0,3,0,"maximize",0.0,1.0,3,-1,"maximize")
+      
 
       part {
 	 name:          "e.event.icon";
@@ -1210,7 +1211,6 @@ group {
          }
       }
 
-			   
    }
    programs {
       program {
@@ -1603,6 +1603,100 @@ group {
   }
 }
 
+group { name: "e/widgets/border/left_controls/border";
+   inherit: "e/widgets/border/default/border";
+   parts {
+
+   part {
+	 name:          "t1";
+	 mouse_events:  0;
+	 description {
+	    state:    "default" 0.0;
+	    align:    0.0 0.0;
+	    aspect:   1.0 1.0;
+	    min: 75 0;
+	    aspect_preference: VERTICAL;
+	    rel1 {
+	       relative: 0.0  0.0;
+	    }
+	    rel2 {
+	       relative: 1.0  1.0;
+	       offset:   0    5;
+	    }
+	    image {
+	       normal: "e17_border1.png";
+	       border: 12 12 12 12;
+	    }
+	    fill {
+	       smooth: 0;
+	    }
+	 }
+	 description {
+	    state:    "hidden" 0.0;
+	    inherit: "default" 0.0;
+	    image {
+	       normal: "e17_border1b.png";
+	    }
+	 }
+      }
+   part {
+	 name:          "t3";
+	 mouse_events:  0;
+	 description {
+	    state:    "default" 0.0;
+	    rel1 {
+	       relative: 0.0  0.0;
+	       offset:   -2   0;
+	       to_x:     "e.swallow.icon";
+	    }
+	    rel2 {
+	       relative: 1.0  1.0;
+	       offset:   -1    5;
+	       to_y:     "title2";
+	    }
+	    image {
+	       normal: "e17_border3.png";
+	       border: 3 6 3 3;
+	    }
+	    fill {
+	       smooth: 0;
+	    }
+	 }
+	 description {
+	    state:    "hidden" 0.0;
+	    inherit: "default" 0.0;
+	    image {
+	       normal: "e17_border3b.png";
+	    }
+	 }
+      }
+
+   BORDER_BUTTON_ADV("close","close",0.0,0.0,12,0,"whole", "whole",0.0,1.0,30,5,"whole", "title2")
+   BORDER_BUTTON("maximize","maximize",1.0,0.0,5,0,"close",1.0,1.0,28,0,"close")
+   BORDER_BUTTON("minimize","minimize",1.0,0.0,5,-2,"maximize",1.0,1.0,28,0,"maximize")
+
+part {
+	 name:          "e.swallow.icon";
+	 type:          SWALLOW;
+	 description {
+	    state:    "default" 0.0;
+	    fixed: 1 0;
+	    rel1 {
+	       relative: 1.0  0.0;
+	       offset:   -30  2;
+	       to:       "whole";
+	    }
+	    rel2 {
+	       relative: 1.0  1.0;
+	       offset:   -5   -3;
+	       to:       "t3";
+	    }
+	    align: 1.0 0.5;
+	 }
+      }
+   }
+}
+
 group {
    name: "e/widgets/border/shaped/border";
    // ALSO:
@@ -1632,7 +1726,7 @@ group {
 	 name:           "title2";
 	 type:           TEXT;
 	 mouse_events:   0;
-   scale: 1;
+	 scale: 1;
 	 description {
 	    state: "default" 0.0;
 	    align: 1.0 0.0;
