@@ -37,7 +37,7 @@ group { name: "e/modules/notification/logo";
          }
       }
    }
-   programs {  
+   programs {
     program
           {
            signal: "stop";
@@ -68,9 +68,9 @@ group { name: "e/modules/notification/logo";
            target: "base";
            after: "normal";
            transition: ACCELERATE 0.1;
-          } 
+          }
     }
-} 
+}
 
 group { name: "e/modules/notification/main";
    images.image: "e17_border1b.png" COMP;
@@ -108,21 +108,8 @@ group { name: "e/modules/notification/main";
    }
    
    parts {
-      part { "clip"; type: RECT;
-         scale: 1;
-         desc { "default";
-            rel1.relative: 0.0 0.0;
-            rel2.relative: 1.0 0.75;
-            color: 70 52 30 255;
-         }
-         desc { "show";
-            rel1.relative: 0.0 0.0;
-            rel2.relative: 1.0 1.0;
-            color: 70 52 30 255;
-         }
-      }
       part { name: "base"; scale: 1;
-         clip_to: "clip";
+         scale: 1;
          description { state: "default" 0.0;
             image.normal: "e17_ibar_handle_h.png";
             rel1.offset: -2 -2;
@@ -147,7 +134,7 @@ group { name: "e/modules/notification/main";
          description { state: "default" 0.0;
             rel2.offset: -13 -13;
             rel.to: "base";
-            min: 220 115;
+            min: 245 115;
          }
       }
       part { name: "notification.swallow.app_icon"; type: SWALLOW; mouse_events: 0;
@@ -162,7 +149,7 @@ group { name: "e/modules/notification/main";
             fixed: 1 1;
          }
       }
-      part { 
+      part {
          name: "notification.textblock.message"; 
          type: TEXTBLOCK; 
          mouse_events: 0;
