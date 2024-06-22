@@ -814,7 +814,7 @@ group {
 	    align: 1.0 0.0;
 	    rel1 {
 	       relative: 1.0  0.0;
-	       offset:   9    4;
+	       offset:   9    1;
 	       to_x:     "t1";
 	    }
 	    rel2 {
