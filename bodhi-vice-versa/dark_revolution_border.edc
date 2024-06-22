@@ -1614,7 +1614,7 @@ group { name: "e/widgets/border/left_controls/border";
 	    state:    "default" 0.0;
 	    align:    0.0 0.0;
 	    aspect:   1.0 1.0;
-	    min: 75 0;
+	    min: 85 0;
 	    aspect_preference: VERTICAL;
 	    rel1 {
 	       relative: 0.0  0.0;
