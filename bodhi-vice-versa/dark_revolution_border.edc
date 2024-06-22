@@ -815,12 +815,12 @@ group {
 	    rel1 {
 	       relative: 1.0  0.0;
 	       offset:   9    1;
-	       to_x:     "t1";
+	       to:     "t1";
 	    }
 	    rel2 {
-	       relative: 0.0  0.0;
-	       offset:   -10  7;
-	       to_x:     "t3";
+	       relative: 0.0  1.0;
+	       offset:   -10  0;
+	       to:     "t3";
 	    }
 	    color: 220 202 154 255;
 	    color3: 0 0 0 0;
