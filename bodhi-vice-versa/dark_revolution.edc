@@ -125,4 +125,5 @@ collections {
 #include "dark_revolution_icons.edc"
 #include "dark_revolution_fontpreview.edc"
 #include "dark_revolution_menu.edc"
+#include "dark_revolution_wallpaper.edc"
 }
