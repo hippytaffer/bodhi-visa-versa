@@ -14,7 +14,7 @@ data {
 	item: "theme/version"   "0.0.1";
 	item: "theme/author"    "Agustin J Verdegal, Gareth ""hippytaff"" Williams, Stefan ""the_waiter"" Uram";
 	item: "theme/license"   "BSD Artistic License";
-	item: "gtk-theme"     "MokshaViceVersa-GTK";
+	item: "gtk-theme"     "MokshaViceVersa";
 	item: "version"       "110";
 	item: "icon-theme"    "MokshaViceVersa";
 }
