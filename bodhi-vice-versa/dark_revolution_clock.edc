@@ -213,7 +213,7 @@ group {
                   normal: "e17_clock_hour_0.png";
                 }
             }
-            description { state: 0 0.0; inherit: "default" 0.0; image { normal: "e17_clock_hour_0.png"; } }
+ description { state: 0 0.0; inherit: "default" 0.0; image { normal: "e17_clock_hour_0.png"; } }
  description { state: 1 0.0; inherit: "default" 0.0; image { normal: "e17_clock_hour_1.png"; } }
  description { state: 2 0.0; inherit: "default" 0.0; image { normal: "e17_clock_hour_2.png"; } }
  description { state: 3 0.0; inherit: "default" 0.0; image { normal: "e17_clock_hour_3.png"; } }
@@ -277,7 +277,7 @@ group {
         }
 
         part {
-          name: minutes_s;
+          name: "minutes_s";
           mouse_events: 0;
             description {
               state: "default" 0.0;
@@ -297,7 +297,7 @@ group {
         }
         
         part {
-          name: minutes;
+          name: "minutes";
           mouse_events: 0;
             description {
               state: "default" 0.0;
@@ -317,7 +317,7 @@ group {
         }
 
         part {
-          name: second_s;
+          name: "second_s";
           mouse_events: 0;
             description {
               state: "default" 0.0;
@@ -337,7 +337,7 @@ group {
         }
 
         part {
-          name: second;
+          name: "second";
           mouse_events: 0;
             description {
               state: "default" 0.0;
