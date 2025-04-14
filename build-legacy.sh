@@ -3,9 +3,10 @@
 
 printf "\n\033[1;33mWARNING:\033[0m For use with Bodhi Linux 7 only.\n\n"
 cd bodhi-vice-versa
-sed -i 's/MokshaViceVersa/MokshaViceVersa-Icons/g' dark_revolution.edc
-sed -i 's/MokshaViceVersa/MokshaViceVersa-GTKs/g' dark_revolution.edc
+sed -i \
+    -e 's/item: "gtk-theme" *"[^"]*"/item: "gtk-theme"     "MokshaViceVersa-GTK"/' \
+    -e 's/item: "icon-theme" *"[^"]*"/item: "icon-theme"    "MokshaViceVersa-Icons"/' \
+    dark_revolution.edc
 ./build.sh
-sed -i 's/MokshaViceVersa-Icons/MokshaViceVersa/g' dark_revolution.edc
-sed -i 's/MokshaViceVersa-GTK/MokshaViceVersa/g' dark_revolution.edc
+git restore dark_revolution.edc
 cd ..
