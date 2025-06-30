@@ -1,7 +1,6 @@
 images {
    image: "e17_button_sm.png" COMP;
    image: "e17_button_sm2.png" COMP;
-   image: "e17_button_sm_disabled.png" COMP;
    image: "e17_titlebar_glint1.png" COMP;
    image: "e17_titlebar_glint2.png" COMP;
    image: "e17_titlebar_glint3.png" COMP;
