@@ -7,15 +7,15 @@ images {
 group { name: "e/pointer/enlightenment/default/color";
    parts {
       part { name: "parent"; type: RECT;
-            description { state: "default" 0.0;
-               color: 255 255 255 255;
-            }
-            description { state: "suspend" 0.0;
-               inherit: "default" 0.0;
-               rel1.relative: 0.5 0.5;
-               rel2.relative: 0.5 0.5;
-               color: 255 255 255 0;
-            }
+         description { state: "default" 0.0;
+            color: 255 255 255 255;
+         }
+         description { state: "suspend" 0.0;
+            inherit: "default" 0.0;
+            rel1.relative: 0.5 0.5;
+            rel2.relative: 0.5 0.5;
+            color: 255 255 255 0;
+        }
       }
       part { name: "base";
          clip_to: "parent";
@@ -40,16 +40,16 @@ group { name: "e/pointer/enlightenment/default/color";
    }
    programs {
       program {
-            signal: "e,state,init"; source: "e";
-            action: STATE_SET "suspend" 0.0;
-            target: "parent";
-            after: "load2";
+         signal: "e,state,init"; source: "e";
+         action: STATE_SET "suspend" 0.0;
+         target: "parent";
+         after: "load2";
       }
       program { name: "load2";
-            action: STATE_SET "default" 0.0;
-            transition: SINUSOIDAL 1.0;
-            in: 1.0 0.0;
-            target: "parent";
+         action: STATE_SET "default" 0.0;
+         transition: SINUSOIDAL 1.0;
+         in: 1.0 0.0;
+         target: "parent";
       }
       program {
          signal: "e,action,mouse,down"; source: "e";
@@ -93,32 +93,26 @@ group { name: "e/pointer/enlightenment/default/color";
 group {
    name: "e/pointer/enlightenment/default/mono";
    parts {
-      part {
-	 name:          "e/pointer";
-	 type:          IMAGE;
-	 mouse_events:  0;
-	 description {
-	    state:  "default" 0.0;
-	    image {
-	       normal: "e17_pointer_mono.png";
-	    }
-	 }
+      part { name: "e/pointer";
+         type: IMAGE;
+         mouse_events: 0;
+         description { state:  "default" 0.0;
+           image.normal: "e17_pointer_mono.png";
+         }
       }
-      part {
-	 name:          "hotspot";
-	 type:          SWALLOW;
-	 description {
-	    state:    "default" 0.0;
-	    visible:  0;
-	    rel1 {
-	       relative: 0.0 0.0;
-	       offset:   1   1;
-	    }
-	    rel2 {
-	       relative: 0.0 0.0;
-	       offset:   1   1;
-	    }
-	 }
+      part { name: "hotspot";
+         type: SWALLOW;
+         description { state: "default" 0.0;
+           visible:  0;
+           rel1 {
+              relative: 0.0 0.0;
+              offset:   1   1;
+           }
+           rel2 {
+              relative: 0.0 0.0;
+              offset:   1   1;
+           }
+         }
       }
    }
 }
