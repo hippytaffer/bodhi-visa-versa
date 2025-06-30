@@ -52,8 +52,6 @@ spectra {
 }
 #endif
 
-//~ efl_version: 1 22; - Causes issues!?
-
 collections {
 #include "fonts.edc"
 #include "macros.edc"
