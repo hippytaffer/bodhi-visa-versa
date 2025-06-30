@@ -37,10 +37,10 @@ data {
 # define SM
 #endif
 
-//~ fonts {
-//~ font: "Vera.ttf"   "Edje-Vera";
-//~ font: "VeraBd.ttf" "Edje-Vera-Bold";
-//~ }
+fonts {
+font: "Vera.ttf"   "Edje-Vera";
+font: "VeraBd.ttf" "Edje-Vera-Bold";
+}
 
 #if 0
 spectra {
