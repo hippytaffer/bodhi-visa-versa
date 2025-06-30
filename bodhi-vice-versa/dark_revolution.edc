@@ -8,15 +8,15 @@
 //
 #define NO_COLOR "#FFFFFF00"
 #define VISIBLE "#FFFFFF"
-
+efl_version: 1 25;
 data {
-	item: "theme/name"              "MokshaViceVersa";
+	item: "theme/name"      "MokshaViceVersa";
 	item: "theme/version"   "0.0.1";
 	item: "theme/author"    "Agustin J Verdegal, Gareth ""hippytaff"" Williams, Stefan ""the_waiter"" Uram";
 	item: "theme/license"   "BSD Artistic License";
-	item: "gtk-theme"     "MokshaViceVersa";
-	item: "version"       "110";
-	item: "icon-theme"    "MokshaViceVersa";
+	item: "gtk-theme"       "MokshaViceVersa";
+	item: "version"         "125";
+	item: "icon-theme"      "MokshaViceVersa";
 }
 
 #ifdef E17_PROFILE
