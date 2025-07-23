@@ -3476,7 +3476,7 @@ group {
 group {
    name: "e/fileman/default/icon/fixed";
    parts {
-      part {      
+      part {
      name:          "icon_overlay";
      mouse_events:  0;
      description {
@@ -3701,7 +3701,7 @@ group {
         color_class: "label_text";
         text {
            text:     "No Title";
-           size:     10;
+           size:     12;
            font:     "Edje-Vera";
            min:      0 1;
            align:    0.5 1.0;
@@ -6168,7 +6168,7 @@ group {
         }
      }
       }
-      part {      
+      part {
      name: "sb_vbar_a1";
      type: IMAGE;
      mouse_events: 1;
@@ -6477,7 +6477,7 @@ group {
      }
       }
    }
-   programs {     
+   programs {
       program {
      name: "sb_vbar_show";
      signal: "e,action,show,vbar";
@@ -6653,7 +6653,7 @@ group {
 group {
    name: "e/fileman/desktop/icon/fixed";
    parts {
-      part {      
+      part {
      name:          "icon_overlay";
      mouse_events:  0;
      description {
@@ -6860,6 +6860,7 @@ group {
      type:          TEXT;
      effect:        SOFT_SHADOW;
      mouse_events:  0;
+     scale
      description {
         state: "default" 0.0;
         align: 0.5 1.0;
@@ -6877,12 +6878,12 @@ group {
         color_class: "desktop_label_text";
         text {
            text:     "No Title";
-           size:     10;
+           size:     9;
            font:     "Edje-Vera-Bold";
            min:      0 1;
            align:    0.5 1.0;
            elipsis:  0.0;
-           text_class: "desktop_fileman_icon";
+           //~ text_class: "desktop_fileman_icon";
         }
      }
       }
@@ -6905,7 +6906,7 @@ group {
      target: "e.text.label";
      target: "icon_overlay";
       } 
-      program { 
+      program {
      name:   "passive";
      signal: "e,state,unselected"; 
      source: "e"; 
@@ -6973,7 +6974,7 @@ group {
 group {
    name: "e/fileman/desktop/icon/variable";
    parts {
-      part {      
+      part {
      name:          "icon_overlay";
      mouse_events:  0;
      description {
@@ -7181,6 +7182,7 @@ group {
      type:          TEXT;
      effect:        SOFT_SHADOW;
      mouse_events:  0;
+     scale;
      description {
         state: "default" 0.0;
         align: 0.5 1.0;
@@ -7198,7 +7200,7 @@ group {
         color_class: "desktop_label_text";
         text {
            text:     "No Title";
-           size:     10;
+           size:     9;
            font:     "Edje-Vera-Bold";
            min:      0 1;
            align:    0.5 1.0;
