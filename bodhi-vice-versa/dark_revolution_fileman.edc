@@ -3725,8 +3725,7 @@ group {
      name:   "active";
      signal: "e,state,selected";
      source: "e";
-     action: STATE_SET "default" 0.0;
-     target: "e.text.label";
+     action: STATE_SET "active" 0.0;
      target: "icon_overlay";
       } 
       program { 
@@ -4045,13 +4044,12 @@ group {
      name:   "active"; 
      signal: "e,state,selected"; 
      source: "e"; 
-     action: STATE_SET "default" 0.0;
-     target: "e.text.label"; 
+     action: STATE_SET "active" 0.0;
      target: "icon_overlay";
       } 
       program { 
      name:   "passive";
-     signal: "e,state,unselected"; 
+     signal: "e,state,unselected";
      source: "e"; 
      action: STATE_SET "default" 0.0;
      transition: LINEAR 0.2;
@@ -6902,8 +6900,7 @@ group {
      name:   "active";
      signal: "e,state,selected";
      source: "e";
-     action: STATE_SET "default" 0.0;
-     target: "e.text.label";
+     action: STATE_SET "active" 0.0;
      target: "icon_overlay";
       } 
       program {
