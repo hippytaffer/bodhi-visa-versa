@@ -6245,14 +6245,14 @@ group {
      name: "sb_vbar_down";
      signal: "mouse,down,1";
      source: "e.dragable.vbar";
-         action:  STATE_SET "clicked" 0.0;
+     action:  STATE_SET "clicked" 0.0;
      target: "e.dragable.vbar";
       }
       program {
      name: "sb_vbar_up";
      signal: "mouse,up,1";
      source: "e.dragable.vbar";
-         action:  STATE_SET "default" 0.0;
+     action:  STATE_SET "default" 0.0;
      target: "e.dragable.vbar";
       }
       program {
@@ -6315,14 +6315,14 @@ group {
      name: "sb_hbar_down";
      signal: "mouse,down,1";
      source: "e.dragable.hbar";
-         action:  STATE_SET "clicked" 0.0;
+     action:  STATE_SET "clicked" 0.0;
      target: "e.dragable.hbar";
       }
       program {
      name: "sb_hbar_up";
      signal: "mouse,up,1";
      source: "e.dragable.hbar";
-         action:  STATE_SET "default" 0.0;
+     action:  STATE_SET "default" 0.0;
      target: "e.dragable.hbar";
       }
    }
