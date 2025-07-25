@@ -3475,640 +3475,320 @@ group {
 
 group {
    name: "e/fileman/default/icon/fixed";
+   alias: "e/fileman/default/icon/variable";
    parts {
-      part {
-     name:          "icon_overlay";
-     mouse_events:  0;
-     description {
-        state:      "default" 0.0;
-        rel1 {
-           relative: 0.0 0.0;
-           offset:   0 0;
-        }
-        rel2 {
-           relative: 1.0 1.0;
-           offset:   -1 -1;
-        }
-        image {
-           normal: "e17_button.png";
-           border: 8 8 8 8;
-        }
-        color: 255 255 255 0;
+     part { name: "icon_overlay";
+       mouse_events:  0;
+       description {
+          state:      "default" 0.0;
+          rel1 {
+            relative: 0.0 0.0;
+            offset:   0 0;
+          }
+          rel2 {
+            relative: 1.0 1.0;
+            offset:   -1 -1;
+          }
+          image {
+            normal: "e17_button.png";
+            border: 8 8 8 8;
+          }
+          color: 255 255 255 0;
+       }
+       description {
+         state: "active" 0.0;
+         inherit: "default" 0.0;
+         color: 255 255 255 255;
+       }
      }
-     description {
-        state: "active" 0.0;
-        inherit: "default" 0.0;
-        color: 255 255 255 255;
-     }
-      }
-      part {
-     name:          "icon_box_shadow";
-     mouse_events:  0;
-     description {
-        state:      "default" 0.0;
-        visible:    0;
-        rel1 {
+     part {
+       name:          "icon_box_shadow";
+       mouse_events:  0;
+       description {
+         state:      "default" 0.0;
+         visible:    0;
+         rel1 {
            to: "icon_box";
            relative: 0.0 0.0;
            offset: -1 -1;
-        }
-        rel2 {
+         }
+         rel2 {
            to: "icon_box";
            relative: 1.0 1.0;
            offset: 2 2;
-        }
-            image {
+         }
+         image {
            normal: "e17_mini_button_shadow2.png";
            border: 6 6 6 6;
-        }
+         }
+       }
+       description {
+         state:      "visible" 0.0;
+         inherit:    "default" 0.0;
+         visible:    1;
+       }
      }
-     description {
-        state:      "visible" 0.0;
-        inherit:    "default" 0.0;
-        visible:    1;
-     }
-      }
-      part {
-     name:          "icon_box";
-     type:          RECT;
-     mouse_events:  0;
-     description {
-        state:      "default" 0.0;
-        visible:    0;
-        align: 0.5 0.5;
+     part {
+       name:          "icon_box";
+       type:          RECT;
+       mouse_events:  0;
+       description {
+         state:      "default" 0.0;
+         visible:    0;
+         align: 0.5 0.5;
          rel1 {
            to: "e.swallow.icon";
            relative: 0.0 0.0;
            offset: -1 -1;
-        }
-        rel2 {
+         }
+         rel2 {
            to: "e.swallow.icon";
            relative: 1.0 1.0;
            offset: 0 0;
-        }
-        color: 0 0 0 64;
+         }
+         color: 0 0 0 64;
+       }
+       description {
+         state:      "visible" 0.0;
+         inherit:    "default" 0.0;
+         visible:    1;
+       }
      }
-     description {
-        state:      "visible" 0.0;
-        inherit:    "default" 0.0;
-        visible:    1;
-     }
-      }
-      part {
-     name:          "icon_box_bg";
-     mouse_events:  0;
-     description {
-        state:      "default" 0.0;
-        visible:    0;
-        rel1 {
-           to: "icon_box";
-           relative: 0.0 0.0;
-           offset: 1 1;
-
-        }
-        rel2 {
-           to: "icon_box";
-           relative: 1.0 1.0;
-           offset: -2 -2;
-        }
-            image {
-           normal: "e17_fileman_thumb_bg.png";
-        }
-        fill {
-           smooth: 0;
-           size {
-          relative: 0 0;
-          offset:   32 32;
-           }
-        }
-     }
-     description {
-        state:      "visible" 0.0;
-        inherit:    "default" 0.0;
-        visible:    1;
-     }
-      }
-      part {
-     name:          "icon0";
-     type:          RECT;
-     mouse_events:  0;
-     description {
-        state:    "default" 0.0;
-        align:    0.0 0.5;
-        aspect:   1.0 1.0;
-        aspect_preference: VERTICAL;
-        visible:  0;
-        rel1 {
-           relative: 0.0 0.0;
-           offset: 8 8;
-        }
-        rel2 {
-           to_y: "e.text.label";
-           relative: 1.0 0.0;
-           offset: -9 -2;
-        }
-        color: 0 0 0 0;
-     }
-      }
-      part {
-     name:          "icon";
-     type:          RECT;
-     mouse_events:  0;
-     description {
-        state:    "default" 0.0;
-        align:    0.5 0.5;
-        aspect:   1.0 1.0;
-        aspect_preference: BOTH;
-        visible:  0;
-        rel1 {
-           to: "icon0";
-        }
-        rel2 {
-           to: "icon0";
-        }
-        color: 0 0 0 0;
-     }
-     description {
-        state:    "min" 0.0;
-        inherit:  "default" 0.0;
-        max:      0 0;
-     }
-     description {
-        state:    "max" 0.0;
-        inherit:  "default" 0.0;
-        rel1 {
-           to: "icon0";
-           relative: 0.0  0.0;
-           offset:   -4   -4;
-        }
-        rel2 {
-           to: "icon0";
-           relative: 1.0  1.0;
-           offset:   3    3;
-        }
-     }
-     description {
-        state:    "max2" 0.0;
-        inherit:  "default" 0.0;
-        rel1 {
-           to: "icon0";
-           relative: 0.0  0.0;
-           offset:   -2   -2;
-        }
-        rel2 {
-           to: "icon0";
-           relative: 1.0  1.0;
-           offset:   1    1;
-        }
-     }
-      }
-      part {
-     name:          "e.swallow.icon";
-     type:          SWALLOW;
-     description {
-        state: "default" 0.0;
-        aspect: 1.0 1.0;
-        aspect_preference: BOTH;
-        align:    0.5 0.5;
-//        fixed:    1 1;
-        rel1 {
-           to:      "icon";
-        }
-        rel2 {
-           to:      "icon";
-        }
-     }
-      }
-      part {
-     name:          "e.text.label";
-     type:          TEXT;
-     effect:        SHADOW;
-     mouse_events:  0;
-     description {
-        state: "default" 0.0;
-        align: 0.5 1.0;
-        fixed: 0 1;
-        rel1 {
-           relative: 0.0 1.0;
-           offset:   8 -9;
-        }
-        rel2 {
-           relative: 1.0 1.0;
-           offset:   -9 -9;
-        }
-        color: 0 0 0 255;
-        color3: 255 255 255 128;
-        color_class: "label_text";
-        text {
-           text:     "No Title";
-           size:     12;
-           font:     "Edje-Vera";
-           min:      0 1;
-           align:    0.5 1.0;
-           elipsis:  0.0;
-           text_class: "fileman_icon";
-        }
-     }
-      }
-      part {
-     name:          "icon_event";
-     type:          RECT;
-     mouse_events:  1;
-     description {
-        state:      "default" 0.0;
-        color:      0 0 0 0;
-     }
-      }
-   }
-   programs {
-      program {
-     name:   "active";
-     signal: "e,state,selected";
-     source: "e";
-     action: STATE_SET "active" 0.0;
-     target: "icon_overlay";
-      } 
-      program { 
-     name:   "passive";
-     signal: "e,state,unselected"; 
-     source: "e"; 
-     action: STATE_SET "default" 0.0;
-     transition: LINEAR 0.2;
-     target: "e.text.label";
-     target: "icon_overlay";
-      }
-      program {
-     name:    "thumb_gen";
-     signal:  "e,action,thumb,gen";
-     source:  "e";
-     action:  STATE_SET "visible" 0.0;
-     target:  "icon_box_shadow";
-     target:  "icon_box";
-     target:  "icon_box_bg";
-     after:   "thumb_gen2";
-      }
-      program {
-     name:    "thumb_gen-";
-     signal:  "e,action,thumb,gen,alpha";
-     source:  "e";
-     action:  STATE_SET "default" 0.0;
-     target:  "icon_box_shadow";
-     target:  "icon_box";
-     target:  "icon_box_bg";
-     after:   "thumb_gen2";
-      }
-      program {
-     name:    "thumb_gen2";
-     action:  STATE_SET "min" 0.0;
-     target:  "icon";
-     after:   "thumb_gen3";
-      }
-      program {
-     name:    "thumb_gen3";
-     action:  STATE_SET "max" 0.0;
-     target:  "icon";
-     transition: DECELERATE 0.2;
-     after:   "thumb_gen4";
-      }
-      program {
-     name:    "thumb_gen4";
-     action:  STATE_SET "default" 0.0;
-     target:  "icon";
-     transition: SINUSOIDAL 0.1;
-     after:   "thumb_gen5";
-      }
-      program {
-     name:    "thumb_gen5";
-     action:  STATE_SET "max2" 0.0;
-     target:  "icon";
-     transition: SINUSOIDAL 0.2;
-     after:   "thumb_gen6";
-      }
-      program {
-     name:    "thumb_gen6";
-     action:  STATE_SET "default" 0.0;
-     target:  "icon";
-     transition: SINUSOIDAL 0.3;
-      }
-   }
-}
-
-group {
-   name: "e/fileman/default/icon/variable";
-   parts {
-      part {
-     name:          "icon_overlay";
-     mouse_events:  0;
-     description {
-        state:      "default" 0.0;
-        rel1 {
-           relative: 0.0 0.0;
-           offset:   0 0;
-        }
-        rel2 {
-           relative: 1.0 1.0;
-           offset:   -1 -1;
-        }
-        image {
-           normal: "e17_button.png";
-           border: 8 8 8 8;
-        }
-        color: 255 255 255 0;
-     }
-     description {
-        state: "active" 0.0;
-        inherit: "default" 0.0;
-        color: 255 255 255 255;
-     }
-      }
-      part {
-     name:          "icon_box_shadow";
-     mouse_events:  0;
-     description {
-        state:      "default" 0.0;
-        visible:    0;
-        rel1 {
-           to: "icon_box";
-           relative: 0.0 0.0;
-           offset: -1 -1;
-        }
-        rel2 {
-           to: "icon_box";
-           relative: 1.0 1.0;
-           offset: 2 2;
-        }
-            image {
-           normal: "e17_mini_button_shadow2.png";
-           border: 6 6 6 6;
-        }
-     }
-     description {
-        state:      "visible" 0.0;
-        inherit:    "default" 0.0;
-        visible:    1;
-     }
-      }
-      part {
-     name:          "icon_box";
-     type:          RECT;
-     mouse_events:  0;
-     description {
-        state:      "default" 0.0;
-        visible:    0;
-        align: 0.5 0.5;
+     part {
+       name:          "icon_box_bg";
+       mouse_events:  0;
+       description {
+         state:      "default" 0.0;
+         visible:    0;
          rel1 {
-           to: "e.swallow.icon";
-           relative: 0.0 0.0;
-           offset: -1 -1;
-        }
-        rel2 {
-           to: "e.swallow.icon";
-           relative: 1.0 1.0;
-           offset: 0 0;
-        }
-        color: 0 0 0 64;
-     }
-     description {
-        state:      "visible" 0.0;
-        inherit:    "default" 0.0;
-        visible:    1;
-     }
-      }
-      part {
-     name:          "icon_box_bg";
-     mouse_events:  0;
-     description {
-        state:      "default" 0.0;
-        visible:    0;
-        rel1 {
            to: "icon_box";
            relative: 0.0 0.0;
            offset: 1 1;
-        }
-        rel2 {
+         }
+         rel2 {
            to: "icon_box";
            relative: 1.0 1.0;
            offset: -2 -2;
-        }
-            image {
+         }
+           image {
            normal: "e17_fileman_thumb_bg.png";
-        }
-        fill {
+          }
+         fill {
            smooth: 0;
            size {
-          relative: 0 0;
-          offset:   32 32;
+             relative: 0 0;
+             offset:   32 32;
            }
-        }
+         }
+       }
+       description {
+         state:      "visible" 0.0;
+         inherit:    "default" 0.0;
+         visible:    1;
+       }
      }
-     description {
-        state:      "visible" 0.0;
-        inherit:    "default" 0.0;
-        visible:    1;
+     part {
+       name:          "icon0";
+       type:          RECT;
+       mouse_events:  0;
+       description {
+         state:    "default" 0.0;
+         align:    0.5 0.5;
+         aspect:   1.0 1.0;
+         aspect_preference: VERTICAL;
+         visible:  0;
+         rel1 {
+            relative: 0.0 0.0;
+            offset: 8 8;
+         }
+         rel2 {
+            to_y: "e.text.label";
+            relative: 1.0 0.0;
+            offset: -9 -2;
+         }
+         color: 0 0 0 0;
+       }
      }
-      }
-      part {
-     name:          "icon0";
-     type:          RECT;
-     mouse_events:  0;
-     description {
-        state:    "default" 0.0;
-        align:    0.5 0.5;
-        aspect:   1.0 1.0;
-        aspect_preference: VERTICAL;
-        visible:  0;
-        rel1 {
-           relative: 0.0 0.0;
-           offset: 8 8;
-        }
-        rel2 {
-           to_y: "e.text.label";
-           relative: 1.0 0.0;
-           offset: -9 -2;
-        }
-        color: 0 0 0 0;
+     part {
+       name:          "icon";
+       type:          RECT;
+       mouse_events:  0;
+       description {
+         state:    "default" 0.0;
+         align:    0.5 0.5;
+         aspect:   1.0 1.0;
+         aspect_preference: BOTH;
+         visible:  0;
+         rel1 {
+            to: "icon0";
+         }
+         rel2 {
+            to: "icon0";
+         }
+         color: 0 0 0 0;
+       }
+       description {
+         state:    "min" 0.0;
+         inherit:  "default" 0.0;
+         max:      0 0;
+       }
+       description {
+         state:    "max" 0.0;
+         inherit:  "default" 0.0;
+         rel1 {
+            to: "icon0";
+            relative: 0.0  0.0;
+            offset:   -4   -4;
+         }
+         rel2 {
+            to: "icon0";
+            relative: 1.0  1.0;
+            offset:   3    3;
+         }
+       }
+       description {
+         state:    "max2" 0.0;
+         inherit:  "default" 0.0;
+         rel1 {
+            to: "icon0";
+            relative: 0.0  0.0;
+            offset:   -2   -2;
+         }
+         rel2 {
+            to: "icon0";
+            relative: 1.0  1.0;
+            offset:   1    1;
+         }
+       }
      }
-      }
-      part {
-     name:          "icon";
-     type:          RECT;
-     mouse_events:  0;
-     description {
-        state:    "default" 0.0;
-        align:    0.5 0.5;
-        aspect:   1.0 1.0;
-        aspect_preference: BOTH;
-        visible:  0;
-        rel1 {
-           to: "icon0";
-        }
-        rel2 {
-           to: "icon0";
-        }
-        color: 0 0 0 0;
-     }
-     description {
-        state:    "min" 0.0;
-        inherit:  "default" 0.0;
-        max:      0 0;
-     }
-     description {
-        state:    "max" 0.0;
-        inherit:  "default" 0.0;
-        rel1 {
-           to: "icon0";
-           relative: 0.0  0.0;
-           offset:   -4   -4;
-        }
-        rel2 {
-           to: "icon0";
-           relative: 1.0  1.0;
-           offset:   3    3;
-        }
-     }
-     description {
-        state:    "max2" 0.0;
-        inherit:  "default" 0.0;
-        rel1 {
-           to: "icon0";
-           relative: 0.0  0.0;
-           offset:   -2   -2;
-        }
-        rel2 {
-           to: "icon0";
-           relative: 1.0  1.0;
-           offset:   1    1;
-        }
-     }
-      }
-      part {
-     name:          "e.swallow.icon";
-     type:          SWALLOW;
-     description {
-        state: "default" 0.0;
-        aspect: 1.0 1.0;
-        aspect_preference: BOTH;
-        align:    0.5 0.5;
-//        fixed:    1 1;
-        rel1 {
+     part {
+       name: "e.swallow.icon";
+       type: SWALLOW;
+       description {
+         state: "default" 0.0;
+         aspect: 1.0 1.0;
+         aspect_preference: BOTH;
+         align:    0.5 0.5;
+//       fixed:    1 1;
+         rel1 {
            to:      "icon";
-        }
-        rel2 {
+         }
+         rel2 {
            to:      "icon";
-        }
+         }
+       }
      }
-      }
-      part {
-     name:          "e.text.label";
-     type:          TEXT;
-     effect:        SHADOW;
-     mouse_events:  0;
-     description {
-        state: "default" 0.0;
-        align: 0.5 1.0;
-        fixed: 0 1;
-        rel1 {
-           relative: 0.0 1.0;
-           offset:   8 -9;
-        }
-        rel2 {
-           relative: 1.0 1.0;
-           offset:   -9 -9;
-        }
-        color: 0 0 0 255;
-        color3: 255 255 255 128;
-        color_class: "label_text";
-        text {
-           text:     "No Title";
-           size:     10;
-           font:     "Edje-Vera";
-           min:      1 1;
-           align:    0.5 1.0;
-           elipsis:  0.0;
-           text_class: "fileman_icon";
-        }
+     part {
+       name: "e.text.label";
+       type: TEXT;
+       effect:        SHADOW;
+       mouse_events:  0;
+       description {
+         state: "default" 0.0;
+         align: 0.5 1.0;
+         fixed: 0 1;
+         rel1 {
+            relative: 0.0 1.0;
+            offset:   8 -9;
+         }
+         rel2 {
+            relative: 1.0 1.0;
+            offset:   -9 -9;
+         }
+         color: 0 0 0 255;
+         color3: 255 255 255 128;
+         color_class: "label_text";
+         text {
+            text:     "No Title";
+            size:     10;
+            font:     "Edje-Vera";
+            min:      1 1;
+            align:    0.5 1.0;
+            ellipsis:  0.0;
+            text_class: "fileman_icon";
+         }
+       }
      }
-      }
-      part {
-     name:          "icon_event";
-     type:          RECT;
-     mouse_events:  1;
-     description {
-        state:      "default" 0.0;
-        color:      0 0 0 0;
+     part {
+       name: "icon_event";
+       type: RECT;
+       mouse_events:  1;
+       description {
+         state:      "default" 0.0;
+         color:      0 0 0 0;
+       }
      }
-      }
    }
    programs {
-      program {
-     name:   "active"; 
-     signal: "e,state,selected"; 
-     source: "e"; 
-     action: STATE_SET "active" 0.0;
-     target: "icon_overlay";
-      } 
-      program { 
-     name:   "passive";
-     signal: "e,state,unselected";
-     source: "e"; 
-     action: STATE_SET "default" 0.0;
-     transition: LINEAR 0.2;
-     target: "e.text.label";
-     target: "icon_overlay";
-      }
-      program {
-     name:    "thumb_gen";
-     signal:  "e,action,thumb,gen";
-     source:  "e";
-     action:  STATE_SET "visible" 0.0;
-     target:  "icon_box_shadow";
-     target:  "icon_box";
-     target:  "icon_box_bg";
-     after:   "thumb_gen2";
-      }
-      program {
-     name:    "thumb_gen-";
-     signal:  "e,action,thumb,gen,alpha";
-     source:  "e";
-     action:  STATE_SET "default" 0.0;
-     target:  "icon_box_shadow";
-     target:  "icon_box";
-     target:  "icon_box_bg";
-     after:   "thumb_gen2";
-      }
-      program {
-     name:    "thumb_gen2";
-     action:  STATE_SET "min" 0.0;
-     target:  "icon";
-     after:   "thumb_gen3";
-      }
-      program {
-     name:    "thumb_gen3";
-     action:  STATE_SET "max" 0.0;
-     target:  "icon";
-     transition: DECELERATE 0.2;
-     after:   "thumb_gen4";
-      }
-      program {
-     name:    "thumb_gen4";
-     action:  STATE_SET "default" 0.0;
-     target:  "icon";
-     transition: SINUSOIDAL 0.1;
-     after:   "thumb_gen5";
-      }
-      program {
-     name:    "thumb_gen5";
-     action:  STATE_SET "max2" 0.0;
-     target:  "icon";
-     transition: SINUSOIDAL 0.2;
-     after:   "thumb_gen6";
-      }
-      program {
-     name:    "thumb_gen6";
-     action:  STATE_SET "default" 0.0;
-     target:  "icon";
-     transition: SINUSOIDAL 0.3;
-      }
+     program {
+       name:   "active"; 
+       signal: "e,state,selected"; 
+       source: "e"; 
+       action: STATE_SET "active" 0.0;
+       target: "icon_overlay";
+     } 
+     program { 
+       name:   "passive";
+       signal: "e,state,unselected";
+       source: "e"; 
+       action: STATE_SET "default" 0.0;
+       transition: LINEAR 0.2;
+       target: "e.text.label";
+       target: "icon_overlay";
+     }
+     program {
+       name:    "thumb_gen";
+       signal:  "e,action,thumb,gen";
+       source:  "e";
+       action:  STATE_SET "visible" 0.0;
+       target:  "icon_box_shadow";
+       target:  "icon_box";
+       target:  "icon_box_bg";
+       after:   "thumb_gen2";
+     }
+     program {
+       name:    "thumb_gen-";
+       signal:  "e,action,thumb,gen,alpha";
+       source:  "e";
+       action:  STATE_SET "default" 0.0;
+       target:  "icon_box_shadow";
+       target:  "icon_box";
+       target:  "icon_box_bg";
+       after:   "thumb_gen2";
+     }
+     program {
+       name:    "thumb_gen2";
+       action:  STATE_SET "min" 0.0;
+       target:  "icon";
+       after:   "thumb_gen3";
+     }
+     program {
+       name:    "thumb_gen3";
+       action:  STATE_SET "max" 0.0;
+       target:  "icon";
+       transition: DECELERATE 0.2;
+       after:   "thumb_gen4";
+     }
+     program {
+       name:    "thumb_gen4";
+       action:  STATE_SET "default" 0.0;
+       target:  "icon";
+       transition: SINUSOIDAL 0.1;
+       after:   "thumb_gen5";
+     }
+     program {
+       name:    "thumb_gen5";
+       action:  STATE_SET "max2" 0.0;
+       target:  "icon";
+       transition: SINUSOIDAL 0.2;
+       after:   "thumb_gen6";
+     }
+     program {
+       name:    "thumb_gen6";
+       action:  STATE_SET "default" 0.0;
+       target:  "icon";
+       transition: SINUSOIDAL 0.3;
+     }
    }
 }
 
@@ -6650,326 +6330,7 @@ group {
 
 group {
    name: "e/fileman/desktop/icon/fixed";
-   parts {
-      part {
-     name:          "icon_overlay";
-     mouse_events:  0;
-     description {
-        state:      "default" 0.0;
-        rel1 {
-           relative: 0.0 0.0;
-           offset:   0 0;
-        }
-        rel2 {
-           relative: 1.0 1.0;
-           offset:   -1 -1;
-        }
-        image {
-           normal: "e17_button.png";
-           border: 8 8 8 8;
-        }
-        color: 255 255 255 0;
-     }
-     description {
-        state: "active" 0.0;
-        inherit: "default" 0.0;
-        color: 255 255 255 160;
-     }
-      }
-      part {
-     name:          "icon_box_shadow";
-     mouse_events:  0;
-     description {
-        state:      "default" 0.0;
-        visible:    0;
-        rel1 {
-           to: "icon_box";
-           relative: 0.0 0.0;
-           offset: -1 -1;
-        }
-        rel2 {
-           to: "icon_box";
-           relative: 1.0 1.0;
-           offset: 2 2;
-        }
-            image {
-           normal: "e17_mini_button_shadow2.png";
-           border: 6 6 6 6;
-        }
-     }
-     description {
-        state:      "visible" 0.0;
-        inherit:    "default" 0.0;
-        visible:    1;
-     }
-      }
-      part {
-     name:          "icon_box";
-     type:          RECT;
-     mouse_events:  0;
-     description {
-        state:      "default" 0.0;
-        visible:    0;
-        align: 0.5 0.5;
-         rel1 {
-           to: "e.swallow.icon";
-           relative: 0.0 0.0;
-           offset: -1 -1;
-        }
-        rel2 {
-           to: "e.swallow.icon";
-           relative: 1.0 1.0;
-           offset: 0 0;
-        }
-        color: 0 0 0 64;
-     }
-     description {
-        state:      "visible" 0.0;
-        inherit:    "default" 0.0;
-        visible:    1;
-     }
-      }
-      part {
-     name:          "icon_box_bg";
-     mouse_events:  0;
-     description {
-        state:      "default" 0.0;
-        visible:    0;
-        rel1 {
-           to: "icon_box";
-           relative: 0.0 0.0;
-           offset: 1 1;
-        }
-        rel2 {
-           to: "icon_box";
-           relative: 1.0 1.0;
-           offset: -2 -2;
-        }
-        image {
-           normal: "e17_fileman_thumb_bg.png";
-        }
-        fill {
-           smooth: 0;
-           size {
-             relative: 0 0;
-             offset:   32 32;
-           }
-        }
-     }
-     description {
-        state:      "visible" 0.0;
-        inherit:    "default" 0.0;
-        visible:    1;
-     }
-      }
-      part {
-     name:          "icon0";
-     type:          RECT;
-     mouse_events:  0;
-     description {
-        state:    "default" 0.0;
-        align:    0.0 0.5;
-        aspect:   1.0 1.0;
-        aspect_preference: VERTICAL;
-        visible:  0;
-        rel1 {
-           relative: 0.0 0.0;
-           offset: 8 8;
-        }
-        rel2 {
-           to_y: "e.text.label";
-           relative: 1.0 0.0;
-           offset: -9 -2;
-        }
-        color: 0 0 0 0;
-     }
-      }
-      part {
-     name:          "icon";
-     type:          RECT;
-     mouse_events:  0;
-     description {
-        state:    "default" 0.0;
-        align:    0.5 0.5;
-        aspect:   1.0 1.0;
-        aspect_preference: BOTH;
-        visible:  0;
-        rel1 {
-           to: "icon0";
-        }
-        rel2 {
-           to: "icon0";
-        }
-        color: 0 0 0 0;
-     }
-     description {
-        state:    "min" 0.0;
-        inherit:  "default" 0.0;
-        max:      0 0;
-     }
-     description {
-        state:    "max" 0.0;
-        inherit:  "default" 0.0;
-        rel1 {
-           to: "icon0";
-           relative: 0.0  0.0;
-           offset:   -4   -4;
-        }
-        rel2 {
-           to: "icon0";
-           relative: 1.0  1.0;
-           offset:   3    3;
-        }
-     }
-     description {
-        state:    "max2" 0.0;
-        inherit:  "default" 0.0;
-        rel1 {
-           to: "icon0";
-           relative: 0.0  0.0;
-           offset:   -2   -2;
-        }
-        rel2 {
-           to: "icon0";
-           relative: 1.0  1.0;
-           offset:   1    1;
-        }
-     }
-      }
-      part {
-     name:          "e.swallow.icon";
-     type:          SWALLOW;
-     description {
-        state: "default" 0.0;
-        aspect: 1.0 1.0;
-        aspect_preference: BOTH;
-        align:    0.5 0.5;
-//        fixed:    1 1;
-        rel1 {
-           to:      "icon";
-        }
-        rel2 {
-           to:      "icon";
-        }
-     }
-      }
-      part {
-     name:          "e.text.label";
-     type:          TEXT;
-     effect:        SOFT_SHADOW;
-     mouse_events:  0;
-     scale: 1;
-     description {
-        state: "default" 0.0;
-        align: 0.5 1.0;
-        fixed: 0 1;
-        rel1 {
-           relative: 0.0 1.0;
-           offset:   8 -9;
-        }
-        rel2 {
-           relative: 1.0 1.0;
-           offset:   -9 -9;
-        }
-        color: 255 255 255 220;
-        color3: 0 0 0 24;
-        color_class: "desktop_label_text";
-        text {
-           text:     "No Title";
-           size:     9;
-           font:     "Edje-Vera-Bold";
-           min:      0 1;
-           align:    0.5 1.0;
-           elipsis:  0.0;
-           //~ text_class: "desktop_fileman_icon";
-        }
-     }
-      }
-      part {
-     name:          "icon_event";
-     type:          RECT;
-     mouse_events:  1;
-     description {
-        state:      "default" 0.0;
-        color:      0 0 0 0;
-     }
-      }
-   }
-   programs {
-      program {
-     name:   "active";
-     signal: "e,state,selected";
-     source: "e";
-     action: STATE_SET "active" 0.0;
-     target: "icon_overlay";
-      } 
-      program {
-     name:   "passive";
-     signal: "e,state,unselected"; 
-     source: "e"; 
-     action: STATE_SET "default" 0.0;
-     transition: LINEAR 0.2;
-     target: "e.text.label";
-     target: "icon_overlay";
-      }
-      program {
-     name:    "thumb_gen";
-     signal:  "e,action,thumb,gen";
-     source:  "e";
-     action:  STATE_SET "visible" 0.0;
-     target:  "icon_box_shadow";
-     target:  "icon_box";
-     target:  "icon_box_bg";
-     after:   "thumb_gen2";
-      }
-      program {
-     name:    "thumb_gen-";
-     signal:  "e,action,thumb,gen,alpha";
-     source:  "e";
-     action:  STATE_SET "default" 0.0;
-     target:  "icon_box_shadow";
-     target:  "icon_box";
-     target:  "icon_box_bg";
-     after:   "thumb_gen2";
-      }
-      program {
-     name:    "thumb_gen2";
-     action:  STATE_SET "min" 0.0;
-     target:  "icon";
-     after:   "thumb_gen3";
-      }
-      program {
-     name:    "thumb_gen3";
-     action:  STATE_SET "max" 0.0;
-     target:  "icon";
-     transition: DECELERATE 0.2;
-     after:   "thumb_gen4";
-      }
-      program {
-     name:    "thumb_gen4";
-     action:  STATE_SET "default" 0.0;
-     target:  "icon";
-     transition: SINUSOIDAL 0.1;
-     after:   "thumb_gen5";
-      }
-      program {
-     name:    "thumb_gen5";
-     action:  STATE_SET "max2" 0.0;
-     target:  "icon";
-     transition: SINUSOIDAL 0.2;
-     after:   "thumb_gen6";
-      }
-      program {
-     name:    "thumb_gen6";
-     action:  STATE_SET "default" 0.0;
-     target:  "icon";
-     transition: SINUSOIDAL 0.3;
-      }
-   }
-}
-
-group {
-   name: "e/fileman/desktop/icon/variable";
+   alias: "e/fileman/desktop/icon/variable";
    parts {
       part {
         name:          "icon_overlay";
@@ -7223,73 +6584,73 @@ group {
    }
    programs {
      program {
-     name:   "active";
-     signal: "e,state,selected";
-     source: "e";
-     action: STATE_SET "active" 0.0;
-     target: "e.text.label";
-     target: "icon_overlay";
+       name:   "active";
+       signal: "e,state,selected";
+       source: "e";
+       action: STATE_SET "active" 0.0;
+       target: "e.text.label";
+       target: "icon_overlay";
      } 
      program {
-     name:   "passive";
-     signal: "e,state,unselected"; 
-     source: "e"; 
-     action: STATE_SET "default" 0.0;
-     target: "e.text.label";
-     target: "icon_overlay";
+       name:   "passive";
+       signal: "e,state,unselected"; 
+       source: "e"; 
+       action: STATE_SET "default" 0.0;
+       target: "e.text.label";
+       target: "icon_overlay";
      }
      program {
-     name:    "thumb_gen";
-     signal:  "e,action,thumb,gen";
-     source:  "e";
-     action:  STATE_SET "visible" 0.0;
-     target:  "icon_box_shadow";
-     target:  "icon_box";
-     target:  "icon_box_bg";
-     after:   "thumb_gen2";
+       name:    "thumb_gen";
+       signal:  "e,action,thumb,gen";
+       source:  "e";
+       action:  STATE_SET "visible" 0.0;
+       target:  "icon_box_shadow";
+       target:  "icon_box";
+       target:  "icon_box_bg";
+       after:   "thumb_gen2";
      }
      program {
-     name:    "thumb_gen-";
-     signal:  "e,action,thumb,gen,alpha";
-     source:  "e";
-     action:  STATE_SET "default" 0.0;
-     target:  "icon_box_shadow";
-     target:  "icon_box";
-     target:  "icon_box_bg";
-     after:   "thumb_gen2";
+       name:    "thumb_gen-";
+       signal:  "e,action,thumb,gen,alpha";
+       source:  "e";
+       action:  STATE_SET "default" 0.0;
+       target:  "icon_box_shadow";
+       target:  "icon_box";
+       target:  "icon_box_bg";
+       after:   "thumb_gen2";
      }
      program {
-     name:    "thumb_gen2";
-     action:  STATE_SET "min" 0.0;
-     target:  "icon";
-     after:   "thumb_gen3";
+       name:    "thumb_gen2";
+       action:  STATE_SET "min" 0.0;
+       target:  "icon";
+       after:   "thumb_gen3";
      }
      program {
-     name:    "thumb_gen3";
-     action:  STATE_SET "max" 0.0;
-     target:  "icon";
-     transition: DECELERATE 0.2;
-     after:   "thumb_gen4";
+       name:    "thumb_gen3";
+       action:  STATE_SET "max" 0.0;
+       target:  "icon";
+       transition: DECELERATE 0.2;
+       after:   "thumb_gen4";
      }
      program {
-     name:    "thumb_gen4";
-     action:  STATE_SET "default" 0.0;
-     target:  "icon";
-     transition: SINUSOIDAL 0.1;
-     after:   "thumb_gen5";
+       name:    "thumb_gen4";
+       action:  STATE_SET "default" 0.0;
+       target:  "icon";
+       transition: SINUSOIDAL 0.1;
+       after:   "thumb_gen5";
      }
      program {
-     name:    "thumb_gen5";
-     action:  STATE_SET "max2" 0.0;
-     target:  "icon";
-     transition: SINUSOIDAL 0.2;
-     after:   "thumb_gen6";
+       name:    "thumb_gen5";
+       action:  STATE_SET "max2" 0.0;
+       target:  "icon";
+       transition: SINUSOIDAL 0.2;
+       after:   "thumb_gen6";
      }
      program {
-     name:    "thumb_gen6";
-     action:  STATE_SET "default" 0.0;
-     target:  "icon";
-     transition: SINUSOIDAL 0.3;
+       name:    "thumb_gen6";
+       action:  STATE_SET "default" 0.0;
+       target:  "icon";
+       transition: SINUSOIDAL 0.3;
      }
    }
 }
