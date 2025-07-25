@@ -6860,7 +6860,7 @@ group {
      type:          TEXT;
      effect:        SOFT_SHADOW;
      mouse_events:  0;
-     scale
+     scale: 1;
      description {
         state: "default" 0.0;
         align: 0.5 1.0;
